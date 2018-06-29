@@ -1,0 +1,63 @@
+{
+  "name": "membrana",
+  "version": "1.0.0",
+  "description": "Landing page for the company engaged in the assembly and installation of membrane roofing.",
+  "main": "index.js",
+  "scripts": {
+    "editorconfig": "editorconfig-cli",
+    "stylelint": "stylelint 'src/less/**/*.scss' --syntax scss --fix",
+    "test": "npm run editorconfig && npm run stylelint",
+    "build": "gulp build",
+    "start": "npm run test && npm run build",
+    "server": "npm run test && npm run build && gulp server"
+  },
+  "browserslist": [
+    "cover 99%",
+    "> 0.5%",
+    "last 10 versions",
+    "IE 11",
+    "Firefox ESR",
+    "chrome 41"
+  ],
+  "editorconfig-cli": [
+    "*.json",
+    "*.js",
+    "src/*.html",
+    "src/js/**/*.js",
+    "src/img/**/*.svg",
+    "src/sass/**/*.{sass,scss}",
+    "src/less/**/*.less"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@strogov-bitbucket:strogov/membrana.git"
+  },
+  "author": "Strogov Media",
+  "license": "ISC",
+  "devDependencies": {
+    "@htmlacademy/editorconfig-cli": "^1.0.0",
+    "autoprefixer": "^8.6.4",
+    "browser-sync": "^2.24.5",
+    "critical": "^1.3.3",
+    "css-mqpacker": "^6.0.2",
+    "cssnano": "^3.10.0",
+    "del": "^3.0.0",
+    "fs": "0.0.1-security",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-real-favicon": "^0.3.0",
+    "gulp-rename": "^1.3.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-sass-generate-contents": "^0.5.0",
+    "gulp-svgstore": "^6.1.1",
+    "gulp-webp": "^3.0.0",
+    "run-sequence": "^2.2.1",
+    "stylelint": "^9.3.0"
+  },
+  "dependencies": {
+    "npm": "^6.0.0"
+  }
+}
