@@ -12,7 +12,6 @@
     "server": "npm run test && npm run build && gulp server"
   },
   "browserslist": [
-    "cover 99%",
     "> 0.5%",
     "last 10 versions",
     "IE 11",
