@@ -1,0 +1,23 @@
+/*------------------------------------------------------------------
+* [Common styles]
+*/
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: $root-font-family;
+  font-size: $root-font-size;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+p:empty {
+  margin: 0;
+}

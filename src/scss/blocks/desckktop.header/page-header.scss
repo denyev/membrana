@@ -1,0 +1,25 @@
+/*------------------------------------------------------------------
+* [Header]
+*/
+
+.page-header {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  padding-top: rem(20);
+  color: $color-light;
+}
+
+.page-header__wrap {
+  @include page-container();
+}
+
+.page-header__top {
+  align-content: flex-end;
+  display: flex;
+}
+
+.page-header__logo {
+  width: auto;
+  float: left;
+}

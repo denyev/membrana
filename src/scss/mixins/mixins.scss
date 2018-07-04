@@ -1,0 +1,39 @@
+/*------------------------------------------------------------------
+* [Mixins]
+*/
+
+@mixin visually-hidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+@mixin page-container {
+  max-width: 1170px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 0 auto;
+}
+
+@mixin link-underline-hover {
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: rem(2);
+    background: $btn-red;
+    transition: 0.4s ease-in-out;
+  }
+}
