@@ -33,7 +33,28 @@
     left: 0;
     width: 0;
     height: rem(2);
-    background: $btn-red;
+    background: $btn-primary;
     transition: 0.4s ease-in-out;
+  }
+}
+
+@mixin ripple-effect($hover-color, $active-color) {
+  background-position: center;
+  transition: background 0.8s;
+  &:hover {
+    background-color: $hover-color;
+    background-image: radial-gradient(circle at center center, transparent 1%, $hover-color 1%);
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 15000% auto;
+  }
+  &:active {
+    background-color: $active-color;
+    background-size: 100%;
+    transition: background 0s;
   }
 }

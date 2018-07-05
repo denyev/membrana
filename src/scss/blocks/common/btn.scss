@@ -9,8 +9,9 @@
   display: flex;
   overflow: hidden;
 
-  margin: 0;
-  padding: rem(14) rem(18) rem(13) rem(17);
+  margin: rem(8) 0 0 0;
+  padding: rem(6) rem(18) 0 rem(17);
+  height: rem(35);
 
   cursor: pointer;
   user-select: none;
@@ -32,14 +33,9 @@
   align-items: center;
   flex: 0 0 160px;
   &--red {
-    background-color: $btn-red;
+    background-color: $btn-primary;
   }
   &--ripple {
-    @include mdc-ripple-surface;
-    @include mdc-ripple-radius-bounded;
-    @include mdc-states-base-color(black);
-    @include mdc-states-hover-opacity(.1);
-    @include mdc-states-focus-opacity(.3);
-    @include mdc-states-press-opacity(.4);
+    @include ripple-effect($btn-primary-hover, $btn-primary-active);
   }
 }

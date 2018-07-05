@@ -79,3 +79,6 @@ awstats/
 /.htaccess
 .htpasswd
 dist/
+*.psd
+/*.jpg
+/*.png

@@ -23,7 +23,8 @@
 
 .main-nav__item {
   display: block;
-  margin-right: rem(22);
+  margin-right: rem(27);
+  margin-top: rem(18);
 }
 
 .main-nav__link {
@@ -36,7 +37,6 @@
   align-items: center;
 
   position: relative;
-  margin-top: rem(8);
   @include link-underline-hover();
 }
 
