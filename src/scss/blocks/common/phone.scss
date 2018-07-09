@@ -1,0 +1,13 @@
+/*------------------------------------------------------------------
+* [Phone]
+*/
+
+.phone__link {
+  @include reset-link();
+  @include link-underline-hover($bottom: rem(-3));
+  font-family: $title-font-family;
+  font-weight: bold;
+  font-size: rem(18);
+  color: currentColor;
+  letter-spacing: -1px;
+}

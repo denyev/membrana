@@ -28,20 +28,17 @@
 }
 
 .main-nav__link {
+  @include link-underline-hover();
   color: currentColor;
   text-decoration: none;
-  font-size: rem(19);
-
+  @include fluid-type();
   display: inline-flex;
   height: auto;
   align-items: center;
-
-  position: relative;
-  @include link-underline-hover();
 }
 
 .main-nav__btn-list {
-  list-style: none;
+  @include unstyle-list();
   padding: 0;
   margin: 0;
 }

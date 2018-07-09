@@ -2,40 +2,58 @@
 * [Buttons]
 */
 
-//@import "../../../../node_modules/@material/ripple/mixins";
-
 .btn {
   appearance: none;
-  display: flex;
-  overflow: hidden;
-
-  margin: rem(8) 0 0 0;
-  padding: rem(6) rem(18) 0 rem(17);
-  height: rem(35);
-
   cursor: pointer;
+  overflow: hidden;
   user-select: none;
   transition: all 150ms linear;
   text-align: center;
-  white-space: nowrap;
   text-decoration: none;
-  text-transform: uppercase;
-
+  white-space: nowrap;
   color: currentColor;
   border: 0 none;
-
-  font-family: $title-font-family;
-  font-size: $btn-font-size;
-  font-weight: bold;
-  line-height: 1.3;
-
-  justify-content: center;
-  align-items: center;
-  flex: 0 0 160px;
+  &--flat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 160px;
+    margin: rem(8) 0 0 0;
+    padding: rem(6) rem(18) 0 rem(17);
+    height: rem(35);
+    text-transform: uppercase;
+    font-family: $title-font-family;
+    font-size: $btn-font-size;
+    font-weight: bold;
+  }
   &--red {
     background-color: $btn-primary;
   }
   &--ripple {
     @include ripple-effect($btn-primary-hover, $btn-primary-active);
+  }
+  &--slide-up {
+    position: relative;
+    padding: 10px 10px 0 10px;
+    outline-color:transparent;
+    transition: all 0.8s ease;
+    &:hover {
+      padding-bottom: 10px;
+      font-weight: bold;
+      &::before {
+        background-color: transparent;
+      }
+    }
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: rem(-3);
+    left: 0;
+    width: calc(100% - 20px);
+    transform: translateX(10px);
+    height: rem(2);
+    background-color: $btn-primary;
+    transition: 0.4s ease-in-out;
   }
 }

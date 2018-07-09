@@ -40,7 +40,7 @@
           </ul>
           <ul class="main-nav__btn-list">
             <li class="main-nav__btn">
-              <button class="btn btn--red btn--ripple mdc-ripple-upgraded">Калькулятор</button>
+              <button class="btn btn--flat btn--red btn--ripple">Калькулятор</button>
             </li>
           </ul>
         </div>
@@ -54,14 +54,15 @@
               <a href="tel:+74955057718" class="phone__link">+7 (495) 505-77-18</a>
             </div>
           </li>
-          <li class="requisites__item">
-            <div class="call">
-              <a href="" class="btn btn__call">Заказать звонок</a>
+          <li class="requisites__item call">
+            <div class="call__wrap">
+              <a href="" class="btn btn--slide-up btn--ripple call__btn">Заказать звонок</a>
             </div>
           </li>
-          <li class="requisites__item">
-            <div class="schedule">
-              <time datetime="Mo-Fr 09:00-20:00">Пн-Пт 9:00-20:00</time>
+          <li class="requisites__item schedule">
+            <div class="schedule__wrap">
+              <i class="schedule__icon"></i>
+              <time class="schedule__value" datetime="Mo-Fr 09:00-20:00">Пн-Пт 9:00-20:00</time>
             </div>
           </li>
         </ul>
@@ -413,8 +414,13 @@
   </div>
 </footer>
 
+<div class="visually-hidden">
+  <!-- inject:svg --><!-- endinject -->
+</div>
 
 <script async defer>
+  'use strict';
+
   function createLinkOnHead(path, file) {
     var link = document.createElement("link");
     link.setAttribute("rel", "stylesheet");
@@ -432,6 +438,10 @@
   }
 
   addBackgroundImg('.page-header', '/img/header/main-bg.jpg');
+
+  document.querySelector('.call__btn').addEventListener('click', function (event) {
+    event.preventDefault();
+  });
 </script>
 <script async defer src="/js/script.min.js"></script>
 </body>

@@ -1,0 +1,24 @@
+/*------------------------------------------------------------------
+* [Requisites]
+*/
+
+.requisites {
+
+}
+
+.requisites__list {
+  @include unstyle-list();
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: rem(80);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+}
+
+
+.requisites__item {
+  align-self: center;
+}

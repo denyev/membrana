@@ -2,6 +2,10 @@
 * [Common styles]
 */
 
+:root {
+  font-size: $root-font-size;
+}
+
 html,
 body {
   height: 100%;
@@ -9,7 +13,8 @@ body {
 
 body {
   font-family: $root-font-family;
-  font-size: $root-font-size;
+  @include fluid-type();
+  -webkit-text-size-adjust: 100%;
 }
 
 img {

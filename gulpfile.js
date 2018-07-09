@@ -9,6 +9,7 @@ let minifyCss = require('gulp-csso');
 let imagemin = require('gulp-imagemin');
 let webp = require('gulp-webp');
 let svgstore = require('gulp-svgstore');
+let svgmin = require('gulp-svgmin');
 let rename = require('gulp-rename');
 let server = require('browser-sync').create();
 let del = require('del');
@@ -27,6 +28,8 @@ let jsImport = require('gulp-js-import');
 let browserify = require('browserify');
 let babelify = require('babelify');
 let concat = require('gulp-concat');
+let base64 = require('gulp-base64');
+let inject = require('gulp-inject');
 
 let cnf = {
   creds: {
@@ -34,12 +37,13 @@ let cnf = {
     'Website': 'strogov.ru'
   },
   build: {
-    path: 'dist/',
-    css: 'dist/css/',
-    fontcss: 'dist/css/font',
-    js: 'dist/js/',
-    img: 'dist/img/',
-    fonts: 'dist/fonts/'
+    all: 'dist/',
+    path: 'dist/public/',
+    css: 'dist/public/css/',
+    fontcss: 'dist/public/css/font',
+    js: 'dist/public/js/',
+    img: 'dist/public/img/',
+    fonts: 'dist/public/fonts/'
   },
   src: {
     path: 'src',
@@ -48,12 +52,6 @@ let cnf = {
     blocks: 'src/scss/_blocks/**/*.scss',
     css: 'src/css/**/*.css',
     fontcss: 'src/css/font/font.css',
-    img: 'src/img/**/*.*',
-    jpg: 'src/img/**/*.{jpg,jpeg}',
-    png: 'src/img/**/*.png',
-    gif: 'src/img/**/*.gif',
-    ico: 'src/img/**/*.ico',
-    svg: 'src/img/**/*.svg',
     fonts: 'src/fonts/**/*.*',
     libs: 'src/libs/**/*',
     js: {
@@ -62,33 +60,93 @@ let cnf = {
       main: 'src/js/script.js',
       vendor: 'src/js/vendor.js',
       ripple: 'node_modules/@material/ripple/index.js'
+    },
+    img: {
+      all: 'src/img/**/*.*',
+      path: 'src/img/',
+      jpg: 'src/img/**/*.{jpg,jpeg}',
+      png: 'src/img/**/*.png',
+      gif: 'src/img/**/*.gif',
+      ico: 'src/img/**/*.ico',
+      svg: 'src/img/**/*.svg',
+      webp: 'src/img/**/*.webp'
+    },
+    assets: {
+      all: './src/assets/**/*.*',
+      path: './src/assets/',
+      img: {
+        all: './src/assets/img/**/*.*',
+        path: './src/assets/img/',
+        jpg: 'src/assets/img/**/*.{jpg,jpeg}',
+        png: 'src/assets/img/**/*.png',
+        gif: 'src/assets/img/**/*.gif',
+        ico: 'src/assets/img/**/*.ico',
+        svg: 'src/assets/img/**/*.svg',
+        webp: 'src/assets/img/**/*.webp'
+      }
     }
   },
   watch: {
-    html: 'dist/**/*.html',
-    scss: 'src/scss/**/*.scss',
-    css: 'src/scss/**/*.css',
-    js: 'src/js/**/*.js'
+    dist: {
+      html: 'dist/**/*.html',
+      css: 'dist/css/**/*.css',
+      js: 'dist/js/**/*.js'
+    },
+    src: {
+      html: 'src/**/*.html',
+      scss: 'src/scss/**/*.scss',
+      css: 'src/scss/**/*.css',
+      js: 'src/js/**/*.js'
+    }
   },
-  clean: './dist'
+  clean: {
+    all: './dist',
+    build: './dist/public/'
+    // assets: './src/assets/'
+  },
+  minify: {
+    css: {
+      restructure: true,
+      comments: false,
+      debug: true
+    }
+  },
+  base64: {
+    baseDir: './src/',
+    // exclude: ['*.svg*'],
+    // maxImageSize: 8*1024,
+    debug: true
+  }
 };
 
-gulp.task('clean', function () {
-  return del(cnf.clean);
+gulp.task('clean:all', function (done) {
+  run(
+    'clean:assets',
+    'clean:build',
+    done
+  );
 });
 
-gulp.task('copy', function (done) {
+gulp.task('clean:build', function () {
+  return del(cnf.clean.build);
+});
+
+gulp.task('clean:assets', function () {
+  return del(cnf.clean.assets);
+});
+
+gulp.task('copy:all', function (done) {
   return gulp.src([
     cnf.src.html,
     cnf.src.fonts,
     cnf.src.css,
     cnf.src.libs,
     cnf.src.js.all,
-    cnf.src.img
+    cnf.src.img.all
   ], {
     base: cnf.src.path
   })
-  // .pipe(plumber())
+    .pipe(plumber())
     .pipe(debug({
       minimal: 'false'
     }))
@@ -124,8 +182,9 @@ gulp.task('style', function () {
       autoprefixer(),
       mqpacker()
     ]))
+    .pipe(base64(cnf.base64))
     .pipe(gulp.dest(cnf.build.css))
-    .pipe(minifyCss())
+    .pipe(minifyCss(cnf.minify.css))
     .pipe(rename('style.min.css'))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(cnf.build.css))
@@ -175,10 +234,10 @@ gulp.task('critical', function () {
   });
 });
 
-gulp.task('js:browserify', function() {
+gulp.task('js:browserify', function () {
   return browserify([
-      cnf.src.js.ripple
-    ])
+    cnf.src.js.ripple
+  ])
     .transform(babelify.configure({
       presets: ["es2015"]
     }))
@@ -201,6 +260,45 @@ gulp.task('js:all', function () {
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(cnf.build.js))
     .pipe(server.reload({stream: true}));
+});
+
+gulp.task('img:jpg', function () {
+  return gulp.src(cnf.src.assets.img.jpg)
+    .pipe(plumber())
+    .pipe(debug({
+      minimal: 'false'
+    }))
+    .pipe(imagemin([
+      imagemin.jpegtran({progressive: true})
+    ]))
+    .pipe(gulp.dest(cnf.src.img.path));
+
+});
+
+gulp.task('img:png', function () {
+  return gulp.src(cnf.src.assets.img.png)
+    .pipe(plumber())
+    .pipe(debug({
+      minimal: 'false'
+    }))
+    .pipe(imagemin([
+      imagemin.optipng({optimizationLevel: 7})
+    ]))
+    .pipe(gulp.dest(cnf.src.img.path));
+});
+
+gulp.task('svg:sprite', function () {
+  return gulp.src(cnf.src.assets.img.svg)
+    .pipe(plumber())
+    .pipe(debug({
+      minimal: 'false'
+    }))
+    .pipe(svgmin())
+    .pipe(svgstore({
+      inlineSvg: true
+    }))
+    .pipe(rename('icons.svg'))
+    .pipe(gulp.dest(cnf.src.img.path));
 });
 
 gulp.task('html', function () {
@@ -235,39 +333,41 @@ gulp.task('server', function () {
   });
 
   gulp.watch(
-    cnf.watch.css,
+    cnf.watch.src.css,
     ['style:all']
   );
 
   gulp.watch(
-    cnf.watch.scss,
+    cnf.watch.src.scss,
     ['style']
   );
 
-  gulp.watch(cnf.watch.css)
+  gulp.watch(cnf.watch.dist.css)
     .on('change', server.reload);
 
   gulp.watch(
-    cnf.watch.html,
+    cnf.watch.src.html,
     [
-      'htmlmin',
+      // 'htmlmin',
       'html'
     ]
   );
 
-  gulp.watch(cnf.build.html)
+  gulp.watch(cnf.watch.dist.html)
     .on('change', server.reload);
 });
 
 gulp.task('build', function (done) {
   run(
-    'clean',
-    'copy',
+    'clean:all',
+    'img:jpg',
+    'img:png',
+    'svg:sprite',
+    'copy:all',
     'style:all',
     'js:all',
     'html',
-    // 'htmlmin',
     'server',
     done
-  )
+  );
 });
