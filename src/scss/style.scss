@@ -37,9 +37,11 @@
 @import "blocks/common/phone";
 @import "blocks/common/call";
 @import "blocks/common/schedule";
-@import "blocks/desckktop.header/page-header";
-@import "blocks/desckktop.header/main-nav";
-@import "blocks/desckktop.header/requisites";
+@import "blocks/common/helpers";
+@import "blocks/desktop.header/page-header";
+@import "blocks/desktop.header/main-nav";
+@import "blocks/desktop.header/requisites";
+@import "blocks/desktop.header/widget";
 
 //------------------------------------------------------------------
 // [Debug]

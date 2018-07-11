@@ -13,6 +13,7 @@
   white-space: nowrap;
   color: currentColor;
   border: 0 none;
+  position: relative;
   &--flat {
     display: flex;
     justify-content: center;
@@ -35,7 +36,7 @@
   &--slide-up {
     position: relative;
     padding: 10px 10px 0 10px;
-    outline-color:transparent;
+    outline-color: transparent;
     transition: all 0.8s ease;
     &:hover {
       padding-bottom: 10px;
@@ -45,15 +46,49 @@
       }
     }
   }
-  &::before {
+  &--link {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: rem(-3);
+      left: 0;
+      width: calc(100% - 20px);
+      transform: translateX(10px);
+      height: rem(2);
+      background-color: $btn-primary;
+      transition: 0.4s ease-in-out;
+    }
+  }
+}
+
+.btn__calculate {
+  &--icon {
+    position: relative;
+    width: auto;
+    display: inline-block;
+    padding-left: rem(26);
+    line-height: rem(33);
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background-image: url(/img/icons/calculator.png);
+      background-repeat: no-repeat;
+      width: rem(22);
+      height: rem(25);
+    }
+  }
+  &::after {
     content: "";
+    display: block;
     position: absolute;
-    bottom: rem(-3);
-    left: 0;
-    width: calc(100% - 20px);
-    transform: translateX(10px);
-    height: rem(2);
-    background-color: $btn-primary;
-    transition: 0.4s ease-in-out;
+    left: rem(26);
+    bottom: 0;
+    width: 100%;
+    height: rem(3);
+    background-color: currentColor;
   }
 }

@@ -3,11 +3,13 @@
 */
 
 .page-header {
+  background-color: $color-dusky;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom center;
   padding-top: rem(20);
   color: $color-light;
+  @include clearfix();
 }
 
 .page-header__wrap {

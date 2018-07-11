@@ -1,0 +1,73 @@
+.widget {
+  @include clearfix();
+  margin-bottom: rem(138);
+}
+
+.widget__wrap {
+  margin: 0 auto;
+  max-width: rem(456);
+  position: relative;
+  text-align: center;
+  font-family: $title-font-family;
+  padding-top: 1px;
+}
+
+.widget__shape {
+  width: 100%;
+  height: 104%;
+  margin: 0 auto;
+  position: absolute;
+  top: rem(67);
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: rotate(45deg);
+  max-width: 67%;
+  &::before {
+    content: "";
+    display: block;
+    width: 49%;
+    height: 100%;
+    position: absolute;
+    top: -1%;
+    left: 0;
+    background-color: $btn-primary;
+  }
+  &::after {
+    content: "";
+    display: block;
+    width: 52%;
+    height: 100%;
+    position: absolute;
+    top: -12%;
+    right: 0;
+    background-color: $btn-primary;
+  }
+}
+
+.widget__content {
+  position: relative;
+  margin: rem(111) rem(88) rem(115) rem(116);
+}
+
+.widget__title {
+  font-family: $title-font-family;
+  @include fluid-type($max-value: rem(19));
+  margin-top: 0;
+  margin-bottom: rem(33);
+}
+
+.widget__price {
+  @include fluid-type($max-value: rem(24));
+  width: 100%;
+  display: block;
+}
+
+.widget__price-index {
+  @include fluid-type($max-value: rem(15));
+}
+
+.widget__text {
+  margin-bottom: rem(19);
+}
+

@@ -17,6 +17,15 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
+h1 {
+  font-family: $title-font-family;
+  @include fluid-type($max-value: rem(75));
+  text-align: center;
+  margin-top: rem(113);
+  margin-bottom: rem(87);
+  max-width: rem(1098);
+}
+
 img {
   display: block;
   max-width: 100%;

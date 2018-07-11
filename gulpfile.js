@@ -121,7 +121,7 @@ let cnf = {
 
 gulp.task('clean:all', function (done) {
   run(
-    'clean:assets',
+    // 'clean:assets',
     'clean:build',
     done
   );

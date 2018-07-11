@@ -23,8 +23,11 @@
 
 .main-nav__item {
   display: block;
-  margin-right: rem(27);
+  margin-right: rem(32);
   margin-top: rem(18);
+  &:last-child {
+    margin-right: rem(25);
+  }
 }
 
 .main-nav__link {
