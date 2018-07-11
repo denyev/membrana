@@ -1,0 +1,44 @@
+.about {
+  background-color: $color-lightgray;
+  padding-top: rem(90);
+  padding-bottom: rem(74);
+}
+
+.about__wrap {
+  @include page-container();
+  @include clearfix();
+}
+
+.about__content {
+  @include clearfix();
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.about__descr {
+  flex: 1;
+}
+
+.about__text {
+  margin-bottom: rem(30);
+}
+
+.about__image-list {
+  @include unstyle-list();
+  display: flex;
+  flex-direction: row;
+  justify-content: unset;
+  margin: 0;
+  padding: 0;
+}
+.about__image-item {
+  flex: 1;
+  &:nth-child(2) {
+    margin-top: rem(30);
+  }
+}
+
+.about__img {
+  width: 100%;
+}

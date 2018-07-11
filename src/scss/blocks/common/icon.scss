@@ -1,0 +1,82 @@
+.icon-small {
+  background-image: url(/img/icon-small-sprite.png);
+  background-position-x: -10px;
+  display: block;
+  width: rem(84);
+  height: rem(83);
+  &--papers {
+    background-position-y: -10px;
+  }
+  &--job {
+    background-position-y: -113px;
+  }
+  &--workflow {
+    background-position-y: -216px;
+  }
+  &--advance_paynemt {
+    background-position-y: -319px;
+  }
+  &--discussion {
+    background-position-y: -422px;
+  }
+  &--customer {
+    background-position-y: -525px;
+  }
+  &--fire {
+    background-position-y: -628px;
+  }
+  &--strength {
+    background-position-y: -731px;
+  }
+  &--ultraviolet {
+    background-position-y: -834px;
+  }
+  &--few_seams {
+    background-position-y: -937px;
+  }
+  &--frost {
+    background-position-y: -1040px;
+  }
+  &--care {
+    background-position-y: -1143px;
+  }
+  &--steam {
+    background-position-y: -1246px;
+  }
+  &--thermometer {
+    background-position-y: -1349px;
+  }
+  &--durability {
+    background-position-y: -1452px;
+  }
+  &--weld {
+    background-position-y: -1555px;
+  }
+  &--maintainability {
+    background-position-y: -1658px;
+  }
+  &--smooth {
+    background-position-y: -1761px;
+  }
+  &--elasticity {
+    background-position-y: -1864px;
+  }
+  &--price {
+    background-position-y: -1967px;
+  }
+  &--hammer {
+    background-position-y: -2070px;
+  }
+  &--warranty {
+    background-position-y: -2173px;
+  }
+  &--key {
+    background-position-y: -2276px;
+  }
+  &--20 {
+    background-position-y: -2379px;
+  }
+  &--5 {
+    background-position-y: -2482px;
+  }
+}

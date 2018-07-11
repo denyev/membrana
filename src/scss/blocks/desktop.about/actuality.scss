@@ -1,0 +1,35 @@
+.actuality {
+  flex: 1;
+}
+
+.actuality__list {
+  @include unstyle-list();
+  margin: 0 0 0 15.8172231986%;
+  padding: 0;
+  transform: translateY(-3%);
+}
+
+.actuality__item {
+  margin-bottom: rem(-4);
+  &:last-child {
+    margin-bottom: rem(16);
+  }
+}
+
+.actuality__content {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+
+.actuality__icon {
+  margin-right: rem(38);
+}
+
+.actuality__descr {
+  align-self: center;
+  p {
+    margin-bottom: 0;
+  }
+}
