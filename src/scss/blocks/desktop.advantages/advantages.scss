@@ -1,0 +1,43 @@
+.advantages {
+  padding-top: rem(94);
+}
+
+.advantages__wrap {
+  @include page-container();
+  @include clearfix();
+}
+
+.advantages__head {
+  margin-bottom: rem(115);
+}
+
+.advantages__list {
+  @include unstyle-list();
+  @include clearfix();
+  margin: 0;
+  padding: 0;
+}
+
+@include n-columns($list: advantages__list, $item: advantages__item, $min-width: rem(370), $max-cols: 6);
+
+.advantages__content {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+
+.advantages__icon {
+  margin-top: rem(30);
+}
+
+.advantages__text {
+  margin-left: rem(14);
+}
+
+.advantages__title {
+  font-family: $title-font-family;
+  @include fluid-type($max-value: rem(19));
+  margin-top: 0;
+}
