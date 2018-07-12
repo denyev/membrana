@@ -467,9 +467,20 @@
 
   addBackgroundImg('.page-header', '/img/header/main-bg.jpg');
 
-  document.querySelector('.call__btn').addEventListener('click', function (event) {
-    event.preventDefault();
-  });
+  function preventDefaultForElementList(elementList) {
+    var elementList = document.querySelectorAll(elementList);
+    var singleElement = '';
+
+    for ( var i = 0; i < elementList.length; i++) {
+      singleElement = elementList[i];
+
+      singleElement.addEventListener('click', function(event) {
+        event.preventDefault();
+      });
+    }
+  }
+
+  preventDefaultForElementList('a.btn');
 </script>
 <script async defer src="/js/script.min.js"></script>
 </body>
