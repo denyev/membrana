@@ -8,6 +8,7 @@
 
 .schedule__wrap {
   margin-left: auto;
+  padding-top: rem(7);
 }
 
 .schedule__icon {
@@ -20,9 +21,6 @@
   width: rem(19);
   height: rem(19);
   align-self: center;
-
-  transform: translateY(6px);
-
   margin-right: rem(4);
 }
 
@@ -30,8 +28,5 @@
   vertical-align: middle;
   @include fluid-type($max-value: rem(18));
   align-self: center;
-
   letter-spacing: rem(0.816);
-
-  padding-top: rem(17);
 }
