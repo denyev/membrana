@@ -61,10 +61,14 @@ let cnf = {
     css: 'src/css/**/*.css',
     fontcss: 'src/css/font/font.css',
     fonts: 'src/fonts/**/*.*',
-    libs: 'src/libs/**/*',
+    libs: {
+      path: 'src/libs/',
+      all: 'src/libs/**/*',
+      js: 'src/libs/**/*.js'
+    },
     js: {
       path: 'src/js/',
-      all: 'src/**/*.js',
+      all: 'src/js/**/*.js',
       main: 'src/js/script.js',
       vendor: 'src/js/vendor.js',
       ripple: 'node_modules/@material/ripple/index.js'
@@ -166,7 +170,7 @@ gulp.task('copy:all', function (done) {
     cnf.src.html,
     cnf.src.fonts,
     cnf.src.css,
-    cnf.src.libs,
+    cnf.src.libs.all,
     cnf.src.js.all,
     cnf.src.img.all,
     cnf.src.config.apache
@@ -178,6 +182,19 @@ gulp.task('copy:all', function (done) {
       minimal: 'false'
     }))
     .pipe(gulp.dest(cnf.build.path));
+});
+
+gulp.task('copy:assets', function (done) {
+  return gulp.src([
+    cnf.src.assets.all
+  ], {
+    base: cnf.src.path
+  })
+    .pipe(plumber())
+    .pipe(debug({
+      minimal: 'false'
+    }))
+    .pipe(gulp.dest(cnf.src.path));
 });
 
 gulp.task('toc', function () {
@@ -226,6 +243,22 @@ gulp.task('style', function () {
     .pipe(minifyCss(cnf.minify.css))
     .pipe(rename('style.min.css'))
     .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(cnf.build.css))
+    .pipe(server.stream());
+});
+
+gulp.task('style:light', function () {
+  return gulp.src(cnf.src.scss)
+    .pipe(plumber())
+    .pipe(debug({
+      minimal: 'false'
+    }))
+    .pipe(sass({
+      includePaths: [
+        'node_modules'
+      ]
+    }).on('error', sass.logError))
+    .pipe(rename('style.min.css'))
     .pipe(gulp.dest(cnf.build.css))
     .pipe(server.stream());
 });
@@ -293,6 +326,7 @@ gulp.task('js:modernizr', function (done) {
 
 gulp.task('js:all', function () {
   gulp.src([
+    cnf.src.libs.js,
     cnf.src.js.all
   ])
     .pipe(plumber())
@@ -470,12 +504,15 @@ gulp.task('server', function () {
 gulp.task('build', function (done) {
   run(
     'clean:build',
-    'img:jpg',
-    'img:png',
-    'svg:sprite',
+    // 'img:jpg',
+    // 'img:png',
+    // 'svg:sprite',
+    'copy:assets',
     'copy:all',
-    'style:all',
-    'js:modernizr',
+    'style:font',
+    'style:light',
+    // 'style:all',
+    // 'js:modernizr',
     'js:all',
     'html',
     'server',
