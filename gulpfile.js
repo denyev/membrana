@@ -7,6 +7,7 @@ let postcss = require('gulp-postcss');
 let autoprefixer = require('autoprefixer');
 let minifyCss = require('gulp-csso');
 let imagemin = require('gulp-imagemin');
+let imageminMozjpeg = require('imagemin-mozjpeg');
 let webp = require('gulp-webp');
 let svgstore = require('gulp-svgstore');
 let svgmin = require('gulp-svgmin');
@@ -289,7 +290,10 @@ gulp.task('img:jpg', function () {
       minimal: 'false'
     }))
     .pipe(imagemin([
-      imagemin.jpegtran({progressive: true})
+      imagemin.jpegtran({progressive: true}),
+      imageminMozjpeg({
+        quality: 75
+      })
     ]))
     .pipe(gulp.dest(cnf.src.img.path));
 

@@ -78,6 +78,7 @@
     "gulp-uglify": "^3.0.0",
     "gulp-uglify-es": "^1.0.4",
     "gulp-webp": "^3.0.0",
+    "imagemin-mozjpeg": "^7.0.0",
     "postcss-fixes": "^2.0.1",
     "postcss-uncss": "^0.16.1",
     "require-dir": "^1.0.0",
