@@ -1,0 +1,21 @@
+.price-request__legend {
+  margin-bottom: rem(47);
+}
+
+@include n-columns($list: price-request__list, $item: price-request__item, $min-width: rem(128), $max-cols: 2);
+
+.price-request__item {
+  margin-bottom: rem(8);
+}
+
+.price-request__note {
+  @include fluid-type($min-value: rem(11), $max-value: rem(12));
+  @include clearfix();
+  color: $color-sub;
+}
+
+.price-request__send {
+  @include clearfix();
+  color: $color-light;
+  padding-top: rem(12);
+}

@@ -58,3 +58,8 @@ p:empty {
 p {
   margin-top: 0;
 }
+
+legend {
+  @include fluid-type($max-value: rem(34));
+  font-family: $title-font-family;
+}

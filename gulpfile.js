@@ -30,6 +30,11 @@ let babelify = require('babelify');
 let concat = require('gulp-concat');
 let base64 = require('gulp-base64');
 let inject = require('gulp-inject');
+let typographic = require('gulp-typograf');
+let postcssFixes = require('postcss-fixes');
+let uncss = require('postcss-uncss');
+let htmlhint = require("gulp-htmlhint");
+
 
 let cnf = {
   creds: {
@@ -84,6 +89,9 @@ let cnf = {
         svg: 'src/assets/img/**/*.svg',
         webp: 'src/assets/img/**/*.webp'
       }
+    },
+    config: {
+      apache: 'src/.htaccess'
     }
   },
   watch: {
@@ -142,7 +150,8 @@ gulp.task('copy:all', function (done) {
     cnf.src.css,
     cnf.src.libs,
     cnf.src.js.all,
-    cnf.src.img.all
+    cnf.src.img.all,
+    cnf.src.config.apache
   ], {
     base: cnf.src.path
   })
@@ -179,6 +188,17 @@ gulp.task('style', function () {
       ]
     }).on('error', sass.logError))
     .pipe(postcss([
+      uncss({
+        html: [
+          cnf.src.html
+        ],
+        ignore: [
+          /\.js-.*/,
+          /\..*-js/,
+          '.js'
+        ]
+      }),
+      postcssFixes(),
       autoprefixer(),
       mqpacker()
     ]))
@@ -305,6 +325,53 @@ gulp.task('html', function () {
   return gulp.src(cnf.src.html)
     .pipe(plumber())
     .pipe(debug())
+    .pipe(typographic({
+      locale: [
+        'ru',
+        'en-US'
+      ],
+      htmlEntity: {type: 'name'},
+      addRule: {
+        name: 'common/nbsp/wrapNbspForDegreed',
+        handler: function (text) {
+          // https://regex101.com/r/LDlPg5/1/
+          return text.replace(/(\d+((\&\w+\;)?)+[Cс])/g, '<span class="nbsp">$1</span>');
+        }
+      },
+      disableRule: [
+        'common/*',
+        'ru/*'
+      ],
+      enableRule: [
+        'common/nbsp/*',
+        'common/nbsp/wrapNbspForDegreed',
+        'common/other/delBOM',
+        'common/punctuation/apostrophe',
+        'common/punctuation/quote',
+        'common/punctuation/quoteLink',
+        'common/space/afterPunctuation',
+        'common/space/beforeBracket',
+        'common/space/bracket',
+        'common/space/delBeforePercent',
+        'common/space/delBeforePunctuation',
+        'common/space/delLeadingBlanks',
+        'common/space/delRepeatN',
+        'common/space/delRepeatSpace',
+        'common/space/delTrailingBlanks',
+        'common/space/squareBracket',
+        'common/space/trimLeft',
+        'common/space/trimRight',
+        'common/symbols/cf',
+        'ru/dash/*',
+        'ru/nbsp/*',
+        'ru/number/*',
+        'ru/other/accent',
+        'ru/punctuation/*',
+        'ru/space/*',
+        'ru/symbols/NN'
+      ]
+    }))
+    .pipe(htmlhint())
     .pipe(htmlminify({
       collapseWhitespace: true,
       removeComments: true
@@ -343,6 +410,14 @@ gulp.task('server', function () {
   );
 
   gulp.watch(cnf.watch.dist.css)
+    .on('change', server.reload);
+
+  gulp.watch(
+    cnf.watch.src.js,
+    ['js:all']
+  );
+
+  gulp.watch(cnf.watch.dist.js)
     .on('change', server.reload);
 
   gulp.watch(

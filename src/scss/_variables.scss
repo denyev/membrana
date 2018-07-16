@@ -12,7 +12,31 @@ $color-gray: #010101;
 $color-dusky: #1f2937;
 $color-dark: #000;
 $color-strong: #dc0303;
+$color-focus: #2684ff;
 
 $btn-primary: #dc0303;
 $btn-primary-hover: #ef3232;
 $btn-primary-active: #f4b7b7;
+
+$spacer: 1rem !default;
+
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-bold: 700 !default;
+
+$link-color: currentColor;
+$link-decoration: none !default;
+$link-hover-color: currentColor !default;
+$link-hover-decoration: underline !default;
+
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+
+$headings-margin-bottom: ($spacer / 2) !default;
+$paragraph-margin-bottom: 1rem !default;
+$dt-font-weight: $font-weight-bold !default;
+
+$table-cell-padding: .75rem !default;
+
+$table-caption-color: $color-dark !default;
+
+$label-margin-bottom: .5rem !default;

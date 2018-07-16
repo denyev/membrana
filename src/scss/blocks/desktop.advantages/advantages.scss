@@ -11,14 +11,19 @@
   margin-bottom: rem(115);
 }
 
+
 .advantages__list {
   @include unstyle-list();
   @include clearfix();
-  margin: 0;
+  margin: 0 0 rem(110) 0;
   padding: 0;
 }
 
-@include n-columns($list: advantages__list, $item: advantages__item, $min-width: rem(370), $max-cols: 6);
+.advantages__item {
+  margin-bottom: rem(10);
+}
+
+@include n-columns($list: advantages__list, $item: advantages__item, $min-width: rem(370), $max-cols: 2);
 
 .advantages__content {
   margin: 0;
@@ -40,4 +45,7 @@
   font-family: $title-font-family;
   @include fluid-type($max-value: rem(19));
   margin-top: 0;
+  margin-bottom: rem(15);
 }
+
+@include n-columns($list: advantages__bottom-list, $item: advantages__bottom-item, $min-width: rem(280), $max-cols: 2);

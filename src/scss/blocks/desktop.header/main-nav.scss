@@ -32,9 +32,9 @@
 
 .main-nav__link {
   @include link-underline-hover();
+  @include fluid-type();
   color: currentColor;
   text-decoration: none;
-  @include fluid-type();
   display: inline-flex;
   height: auto;
   align-items: center;
