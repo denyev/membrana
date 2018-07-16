@@ -85,4 +85,4 @@ dist/
 /*.png
 src/img/
 *.lock
-
+libs/
