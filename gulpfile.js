@@ -9,6 +9,7 @@ let minifyCss = require('gulp-csso');
 let imagemin = require('gulp-imagemin');
 let imageminMozjpeg = require('imagemin-mozjpeg');
 let webp = require('gulp-webp');
+let webpcss = require('gulp-webpcss');
 let svgstore = require('gulp-svgstore');
 let svgmin = require('gulp-svgmin');
 let rename = require('gulp-rename');
@@ -35,6 +36,7 @@ let typographic = require('gulp-typograf');
 let postcssFixes = require('postcss-fixes');
 let uncss = require('postcss-uncss');
 let htmlhint = require("gulp-htmlhint");
+let modernizr = require("modernizr");
 
 
 let cnf = {
@@ -62,7 +64,7 @@ let cnf = {
     libs: 'src/libs/**/*',
     js: {
       path: 'src/js/',
-      all: 'src/js/*.js',
+      all: 'src/**/*.js',
       main: 'src/js/script.js',
       vendor: 'src/js/vendor.js',
       ripple: 'node_modules/@material/ripple/index.js'
@@ -110,8 +112,8 @@ let cnf = {
   },
   clean: {
     all: './dist',
-    build: './dist/public/'
-    // assets: './src/assets/'
+    build: './dist/public/',
+    img: './src/img/'
   },
   minify: {
     css: {
@@ -122,15 +124,30 @@ let cnf = {
   },
   base64: {
     baseDir: './src/',
-    // exclude: ['*.svg*'],
-    // maxImageSize: 8*1024,
+    exclude: [/.*\.svg.*/i],
+    maxImageSize: 512,
     debug: true
+  },
+  modernizr: {
+    path: 'src/libs/modernizr/js/modernizr-build.js',
+    custom: {
+      "minify": true,
+      "options": [
+        "setClasses"
+      ],
+      "feature-detects": [
+        "test/img/webp-alpha",
+        "test/img/webp-animation",
+        "test/img/webp-lossless",
+        "test/img/webp"
+      ]
+    }
   }
 };
 
 gulp.task('clean:all', function (done) {
   run(
-    // 'clean:assets',
+    'clean:assets',
     'clean:build',
     done
   );
@@ -141,7 +158,7 @@ gulp.task('clean:build', function () {
 });
 
 gulp.task('clean:assets', function () {
-  return del(cnf.clean.assets);
+  return del(cnf.clean.img);
 });
 
 gulp.task('copy:all', function (done) {
@@ -204,6 +221,7 @@ gulp.task('style', function () {
       mqpacker()
     ]))
     .pipe(base64(cnf.base64))
+    .pipe(webpcss())
     .pipe(gulp.dest(cnf.build.css))
     .pipe(minifyCss(cnf.minify.css))
     .pipe(rename('style.min.css'))
@@ -266,6 +284,13 @@ gulp.task('js:browserify', function () {
     .pipe(fs.createWriteStream(cnf.src.js.vendor));
 });
 
+gulp.task('js:modernizr', function (done) {
+
+  modernizr.build(cnf.modernizr.custom, function (code) {
+    fs.writeFile(cnf.modernizr.path, code, done);
+  });
+});
+
 gulp.task('js:all', function () {
   gulp.src([
     cnf.src.js.all
@@ -295,6 +320,9 @@ gulp.task('img:jpg', function () {
         quality: 75
       })
     ]))
+    .pipe(webp({
+      quality: 65
+    }))
     .pipe(gulp.dest(cnf.src.img.path));
 
 });
@@ -308,6 +336,9 @@ gulp.task('img:png', function () {
     .pipe(imagemin([
       imagemin.optipng({optimizationLevel: 7})
     ]))
+    .pipe(webp({
+      lossless: true
+    }))
     .pipe(gulp.dest(cnf.src.img.path));
 });
 
@@ -438,12 +469,13 @@ gulp.task('server', function () {
 
 gulp.task('build', function (done) {
   run(
-    'clean:all',
+    'clean:build',
     'img:jpg',
     'img:png',
     'svg:sprite',
     'copy:all',
     'style:all',
+    'js:modernizr',
     'js:all',
     'html',
     'server',

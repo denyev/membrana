@@ -1,5 +1,7 @@
 'use strict';
 
+document.documentElement.classList.remove('no-js');
+
 function createLinkOnHead(path, file) {
   var link = document.createElement("link");
   link.setAttribute("rel", "stylesheet");
