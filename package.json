@@ -4,13 +4,13 @@
   "description": "Landing page for the company engaged in the assembly and installation of membrane roofing.",
   "main": "index.js",
   "scripts": {
-    "editorconfig": "editorconfig-cli",
-    "stylelint": "stylelint 'src/less/**/*.scss' --syntax scss --fix",
-    "test": "npm run editorconfig && npm run stylelint",
-    "build": "gulp build",
-    "start": "npm run test && npm run build",
-    "server": "npm run test && npm run build && gulp server",
-    "deloy": "bash -x deploy.sh"
+    "editorconfig": "nice -n 19 ionice -c3 editorconfig-cli",
+    "stylelint": "nice -n 19 ionice -c3 stylelint 'src/less/**/*.scss' --syntax scss --fix",
+    "test": "nice -n 19 ionice -c3 yarn run editorconfig && yarn run stylelint",
+    "build": "nice -n 19 ionice -c3 gulp build",
+    "start": "nice -n 19 ionice -c3 yarn run test && nice -n 19 ionice -c3 yarn run build",
+    "server": "nice -n 19 ionice -c3 yarn run test && nice -n 19 ionice -c3 yarn run build && nice -n 19 ionice -c3 gulp server",
+    "deloy": "nice -n 19 ionice -c3 bash -x deploy.sh"
   },
   "browserslist": [
     "> 0.5%",
