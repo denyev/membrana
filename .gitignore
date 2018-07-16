@@ -80,6 +80,9 @@ awstats/
 .htpasswd
 dist/
 *.psd
+*.psd.*
 /*.jpg
 /*.png
-/src/img/
+src/img/
+*.lock
+
