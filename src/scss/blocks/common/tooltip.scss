@@ -1,0 +1,61 @@
+// Tooltip
+//<div class="tooltip">
+//  <div class="tooltip__text-wrap">
+//    <span class="tooltip__text"></span>
+//  </div>
+//  <div class="tooltip__icon"></div>
+//</div>
+
+.tooltip {
+  display: inline-block;
+  position: relative;
+}
+
+.tooltip__text-wrap {
+  position: relative;
+  display: block;
+  background: transparent;
+  width: 200px;
+  height: rem(25);
+  line-height: 60px;
+  text-align: center;
+  @include fluid-type($min-value: rem(11), $max-value: rem(13));
+  margin: auto;
+  cursor: pointer;
+  color: currentColor;
+  box-shadow: 0 0 rem(14) rem(2) rgba(0, 0, 0, 0.05);
+  &::before {
+    width: 100%;
+    left: 0;
+    height: 100%;
+    z-index: 0;
+
+    position: absolute;
+    top: 34px;
+    opacity: 0.4;
+    background-color: $color-light;;
+    content: '';
+    border-top: none;
+    transform: perspective(15px) rotateX(-5deg);
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    left: 0;
+    background-color: $color-light;
+    transform: perspective(15px) rotateX(5deg);
+  }
+}
+
+.tooltip__text {
+  left: 30%;
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip__icon {
+  cursor: help;
+}

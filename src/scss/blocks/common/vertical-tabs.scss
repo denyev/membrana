@@ -1,0 +1,255 @@
+/**
+ * Sets a translucent background color to all elements it affects. Helpf.vertical-tab__inner while setting up, or debugging, the structure of your site to make sure all items are cleared correctly.
+ *
+ * @param {color} [$bg=blue] - A color to be lightened, so make sure you pick a darkish color.
+ *
+ * @example
+ *   .vertical-tab
+ *     edit(red)
+ */
+/**
+ * Clearfix used to clear floated children elements. http://nicolasgallagher.com/micro-clearfix-hack
+ *
+ * @example
+ *   .parent
+ *     clearfix()
+ *     .child
+ *       column('1/2')
+ */
+/**
+ * Creates a Flexbox container.
+ *
+ * @param {string} [$direction=row] - The flex-direction the container sho.vertical-tab__innerd create. This is typically opposite to the element you're creating so a row() wo.vertical-tab__innerd need flex-container(column).
+ *
+ * @example
+ *   $flexbox = true
+ *
+ *   .vertical-tab
+ *     flex-container()
+ *     figure
+ *       column('1/2')
+ */
+/**
+ * Horizontally center a container element and apply padding to it.
+ *
+ * @param {unit} [$max-size=1140px] - A max-width to assign. Can be any unit.
+ * @param {unit} [$pad=0] - Padding on the left and right of the element. Can be any unit.
+ * @param {boolean} [$flex=$flexbox] - Determines whether this element sho.vertical-tab__innerd use Flexbox or not.
+ *
+ * @example
+ *   .vertical-tab
+ *     center(900px)
+ */
+/**
+ * Align nested elements.
+ *
+ * @param {string} [$location=middle-center] - The position the nested element takes relative to the containing element.
+ * @param {boolean} [$flex=$flexbox] - Determines whether this element sho.vertical-tab__innerd use Flexbox or not.
+ *
+ * - reset
+ * - top-left
+ * - top-center or top
+ * - top-right
+ * - middle-left or left
+ * - middle-right or right
+ * - bottom-left
+ * - bottom-center or bottom
+ * - bottom-right
+ *
+ * @example
+ *   .parent
+ *     align(right)
+ *     width: 600px
+ *     height: 400px
+ *     .child
+ *       width: 300px
+ *       height: 150px
+ */
+/**
+ * Creates a column that is a fraction of the size of it's containing element with a gutter. You don't need to pass any additional ratios (fractions) as the grid system will make use of calc(). Note that fractions must always be wrapped in quotes.
+ *
+ * @param {string} [$fraction='1/1'] - This is a simple fraction of the containing element's width. This must be a string written as a fraction.
+ * @param {number} [$cycle=convert(unquote(split('/', $fraction)[1]))] - Lost works by assigning a margin-right to all elements except the last in the row. It does this by default by using the denominator of the fraction you pick. To override this default use this param. e.g. column('2/4', $cycle: 2)
+ * @param {number} [$gut=$gutter] - The margin on the right side of the element used to create a gutter. Typically this is left alone and the global $gutter will be used, but you can override it here if you want certain elements to have a partic.vertical-tab__innerarly large or small gutter (pass 0 for no gutter at all).
+ * @param {boolean} [$flex=$flexbox] - Determines whether this element sho.vertical-tab__innerd use Flexbox or not.
+ *
+ * @example
+ *   figure
+ *     column('1/3')
+ */
+/**
+ * Creates a row that is a fraction of the size of it's containing element with a gutter. You don't need to pass any additional ratios (fractions) as the grid system will make use of calc(). Note that fractions must always be wrapped in quotes.
+ *
+ * @param {string} [$fraction='1/1'] - This is a simple fraction of the containing element's height. This must be a string written as a fraction.
+ * @param {number} [$gut=$gutter] - The margin on the bottom of the element used to create a gutter. Typically this is left alone and the global $gutter will be used, but you can override it here if you want certain elements to have a partic.vertical-tab__innerarly large or small gutter (pass 0 for no gutter at all).
+ * @param {boolean} [$flex=$flexbox] - Determines whether this element sho.vertical-tab__innerd use Flexbox or not.
+ *
+ * @example
+ *   figure
+ *     row('1/3')
+ */
+/**
+ * Creates a block that is a fraction of the size of it's containing element with a gutter on the right and bottom. You don't need to pass any additional ratios (fractions) as the grid system will make use of calc(). Note that fractions must always be wrapped in quotes.
+ *
+ * @param {string} [$fraction='1/1'] - This is a simple fraction of the containing element's width/height. This must be a string written as a fraction.
+ * @param {number} [$cycle=convert(unquote(split('/', $fraction)[1]))] - Lost works by assigning a margin-right/bottom to all elements except the last row (no margin-bottom) and the last column (no margin-right). It does this by default by using the denominator of the fraction you pick. To override this default use this param. e.g. waffle('2/4', $cycle: 2)
+ * @param {number} [$gut=$gutter] - The margin on the right and bottom side of the element used to create a gutter. Typically this is left alone and the global $gutter will be used, but you can override it here if you want certain elements to have a partic.vertical-tab__innerarly large or small gutter (pass 0 for no gutter at all).
+ * @param {boolean} [$flex=$flexbox] - Determines whether this element sho.vertical-tab__innerd use Flexbox or not.
+ *
+ * @example
+ *   figure
+ *     waffle('1/3')
+ */
+/**
+ * Margin to the left, right, bottom, or top, of an element depending on if the fraction passed is positive or negative. It works for both horizontal and vertical grids but not both.
+ *
+ * @param {string} [$fraction='1/1'] - Fraction of the container to be offset. Must be a string.
+ * @param {string} [$dir=row] - Direction the grid is going. Sho.vertical-tab__innerd be the opposite of the column() or row() it's being used on.
+ * @param {number} [$gut=$gutter] - How large the gutter involved is, typically this won't be adjusted, but if you have set the elements for that container to have different gutters than default, you will need to match that gutter here as well.
+ *
+ * @example
+ *   .two-elements
+ *     column('1/3')
+ *     &:first-child
+ *       offset('1/3')
+ */
+/**
+ * Source ordering. Shift elements left, right, up, or down, by their left or top position by passing a positive or negative fraction.
+ *
+ * @param {string} [$fraction='1/1'] - Fraction of the container to be shifted. Must be a string.
+ * @param {string} [$dir=row] - Direction the grid is going. Sho.vertical-tab__innerd be the opposite of the column() or row() it's being used on.
+ * @param {number} [$gut=$gutter] - Adjust the size of the gutter for this movement. Sho.vertical-tab__innerd match the element's $gut.
+ *
+ * @example
+ *   figure
+ *     column('1/2')
+ *     &:first-child
+ *       move('1/2')
+ */
+/**
+ * Creates a wrapping element for working with JS masonry libraries like Isotope. Assigns a negative margin on each side of this wrapping element.
+ *
+ * @param {number} [$gut=$gutter] - How large the gutter involved is, typically this won't be adjusted and will inherit the global $gutter setting, but it's made available if you want your masonry grid to have a special $gut, it sho.vertical-tab__innerd match your masonry-column's $gut.
+ * @param {boolean} [$flex=$flexbox] - Determines whether this element sho.vertical-tab__innerd use Flexbox or not.
+ *
+ * @example
+ *   .vertical-tab
+ *     masonry-wrap()
+ *   figure
+ *     masonry-column('1/3')
+ */
+/**
+ * Creates a column for working with JS masonry libraries like Isotope. Assigns a margin to each side of the element.
+ *
+ * @param {number} [$gut=$gutter] - How large the gutter involved is, typically this won't be adjusted and will inherit the global $gutter setting, but it's made available if you want your masonry grid to have a special $gut, it sho.vertical-tab__innerd match your masonry-row's $gut.
+ * @param {boolean} [$flex=$flexbox] - Determines whether this element sho.vertical-tab__innerd use Flexbox or not.
+ *
+ * @example
+ *   .vertical-tab
+ *     masonry-wrap()
+ *   figure
+ *     masonry-column('1/3')
+ */
+/**
+ * A function to return the size of a column minus it's gutter if a gutter is assigned. Handy for generating CSS classes.
+ *
+ * @param {string} [$fraction='1/1'] - This is a simple fraction of the containing element's width. This must be a string written as a fraction.
+ * @param {number} [$gut=$gutter] - The gutter assigned to this size.
+ *
+ * @example
+ *   [class*="col-"]
+ *     float: left
+ *     margin-right: $gutter
+ *     &:last-child
+ *       margin-right: 0
+ *
+ *   for $i in 1..12
+ *     .col-{$i}
+ *       width: get-size(s('%s/12', $i))
+ */
+
+.vertical-tab {
+  zoom: 1;
+  position: relative;
+  height: auto;
+  margin-bottom: rem(1);
+  background-color: $color-light;
+  &:after,
+  &:before {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+  .vertical-tab__head {
+    cursor: pointer;
+    border-top: none;
+    margin-bottom: 0;
+    padding: rem(28) rem(20);
+    font-family: $root-font-family;
+    font-weight: $font-weight-normal;
+    border-bottom: rem(2) solid $color-silver;
+    @include fluid-type($min-value: rem(12), $max-value: rem(19));
+    &:last-of-type {
+      border-bottom: 0;
+    }
+    + &--active {
+      border-bottom: rem(2) solid transparent;
+    }
+    &--active {
+      cursor: default;
+      box-shadow: -10px 0 15px 10px $color-shadow;
+      &::after {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: calc(100% - 20px);
+        background-color: $color-light;
+        z-index: 10;
+      }
+      + .vertical-tab__inner {
+        display: block;
+      }
+    }
+  }
+  .vertical-tab__inner {
+    zoom: 1;
+    position: relative;
+    height: auto;
+    min-height: 100%;
+    border-left: none;
+    display: none;
+    box-shadow: 0 0 12px 10px $color-shadow;
+    @include clearfix();
+  }
+  .vertical-tab__title {
+    font-family: $title-font-family;
+  }
+}
+
+@media screen and (min-width: rem(600)) {
+  .vertical-tab .vertical-tab__head {
+    position: relative;
+    width: 19.3321616872%;
+    height: 20%;
+    display: block;
+  }
+
+  .vertical-tab .vertical-tab__inner {
+    position: absolute;
+    width: 80.6678383128%;
+    right: 0;
+    top: 0;
+    padding: 15px 30px;
+  }
+
+  .vertical-tab .active {
+
+  }
+}
+
+

@@ -501,18 +501,29 @@ gulp.task('server', function () {
     .on('change', server.reload);
 });
 
-gulp.task('build', function (done) {
+gulp.task('build:light', function (done) {
   run(
     'clean:build',
-    // 'img:jpg',
-    // 'img:png',
-    // 'svg:sprite',
     'copy:assets',
     'copy:all',
     'style:font',
     'style:light',
-    // 'style:all',
-    // 'js:modernizr',
+    'js:all',
+    'html',
+    'server',
+    done
+  );
+});
+
+gulp.task('build', function (done) {
+  run(
+    'clean:build',
+    'img:jpg',
+    'img:png',
+    'svg:sprite',
+    'copy:all',
+    'style:all',
+    'js:modernizr',
     'js:all',
     'html',
     'server',

@@ -46,6 +46,8 @@
 @import "blocks/common/helpers";
 @import "blocks/common/icon";
 @import "blocks/common/form/form";
+@import "blocks/common/tooltip";
+@import "blocks/common/vertical-tabs";
 @import "blocks/desktop.header/page-header";
 @import "blocks/desktop.header/main-nav";
 @import "blocks/desktop.header/requisites";
@@ -55,6 +57,7 @@
 @import "blocks/desktop.advantages/advantages";
 @import "blocks/desktop.advantages/price-request";
 @import "blocks/desktop.advantages/composition";
+@import "blocks/desktop.applying/applying";
 
 //------------------------------------------------------------------
 // [Debug]

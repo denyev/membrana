@@ -1,6 +1,6 @@
 .composition {
   position: relative;
-  max-height: rem(316);
+  height: rem(316);
   float: right;
   display: flex;
   flex-direction: column;
@@ -13,6 +13,7 @@
   margin-top: -13%;
   height: 181px;
   transform: translateY(-8%);
+  transition: 0.4s ease-in-out;
   &--1 {
 
     z-index: 60;

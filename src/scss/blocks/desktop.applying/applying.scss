@@ -1,0 +1,14 @@
+.applying {
+  padding-top: rem(137);
+  padding-bottom: rem(84);
+  background-color: $color-lightgray;
+}
+
+.applying__wrap {
+  @include page-container();
+  @include clearfix();
+}
+
+.applying__head {
+  margin-bottom: rem(64);
+}

@@ -12,6 +12,7 @@ function createLinkOnHead(path, file) {
 
 createLinkOnHead("css", "style.min.css");
 createLinkOnHead("css/font", "font.min.css");
+createLinkOnHead("https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2", "animate.min.css");
 
 function addBackgroundImg(element, url) {
   element = document.querySelector(element);
@@ -80,5 +81,51 @@ document.addEventListener('change', function (event) {
     });
 //   })();
 // })();
+
+// .vertical-tab
+
+$('.vertical-tab__head').click(function(event) {
+  event.preventDefault();
+  $(this).addClass('vertical-tab__head--active');
+  $(this).siblings().removeClass('vertical-tab__head--active');
+
+  var ph = $(this).parent().height();
+  var ch = $(this).next().height();
+
+  if (ch > ph) {
+    $(this).parent().css({
+      'min-height': ch + 'px'
+    });
+  } else {
+    $(this).parent().css({
+      'height': 'auto'
+    });
+  }
+});
+
+function tabParentHeight() {
+  var ph = $('.vertical-tab').height();
+  var ch = $('.vertical-tab__inner').height();
+  if (ch > ph) {
+    $('section').css({
+      'height': ch + 'px'
+    });
+  } else {
+    $(this).parent().css({
+      'height': 'auto'
+    });
+  }
+}
+
+$(window).resize(function() {
+  tabParentHeight();
+});
+
+$(document).resize(function() {
+  tabParentHeight();
+});
+tabParentHeight();
+
+// /.vertical-tab
 
 console.log('script.js is loaded');

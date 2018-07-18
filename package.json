@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "editorconfig": "nice -n 19 ionice -c3 editorconfig-cli",
-    "stylelint": "nice -n 19 ionice -c3 stylelint 'src/less/**/*.scss' --syntax scss --fix",
-    "test": "nice -n 19 ionice -c3 yarn run editorconfig && yarn run stylelint",
+    "stylelint": "nice -n 19 ionice -c3 stylelint 'src/scss/**/*.scss' --syntax scss --fix",
+    "test": "nice -n 19 ionice -c3 yarn run editorconfig && nice -n 19 ionice -c3 yarn run stylelint",
     "build": "nice -n 19 ionice -c3 gulp build",
     "start": "nice -n 19 ionice -c3 yarn run test && nice -n 19 ionice -c3 yarn run build",
     "server": "nice -n 19 ionice -c3 yarn run test && nice -n 19 ionice -c3 yarn run build && nice -n 19 ionice -c3 gulp server",
@@ -66,6 +66,7 @@
     "gulp-js-import": "^1.0.6",
     "gulp-plumber": "^1.2.0",
     "gulp-postcss": "^7.0.1",
+    "gulp-purgecss": "^1.0.0",
     "gulp-real-favicon": "^0.3.0",
     "gulp-rename": "^1.3.0",
     "gulp-rigger": "^0.5.8",
