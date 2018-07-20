@@ -1,0 +1,44 @@
+.features {
+  background-color: $color-lightgray;
+}
+
+.features__wrap {
+  padding-top: rem(94);
+  padding-bottom: rem(25);
+  @include page-container();
+  @include clearfix();
+}
+
+.features__head {
+  margin-bottom: rem(52);
+}
+
+.features__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  margin: 0;
+  padding: 0;
+  @include unstyle-list();
+  @include clearfix();
+}
+
+.features__item {
+  flex: 0 0 25%;
+  align-content: center;
+  justify-content: center;
+}
+
+.features__content {
+  margin-bottom: rem(52);
+}
+
+.features__icon {
+  margin: 0 auto rem(5) auto;
+}
+
+.features__descr,
+.features__descr h3 {
+  text-align: center;
+}
+

@@ -80,3 +80,35 @@
     background-position-y: -2482px;
   }
 }
+
+.icon-big {
+  background-image: url(/img/icon-big-sprite.png);
+  background-position-x: -10px;
+  display: block;
+  width: rem(135);
+  height: rem(136);
+  &--shield {
+    background-position-y: -10px;
+  }
+  &--time {
+    background-position-y: -166px;
+  }
+  &--person {
+    background-position-y: -322px;
+  }
+  &--options {
+    background-position-y: -478px;
+  }
+  &--glass {
+    background-position-y: -634px;
+  }
+  &--calendar {
+    background-position-y: -790px;
+  }
+  &--label {
+    background-position-y: -946px;
+  }
+  &--paper {
+    background-position-y: -1102px;
+  }
+}
