@@ -12,8 +12,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
   <![endif]-->
-  <!--<link rel="stylesheet"-->
-        <!--href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">-->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css"
+        href="//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"/>
 </head>
 <body>
 <header class="page-header">
@@ -457,12 +458,12 @@
 
             <aside class="composition advantages__bottom-item">
               <div class="composition__layer composition__layer--1">
-                <!--<div class="tooltip">-->
-                  <!--<div class="tooltip__text-wrap">-->
-                    <!--<span class="tooltip__text">ПВХ мембрана</span>-->
-                  <!--</div>-->
-                  <!--<div class="tooltip__icon"></div>-->
-                <!--</div>-->
+                <!--<div class="tooltip">
+                <div class="tooltip__text-wrap">
+                <span class="tooltip__text">ПВХ мембрана</span>
+                </div>
+                <div class="tooltip__icon"></div>
+                </div>-->
                 <picture>
                   <source srcset="/img/composition/layer-1.webp" type="image/webp">
                   <img src="/img/composition/layer-1.png" alt="" class="composition__img">
@@ -522,18 +523,66 @@
             </div>
           </div>
           <h3 class="vertical-tab__head">Складские помещения и логистические центры</h3>
-          <div class="vertical-tab__inner animated fadeIn">
-            <div class="vertical-tab__slider"></div>
-            <div class="vertical-tab__content">
-              <p class="vertical-tab__title">Складские помещения и логистические центры</p>
-              <div class="vertical-tab__text">
-                <p>Таким образом дальнейшее развитие различных форм деятельности требуют от нас анализа позиций, занимаемых участниками в отношении поставленных задач. Таким образом укрепление и развитие структуры требуют определения и уточнения существенных финансовых и административных условий. С другой стороны укрепление и развитие структуры требуют определения и уточнения новых предложений. Равным образом реализация намеченных плановых заданий требуют определения и уточнения форм развития. Идейные соображения высшего порядка, а также постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет оценить значение системы обучения кадров, соответствует насущным потребностям. Не следует, однако забывать, что сложившаяся структура организации способствует подготовки и реализации дальнейших направлений развития.</p>
+          <div class="vertical-tab__inner">
+            <div class="vertical-tab__slider animated fadeIn">
+              <div class="carousel">
+                <a href="/img/slider/orig/1.jpg">
+                  <picture>
+                    <source srcset="/img/slider/big/1.webp" type="image/webp">
+                    <img src="/img/slider/big/1.jpg">
+                  </picture>
+                </a>
+                <a href="/img/slider/orig/2.jpg">
+                  <picture>
+                    <source srcset="/img/slider/big/2.webp" type="image/webp">
+                    <img src="/img/slider/big/2.jpg">
+                  </picture>
+                </a>
+                <a href="/img/slider/orig/3.jpg">
+                  <picture>
+                    <source srcset="/img/slider/big/3.webp" type="image/webp">
+                    <img src="/img/slider/big/3.jpg">
+                  </picture>
+                </a>
+              </div>
+              <div class="carousel__thumbnails">
+                <div>
+                  <picture>
+                    <source srcset="/img/slider/min/1.webp" type="image/webp">
+                    <img src="/img/slider/min/1.jpg">
+                  </picture>
+                </div>
+                <div>
+                  <picture>
+                    <source srcset="/img/slider/min/2.webp" type="image/webp">
+                    <img src="/img/slider/min/2.jpg">
+                  </picture>
+                </div>
+                <div>
+                  <picture>
+                    <source srcset="/img/slider/min/3.webp" type="image/webp">
+                    <img src="/img/slider/min/3.jpg">
+                  </picture>
+                </div>
               </div>
             </div>
-            <hr class="vertical-tab__delimiter">
-            <div class="note">
-              <div class="note__icon"></div>
-              <div class="note__text"></div>
+            <div class="vertical-tab__content animated fadeIn">
+              <p class="vertical-tab__title">Складские помещения и логистические центры</p>
+              <div class="vertical-tab__text">
+                <p>Таким образом дальнейшее развитие различных форм деятельности требуют от нас анализа позиций,
+                  занимаемых участниками в отношении поставленных задач. Таким образом укрепление и развитие структуры
+                  требуют определения и уточнения существенных финансовых и административных условий. С другой стороны
+                  укрепление и развитие структуры требуют определения и уточнения новых предложений. Равным образом
+                  реализация намеченных плановых заданий</p>
+              </div>
+              <hr class="vertical-tab__delimiter">
+              <div class="note">
+                <div class="note__icon"></div>
+                <div class="note__text">Мембрана подходит для компаний, работающих с
+                  легковоспламеняющимися веществами, так как укладка
+                  происходит без использования открытого огня
+                </div>
+              </div>
             </div>
           </div>
           <h3 class="vertical-tab__head">Для сферы ЖКХ</h3>
@@ -572,19 +621,144 @@
     </div>
   </section>
 
+  <section>
+    <div class="calculator">
+      <div class="calculator__wrap">
+        <h2 class="calculator__head">Калькулятор</h2>
+        <h3 class="calculator__title">Введите параметры объекта</h3>
+        <form action="#" method="post" class="calculator-request__form">
+          <div class="calculator-request__row calculator-request__row--top">
+            <fieldset class="form-fieldset calculator-request__column calculator-request__column--left">
+              <div class="calculator-request__list calculator-request__group">
+                <div class="calculator-request__item form-element form-input">
+                  <input id="calculator-length" type="text" class="form-element-field form-element-field--calculator"
+                         placeholder="&nbsp;">
+                  <div class="form-element-bar form-element-bar--calculator"></div>
+                  <label class="form-element-label form-element-label--calculator" for="calculator-length">Длина,
+                    м</label>
+                </div>
+
+                <div class="calculator-request__item form-element form-input">
+                  <input id="calculator-request-wide" type="tel"
+                         class="form-element-field form-element-field--calculator"
+                         placeholder="&nbsp;"
+                         required>
+                  <div class="form-element-bar form-element-bar--calculator"></div>
+                  <label class="form-element-label form-element-label--calculator" for="calculator-request-wide">Ширина,
+                    м</label>
+                </div>
+              </div>
+            </fieldset>
+
+            <div class=" calculator-request__column calculator-request__column--center">
+              <p>или</p>
+            </div>
+
+            <fieldset class="form-fieldset calculator-request__column calculator-request__column--right">
+              <div class="calculator-request__list">
+                <div class="calculator-request__item form-element form-input">
+                  <input id="calculator-request-square" type="tel"
+                         class="form-element-field form-element-field--calculator"
+                         placeholder="&nbsp;"
+                         required>
+                  <div class="form-element-bar form-element-bar--calculator"></div>
+                  <label class="form-element-label form-element-label--calculator" for="calculator-request-square">Площадь,
+                    м</label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="calculator-request__row calculator-request__row--bottom">
+            <div class="calculator-request__column calculator-request__column--left">
+              <div class="calculator-request__group">
+                <fieldset class="form-fieldset calculator-request__item">
+                  <div class="form-radio form-radio-block">
+                    <h3 class="calculator__title">Основание</h3>
+                    <label class="form-radio-label">
+                      <input name="base-option" class="form-radio-field" value="base-option-1" type="radio">
+                      <i class="form-radio-button"></i>
+                      <span>Требуется укладка профнастила</span>
+                    </label>
+                    <label class="form-radio-label">
+                      <input name="base-option" class="form-radio-field" value="base-option-2" type="radio">
+                      <i class="form-radio-button"></i>
+                      <span>Металлический профнастил</span>
+                    </label>
+                    <label class="form-radio-label">
+                      <input name="base-option" class="form-radio-field" value="base-option-3" type="radio">
+                      <i class="form-radio-button"></i>
+                      <span>Бетонное основание</span>
+                    </label>
+                  </div>
+                </fieldset>
+
+
+                <fieldset class="form-fieldset calculator-request__item">
+                  <div class="form-radio form-radio-block">
+                    <h3 class="calculator__title">Материалы</h3>
+                    <label class="form-radio-label">
+                      <input name="stuff-option" class="form-radio-field" value="stuff-option-1" type="radio">
+                      <i class="form-radio-button"></i>
+                      <span>Требуется укладка профнастила</span>
+                    </label>
+                    <label class="form-radio-label">
+                      <input name="stuff-option" class="form-radio-field" value="stuff-option-2" type="radio">
+                      <i class="form-radio-button"></i>
+                      <span>Рассчитать стоимость без материалов</span>
+                    </label>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+
+            <div class="calculator-request__column calculator-request__column--center"></div>
+
+            <fieldset class="form-fieldset calculator-request__column calculator-request__column--right">
+              <div class="form-radio form-radio-block">
+                <h3 class="calculator__title">Тип монтажа</h3>
+                <label class="form-radio-label">
+                  <input name="mounting-option" class="form-radio-field" value="mounting-option-1" type="radio">
+                  <i class="form-radio-button"></i>
+                  <span>Монтаж мембраны</span>
+                </label>
+                <label class="form-radio-label">
+                  <input name="mounting-option" class="form-radio-field" value="mounting-option-2" type="radio">
+                  <i class="form-radio-button"></i>
+                  <span>Монтаж мембраны с утеплением</span>
+                </label>
+              </div>
+              <div class="calculator-request__item form-element form-input">
+                <input id="calculator-depth" type="text" class="form-element-field form-element-field--calculator"
+                       placeholder="&nbsp;">
+                <div class="form-element-bar form-element-bar--calculator"></div>
+                <label class="form-element-label form-element-label--calculator" for="calculator-depth">Толщина</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="price-request__send">
+            <button class="btn btn--flat btn--red btn--ripple">Рассчитать</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer class="footer">
   <div class="footer__wrap">
 
 
-
-
   </div>
 </footer>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-<script async defer src="/js/script.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+<script defer src="/js/script.min.js"></script>
 </body>
 </html>

@@ -223,16 +223,16 @@ gulp.task('style', function () {
       ]
     }).on('error', sass.logError))
     .pipe(postcss([
-      uncss({
-        html: [
-          cnf.src.html
-        ],
-        ignore: [
-          /\.js-.*/,
-          /\..*-js/,
-          '.js'
-        ]
-      }),
+      // uncss({
+      //   html: [
+      //     cnf.src.html
+      //   ],
+      //   ignore: [
+      //     /\.js-.*/,
+      //     /\..*-js/,
+      //     '.js'
+      //   ]
+      // }),
       postcssFixes(),
       autoprefixer(),
       mqpacker()
@@ -354,6 +354,7 @@ gulp.task('img:jpg', function () {
         quality: 75
       })
     ]))
+    .pipe(gulp.dest(cnf.src.img.path))
     .pipe(webp({
       quality: 65
     }))
@@ -370,6 +371,7 @@ gulp.task('img:png', function () {
     .pipe(imagemin([
       imagemin.optipng({optimizationLevel: 7})
     ]))
+    .pipe(gulp.dest(cnf.src.img.path))
     .pipe(webp({
       lossless: true
     }))

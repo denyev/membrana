@@ -124,46 +124,51 @@
   padding: rem(5);
 }
 
-.form-checkbox, .form-radio {
+.form-checkbox,
+.form-radio {
   position: relative;
   margin-top: 2.25rem;
   margin-bottom: 2.25rem;
   text-align: left;
 }
 
-.form-checkbox-inline .form-checkbox-label, .form-radio-inline .form-radio-label {
+.form-checkbox-inline .form-checkbox-label,
+.form-radio-inline .form-radio-label {
   display: inline-block;
   margin-right: 1rem;
 }
 
-.form-checkbox-legend, .form-radio-legend {
+.form-checkbox-legend,
+.form-radio-legend {
   margin: 0 0 0.125rem 0;
   font-weight: 500;
   font-size: 1rem;
-  color: #333;
+  color: currentColor;
 }
 
-.form-checkbox-label, .form-radio-label {
+.form-checkbox-label,
+.form-radio-label {
   position: relative;
   cursor: pointer;
   padding-left: 1.5rem;
   text-align: left;
-  color: #333;
+  color: currentColor;
   display: block;
   margin-bottom: 0.5rem;
 }
 
-.form-checkbox-label:hover i, .form-radio-label:hover i {
+.form-checkbox-label:hover i,
+.form-radio-label:hover i {
   color: $color-focus;
 }
 
-.form-checkbox-label span, .form-radio-label span {
-  display: block;
+.form-checkbox-label span,
+.form-radio-label span {
+  display: inline-block;
 }
 
 .form-checkbox-label input, .form-radio-label input {
   width: auto;
-  opacity: 0.0001;
   position: absolute;
   left: 0.25rem;
   top: 0.25rem;
@@ -215,7 +220,7 @@
 }
 
 .form-checkbox-field:checked ~ .form-checkbox-button {
-  color: $color-focus;
+  color: $color-radio;
   &::after, &::before {
     opacity: 1;
     transition: height 0.28s ease;
@@ -238,7 +243,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #999;
+  color: $color-radio;
   &::before {
     content: "";
     position: absolute;
@@ -258,15 +263,15 @@
     left: 0;
     top: 0;
     margin: 0.25rem;
-    width: 1rem;
-    height: 1rem;
+    width: rem(16);
+    height: rem(16);
     transition: transform 0.28s ease, color 0.28s ease;
     border-radius: 50%;
     border: 0.125rem solid currentColor;
     will-change: transform, color;
     transform: scale(0);
-    background-color: $color-focus;
-    border-color: $color-focus;
+    background-color: $color-dusky;
+    border-color: $color-dusky;
   }
 }
 
@@ -275,7 +280,7 @@
     transform: scale(0.5);
   }
   &::before {
-    color: $color-focus;
+    color: $color-radio;
   }
 }
 
@@ -360,7 +365,7 @@
 .form-element-bar {
   position: relative;
   height: rem(2);
-  background: $color-dark;
+  background--color: $color-dark;
   display: block;
   &::after {
     content: "";
@@ -368,12 +373,18 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: $color-focus;
+    background-color: $color-focus;
     height: rem(2);
     display: block;
     transform: rotateY(90deg);
     transition: transform 0.28s ease;
     will-change: transform;
+  }
+  &--calculator {
+    background-color: currentColor;
+    &::after {
+      background-color: $color-radio;
+    }
   }
 }
 
@@ -412,7 +423,8 @@
   opacity: 0.001;
   transition: opacity 0.28s ease;
   will-change: opacity;
-  &:-ms-input-placeholder, &::placeholder {
+  &:-ms-input-placeholder,
+  &::placeholder {
     color: currentColor;
     transform: scale(0.9);
     transform-origin: left top;
@@ -423,6 +435,10 @@
     }
     .form-element-label {
       color: $color-focus;
+      &--calculator {
+        color: $color-radio;
+        @include fluid-type($min-value:  rem(12), $max-value: rem(18));
+      }
     }
   }
   &.js-hasvalue, &:focus {
@@ -432,6 +448,10 @@
     transform: translateY(-100%) translateY(-0.5em) translateY(-2px) scale(0.9);
     cursor: pointer;
     pointer-events: auto;
+  }
+  &--calculator {
+    color: currentColor;
+    @include fluid-type($min-value:  rem(12));
   }
 }
 

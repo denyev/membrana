@@ -1,0 +1,72 @@
+.calculator {
+  color: $color-light;
+  background-color: $color-dusky;
+  padding-bottom: rem(94);
+}
+
+.calculator__wrap {
+  padding-top: rem(94);
+  @include page-container();
+  @include clearfix();
+}
+
+.calculator__head {
+  margin-bottom: rem(60);
+}
+
+.calculator__title {
+  font-family: $title-font-family;
+  margin-bottom: rem(22);
+  @include fluid-type($min-value: rem(12), $max-value: rem(18));
+}
+
+.calculator-request__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  &--top {
+    margin-bottom: rem(50);
+  }
+
+}
+
+.calculator-request__column {
+  &--left {
+    flex: 0 0 57.293497364%;
+  }
+  &--center {
+    flex: 0 0 10.896309315%;
+    align-self: center;
+    text-align: center;
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &--right {
+    flex: 0 0 31.810193322%;
+  }
+}
+
+.calculator-request__list {
+  .calculator-request__item {
+    margin: 0;
+  }
+}
+
+.calculator-request__group {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  .calculator-request__item {
+    margin: 0;
+    &:nth-child(1) {
+      flex: 0 0 54.5%;
+    }
+    &:nth-child(2) {
+      flex: 0 0 40%;
+      margin-left: auto;
+    }
+  }
+}
+
+//@include n-columns($list: calculator-request__group, $item: calculator-request__item, $min-width: rem(50), $max-cols: 2)

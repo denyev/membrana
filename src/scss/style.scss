@@ -48,6 +48,8 @@
 @import "blocks/common/form/form";
 @import "blocks/common/tooltip";
 @import "blocks/common/vertical-tabs";
+@import "blocks/common/carousel";
+@import "blocks/common/note";
 @import "blocks/desktop.header/page-header";
 @import "blocks/desktop.header/main-nav";
 @import "blocks/desktop.header/requisites";
@@ -58,6 +60,7 @@
 @import "blocks/desktop.advantages/price-request";
 @import "blocks/desktop.advantages/composition";
 @import "blocks/desktop.applying/applying";
+@import "blocks/desktop.calculator/calculator";
 
 //------------------------------------------------------------------
 // [Debug]

@@ -1,7 +1,8 @@
 .applying {
   padding-top: rem(137);
-  padding-bottom: rem(84);
+  padding-bottom: rem(70);
   background-color: $color-lightgray;
+  @include clearfix();
 }
 
 .applying__wrap {

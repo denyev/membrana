@@ -1,0 +1,17 @@
+.note__icon {
+  display: inline-block;
+  background-image: url(/img/icons/icon-fire.png);
+  width: rem(72);
+  height: rem(67);
+  float: left;
+
+}
+
+.note__text {
+  @include fluid-type($min-value: rem(12), $max-value: rem(15));
+  max-width: calc(100% - 72px);
+  float: right;
+  vertical-align: bottom;
+  display: inline-block;
+  padding: rem(12) 0 0 rem(12);
+}

@@ -182,69 +182,95 @@
   &:after {
     clear: both;
   }
-  .vertical-tab__head {
-    cursor: pointer;
-    border-top: none;
-    margin-bottom: 0;
-    padding: rem(28) rem(20);
-    font-family: $root-font-family;
-    font-weight: $font-weight-normal;
-    border-bottom: rem(2) solid $color-silver;
-    @include fluid-type($min-value: rem(12), $max-value: rem(19));
-    &:last-of-type {
-      border-bottom: 0;
+}
+.vertical-tab__head {
+  cursor: pointer;
+  border-top: none;
+  margin-bottom: 0;
+  padding: rem(28) rem(20);
+  font-family: $root-font-family;
+  font-weight: $font-weight-normal;
+  border-bottom: rem(2) solid $color-silver;
+  @include fluid-type($min-value: rem(12), $max-value: rem(19));
+  &:last-of-type {
+    border-bottom: 0;
+  }
+  + &--active {
+    border-bottom: rem(2) solid transparent;
+  }
+  &--active {
+    cursor: default;
+    box-shadow: -10px 0 15px 10px $color-shadow;
+    &::after {
+      content: "";
+      display: block;
+      width: 30px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: calc(100% - 20px);
+      background-color: $color-light;
+      z-index: 10;
     }
-    + &--active {
-      border-bottom: rem(2) solid transparent;
-    }
-    &--active {
-      cursor: default;
-      box-shadow: -10px 0 15px 10px $color-shadow;
-      &::after {
-        content: "";
-        display: block;
-        width: 30px;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: calc(100% - 20px);
-        background-color: $color-light;
-        z-index: 10;
-      }
-      + .vertical-tab__inner {
-        display: block;
-      }
+    + .vertical-tab__inner {
+      display: block;
     }
   }
-  .vertical-tab__inner {
-    zoom: 1;
-    position: relative;
-    height: auto;
-    min-height: 100%;
-    border-left: none;
-    display: none;
-    box-shadow: 0 0 12px 10px $color-shadow;
-    @include clearfix();
-  }
-  .vertical-tab__title {
-    font-family: $title-font-family;
-  }
+}
+.vertical-tab__inner {
+  zoom: 1;
+  position: relative;
+  height: auto;
+  min-height: 100%;
+  border-left: none;
+  display: none;
+  box-shadow: 0 0 12px 10px $color-shadow;
+  @include clearfix();
+}
+.vertical-tab__title {
+  font-family: $title-font-family;
+  margin-bottom: rem(24);
+}
+.vertical-tab__text {
+  margin-bottom: rem(24);
+}
+.vertical-tab__delimiter {
+  clear: both;
+  @include clearfix;
+  height: rem(2);
+  border: none;
+  color: $color-silver;
+  background-color: $color-silver;
+  margin-bottom: rem(5);
 }
 
 @media screen and (min-width: rem(600)) {
-  .vertical-tab .vertical-tab__head {
+  .vertical-tab__head {
     position: relative;
     width: 19.3321616872%;
     height: 20%;
     display: block;
   }
 
-  .vertical-tab .vertical-tab__inner {
+  .vertical-tab__inner {
     position: absolute;
     width: 80.6678383128%;
     right: 0;
     top: 0;
-    padding: 15px 30px;
+    //padding: rem(30);
+  }
+
+  .vertical-tab__slider {
+    width: calc(50% - 30px);
+    float: left;
+    margin: 30px 0 30px 30px;
+  }
+
+  .vertical-tab__content {
+    width: calc(50% - 30px);
+    float: right;
+    margin: 30px 30px 30px 0;
+    padding-left: 30px;
   }
 
   .vertical-tab .active {
