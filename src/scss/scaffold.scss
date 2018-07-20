@@ -63,3 +63,7 @@ legend {
   @include fluid-type($max-value: rem(34));
   font-family: $title-font-family;
 }
+
+.important-text {
+  color: $btn-primary;
+}

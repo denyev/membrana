@@ -1,0 +1,81 @@
+.warranty {
+
+}
+
+.warranty__wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  @include clearfix();
+}
+
+.warranty__head {
+  margin-bottom: rem(52);
+}
+
+.warranty__left {
+  flex: 0 0 34.616%;
+  position: relative;
+  z-index: 10;
+}
+
+.warranty__img {
+  width: 100%;
+}
+
+.warranty__right {
+  flex: 0 0 65.384%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: rem(70);
+    background-color: $color-dusky;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+  }
+}
+
+.warranty__content {
+  max-width: 67.465%;
+  font-family: $title-font-family;
+}
+
+.warranty__widget {
+  position: absolute;
+  top: 50%;
+  left: 98.5%;
+  transform: translate(-50%, -50%);
+  color: $color-light;
+  width: 100%;
+  height: 100%;
+  background-image: url(/img/warranty/warranty-widget-bg.png);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.warranty__widget-content {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  height: 100%;
+  align-items: center;
+  font-family: $title-font-family;
+  @include fluid-type($min-value: rem(12), $max-value: rem(19))
+}
+
+.warranty__widget-text {
+  &--big {
+    @include fluid-type($min-value: rem(16), $max-value: rem(43));
+  }
+}

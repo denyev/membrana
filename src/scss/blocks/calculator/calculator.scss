@@ -1,11 +1,14 @@
 .calculator {
   color: $color-light;
   background-color: $color-dusky;
-  padding-bottom: rem(94);
 }
 
 .calculator__wrap {
   padding-top: rem(94);
+  padding-bottom: rem(94);
+  background-image: url(/img/calculator-bg.png);
+  background-repeat: no-repeat;
+  background-position: 16% 100%;
   @include page-container();
   @include clearfix();
 }
