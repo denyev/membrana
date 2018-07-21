@@ -1,0 +1,64 @@
+.brands {
+  background-image: url(/img/brands/brands-bg.jpg);
+  background-repeat: repeat-y;
+  color: $color-light
+}
+
+.brands__wrap {
+  padding-top: rem(94);
+  padding-bottom: rem(74);
+  @include page-container();
+  @include clearfix();
+}
+
+.brands__head {
+  margin-bottom: rem(73);
+}
+
+.brands__list {
+  display: flex;
+  flex-direction: row;
+  margin: 0 0 rem(16) 0;
+  padding: 0;
+  position: relative;
+  @include unstyle-list();
+  @include clearfix();
+  &::before {
+    content: "";
+    background-image: url(/img/brands/arrow-left.png);
+    display: block;
+    width: rem(40);
+    height: rem(40);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(50%, -50%);
+    cursor: pointer;
+  }
+  &::after {
+    content: "";
+    background-image: url(/img/brands/arrow-right.png);
+    display: block;
+    width: rem(40);
+    height: rem(40);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
+}
+
+.brands__item {
+  margin: rem(16);
+  flex-grow: 1;
+  width: 25%;
+}
+
+.brands__img-wrap {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
