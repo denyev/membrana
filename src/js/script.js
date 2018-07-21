@@ -220,6 +220,21 @@ $('.reviews__list').slick({
 
 // /.reviews__list
 
+// .brands__list
+
+$('.brands__list').slick({
+  infinite: true,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  arrows: true,
+  fade: false,
+  draggable: false,
+  prevArrow: '<i class="brands__arrow brands__arrow--left"></i>',
+  nextArrow: '<i class="brands__arrow brands__arrow--right"></i>'
+})
+
+// /.brands__list
+
 
 // } // end window.onload
 

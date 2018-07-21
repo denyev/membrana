@@ -23,30 +23,30 @@
   position: relative;
   @include unstyle-list();
   @include clearfix();
-  &::before {
-    content: "";
-    background-image: url(/img/brands/arrow-left.png);
-    display: block;
-    width: rem(40);
-    height: rem(40);
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translate(50%, -50%);
-    cursor: pointer;
-  }
-  &::after {
-    content: "";
-    background-image: url(/img/brands/arrow-right.png);
-    display: block;
-    width: rem(40);
-    height: rem(40);
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-  }
+  //&::before {
+  //  content: "";
+  //  background-image: url(/img/brands/arrow-left.png);
+  //  display: block;
+  //  width: rem(40);
+  //  height: rem(40);
+  //  position: absolute;
+  //  top: 50%;
+  //  left: 0;
+  //  transform: translate(50%, -50%);
+  //  cursor: pointer;
+  //}
+  //&::after {
+  //  content: "";
+  //  background-image: url(/img/brands/arrow-right.png);
+  //  display: block;
+  //  width: rem(40);
+  //  height: rem(40);
+  //  position: absolute;
+  //  top: 50%;
+  //  right: 0;
+  //  transform: translate(-50%, -50%);
+  //  cursor: pointer;
+  //}
 }
 
 .brands__item {
@@ -61,4 +61,35 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.brands__arrow {
+  z-index: 10;
+  &:hover {
+    opacity: 0.85;
+  }
+  &--left {
+    content: "";
+    background-image: url(/img/brands/arrow-left.png);
+    display: block;
+    width: rem(40);
+    height: rem(40);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(50%, -50%);
+    cursor: pointer;
+  }
+  &--right {
+    content: "";
+    background-image: url(/img/brands/arrow-right.png);
+    display: block;
+    width: rem(40);
+    height: rem(40);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
 }
