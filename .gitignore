@@ -86,3 +86,4 @@ dist/
 src/img/
 *.lock
 libs/
+/design/
