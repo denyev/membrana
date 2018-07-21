@@ -2,7 +2,7 @@
 
 document.documentElement.classList.remove('no-js');
 
-window.onload = function () {
+// window.onload = function () {
 
   function createLinkOnHead(path, file) {
     var link = document.createElement("link");
@@ -220,6 +220,6 @@ window.onload = function () {
   // /.reviews__list
 
 
-} // end window.onload
+// } // end window.onload
 
 console.log('script.js is loaded');
