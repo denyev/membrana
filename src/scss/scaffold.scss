@@ -33,6 +33,11 @@ h2 {
   margin-bottom: rem(22);
 }
 
+h3 {
+  font-family: $title-font-family;
+  @include fluid-type($max-value: rem(19));
+}
+
 header,
 main,
 section,
