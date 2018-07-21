@@ -1,0 +1,62 @@
+.feedback {
+
+}
+
+.feedback__wrap {
+  padding-top: rem(96);
+  padding-bottom: rem(65);
+  @include page-container();
+  @include clearfix();
+}
+
+.feedback__head {
+  margin-bottom: rem(60);
+}
+
+.feedback__form {
+  .form-element-label {
+    color: $color-label;
+  }
+}
+
+.feedback__legend {
+  margin-bottom: rem(12);
+}
+
+.feedback__textarea-wrap {
+  margin-bottom: 0;
+}
+
+.feedback__textarea,
+textarea.feedback__textarea {
+  height: rem(24);
+  min-height: rem(24);
+}
+
+.feedback__group {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  .feedback__item {
+    flex: 0 0 31.5%;
+  }
+}
+
+.feedback__send {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.feedback__btn {
+  color: $color-light;
+  margin-top: 0;
+  flex: 0 0 14%;
+}
+
+.feedback__note {
+  flex: 0 0 auto;
+  font-size: rem(12);
+  margin: auto auto auto rem(19);
+}

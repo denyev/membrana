@@ -1103,6 +1103,76 @@
     </div>
   </section>
 
+    <div class="feedback">
+      <div class="feedback__wrap">
+
+        <form action="#" method="post" class="feedback__form">
+          <fieldset class="form-fieldset">
+          <legend class="feedback__legend">Ваш вопрос</legend>
+
+            <div class="feedback__list">
+              <div class="feedback__item form-element form-input feedback__textarea-wrap">
+                <textarea
+                  class="form-element-field feedback__textarea"
+                  name="feedback-message"
+                  id="feedback-message"
+                  cols="30"
+                  rows="1"
+                  placeholder="&nbsp;"></textarea>
+                <div class="form-element-bar"></div>
+                <label
+                  class="form-element-label"
+                  for="feedback-message">Задайте ваш вопрос</label>
+              </div>
+
+              <div class="feedback__group">
+
+                <div class="feedback__item form-element form-input">
+                  <input id="feedback-name"
+                         type="tel"
+                         class="form-element-field"
+                         placeholder="&nbsp;"
+                         required>
+                  <div class="form-element-bar"></div>
+                  <label
+                    class="form-element-label"
+                    for="feedback-name">Имя</label>
+                </div>
+
+                <div class="feedback__item form-element form-input">
+                  <input id="feedback-email"
+                         type="email"
+                         class="form-element-field"
+                         placeholder="user@example.com"
+                         required>
+                  <div class="form-element-bar"></div>
+                  <label
+                    class="form-element-label"
+                    for="feedback-email">Почта</label>
+                </div>
+
+                <div class="feedback__item form-element form-input">
+                  <input id="feedback-phone"
+                         type="tel"
+                         class="form-element-field"
+                         placeholder="+7 (___)___-__-__"
+                         required>
+                  <div class="form-element-bar"></div>
+                  <label class="form-element-label" for="feedback-phone">Телефон</label>
+                </div>
+
+              </div>
+            </div>
+          </fieldset>
+          <div class="feedback__send">
+            <button class="btn btn--flat btn--red btn--ripple feedback__btn">Заказать звонок</button>
+            <small class="feedback__note">Нажимая кнопку "Отправить вопрос", вы даете согласие на обработку персональных данных</small>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
 
 </main>
 
