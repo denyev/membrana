@@ -1,4 +1,5 @@
-.reviews {}
+.reviews {
+}
 
 .reviews__wrap {
   padding-top: rem(88);
@@ -19,34 +20,12 @@
   position: relative;
   @include unstyle-list();
   @include clearfix();
-  &::before {
-    content: "";
-    background-image: url(/img/reviews/arrow-left.png);
-    display: block;
-    width: rem(40);
-    height: rem(40);
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translate(50%, -50%);
-    cursor: pointer;
-  }
-  &::after {
-    content: "";
-    background-image: url(/img/reviews/arrow-right.png);
-    display: block;
-    width: rem(40);
-    height: rem(40);
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-  }
 }
 
-.reviews__item {
+.reviews__item,
+li.reviews__item {
   margin: rem(16);
+  display: flex;
   flex-grow: 1;
   width: 33%;
   box-shadow: 0 0 rem(15) rem(6) $color-shadow;
@@ -60,4 +39,40 @@
   cursor: pointer;
   border: rem(20) solid $color-light;
   text-align: center;
+  img {
+    display: flex;
+  }
+}
+
+.reviews__img,
+img.reviews__img {
+  display: flex;
+}
+
+.reviews__arrow {
+  z-index: 10;
+  &--left {
+    content: "";
+    background-image: url(/img/reviews/arrow-left.png);
+    display: block;
+    width: rem(40);
+    height: rem(40);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(50%, -50%);
+    cursor: pointer;
+  }
+  &--right {
+    content: "";
+    background-image: url(/img/reviews/arrow-right.png);
+    display: block;
+    width: rem(40);
+    height: rem(40);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
 }
