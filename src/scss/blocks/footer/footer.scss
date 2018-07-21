@@ -1,0 +1,47 @@
+.footer {
+  background-color: $color-lightgray;
+}
+
+.footer__wrap {
+  padding-top: rem(39);
+  padding-bottom: rem(74);
+  @include page-container();
+  @include clearfix();
+}
+
+.footer__wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.footer__left {
+  flex: 0 0 43.4%;
+}
+
+.footer__logo-wrap {
+  margin-bottom: rem(12);
+}
+
+
+.footer__copyright {
+  color: $color-footer-gray;
+  @include fluid-type($max-value: rem(16));
+}
+
+
+.footer__right {
+  flex: 0 0 56.6%;
+}
+
+.footer__phone {
+  text-align: right;
+  margin-bottom: rem(12);
+}
+
+.footer__socials {
+  text-align: right;
+}
+
+

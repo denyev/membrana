@@ -112,3 +112,24 @@
     background-position-y: -1102px;
   }
 }
+
+.icon-social {
+  background-image: url(/img/icon-social-sprite.png);
+  background-position-x: -10px;
+  display: block;
+  &--insta {
+    width: rem(14);
+    height: rem(14);
+    background-position-y: -42px;
+  }
+  &--vk {
+    width: rem(20);
+    height: rem(12);
+    background-position-y: -10px;
+  }
+  &--fb {
+    width: rem(8);
+    height: rem(16);
+    background-position-y: -76px;
+  }
+}

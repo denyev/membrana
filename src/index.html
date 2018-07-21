@@ -28,22 +28,22 @@
         <div class="main-nav__wrapper">
           <ul class="main-nav__list">
             <li class="main-nav__item">
-              <a href="" class="main-nav__link" title="">О нас</a>
+              <a href="#about" class="main-nav__link" title="">О нас</a>
             </li>
             <li class="main-nav__item">
-              <a href="" class="main-nav__link" title="">Преимущества мембраны</a>
+              <a href="#advantages" class="main-nav__link" title="">Преимущества мембраны</a>
             </li>
             <li class="main-nav__item">
-              <a href="" class="main-nav__link" title="">Акции</a>
+              <a href="#" class="main-nav__link" title="">Акции</a>
             </li>
             <li class="main-nav__item">
-              <a href="" class="main-nav__link" title="">Схема работы</a>
+              <a href="#stages" class="main-nav__link" title="">Схема работы</a>
             </li>
             <li class="main-nav__item">
-              <a href="" class="main-nav__link" title="">Отзывы</a>
+              <a href="#reviews" class="main-nav__link" title="">Отзывы</a>
             </li>
             <li class="main-nav__item">
-              <a href="" class="main-nav__link" title="">Контакты</a>
+              <a href="#feedback" class="main-nav__link" title="">Контакты</a>
             </li>
           </ul>
           <ul class="main-nav__btn-list">
@@ -1103,15 +1103,15 @@
     </div>
   </section>
 
-    <div class="feedback">
-      <div class="feedback__wrap">
+  <div class="feedback">
+    <div class="feedback__wrap">
 
-        <form action="#" method="post" class="feedback__form">
-          <fieldset class="form-fieldset">
+      <form action="#" method="post" class="feedback__form">
+        <fieldset class="form-fieldset">
           <legend class="feedback__legend">Ваш вопрос</legend>
 
-            <div class="feedback__list">
-              <div class="feedback__item form-element form-input feedback__textarea-wrap">
+          <div class="feedback__list">
+            <div class="feedback__item form-element form-input feedback__textarea-wrap">
                 <textarea
                   class="form-element-field feedback__textarea"
                   name="feedback-message"
@@ -1119,66 +1119,126 @@
                   cols="30"
                   rows="1"
                   placeholder="&nbsp;"></textarea>
+              <div class="form-element-bar"></div>
+              <label
+                class="form-element-label"
+                for="feedback-message">Задайте ваш вопрос</label>
+            </div>
+
+            <div class="feedback__group">
+
+              <div class="feedback__item form-element form-input">
+                <input id="feedback-name"
+                       type="tel"
+                       class="form-element-field"
+                       placeholder="&nbsp;"
+                       required>
                 <div class="form-element-bar"></div>
                 <label
                   class="form-element-label"
-                  for="feedback-message">Задайте ваш вопрос</label>
+                  for="feedback-name">Имя</label>
               </div>
 
-              <div class="feedback__group">
-
-                <div class="feedback__item form-element form-input">
-                  <input id="feedback-name"
-                         type="tel"
-                         class="form-element-field"
-                         placeholder="&nbsp;"
-                         required>
-                  <div class="form-element-bar"></div>
-                  <label
-                    class="form-element-label"
-                    for="feedback-name">Имя</label>
-                </div>
-
-                <div class="feedback__item form-element form-input">
-                  <input id="feedback-email"
-                         type="email"
-                         class="form-element-field"
-                         placeholder="user@example.com"
-                         required>
-                  <div class="form-element-bar"></div>
-                  <label
-                    class="form-element-label"
-                    for="feedback-email">Почта</label>
-                </div>
-
-                <div class="feedback__item form-element form-input">
-                  <input id="feedback-phone"
-                         type="tel"
-                         class="form-element-field"
-                         placeholder="+7 (___)___-__-__"
-                         required>
-                  <div class="form-element-bar"></div>
-                  <label class="form-element-label" for="feedback-phone">Телефон</label>
-                </div>
-
+              <div class="feedback__item form-element form-input">
+                <input id="feedback-email"
+                       type="email"
+                       class="form-element-field"
+                       placeholder="user@example.com"
+                       required>
+                <div class="form-element-bar"></div>
+                <label
+                  class="form-element-label"
+                  for="feedback-email">Почта</label>
               </div>
+
+              <div class="feedback__item form-element form-input">
+                <input id="feedback-phone"
+                       type="tel"
+                       class="form-element-field"
+                       placeholder="+7 (___)___-__-__"
+                       required>
+                <div class="form-element-bar"></div>
+                <label class="form-element-label" for="feedback-phone">Телефон</label>
+              </div>
+
             </div>
-          </fieldset>
-          <div class="feedback__send">
-            <button class="btn btn--flat btn--red btn--ripple feedback__btn">Заказать звонок</button>
-            <small class="feedback__note">Нажимая кнопку "Отправить вопрос", вы даете согласие на обработку персональных данных</small>
           </div>
-        </form>
+        </fieldset>
+        <div class="feedback__send">
+          <button class="btn btn--flat btn--red btn--ripple feedback__btn">Заказать звонок</button>
+          <small class="feedback__note">Нажимая кнопку "Отправить вопрос", вы даете согласие на обработку персональных
+            данных
+          </small>
+        </div>
+      </form>
 
-      </div>
     </div>
+  </div>
 
 
 </main>
 
 <footer class="footer">
   <div class="footer__wrap">
-
+    <div class="footer__left">
+      <div class="footer__logo-wrap">
+        <picture>
+          <source srcset="/img/logo.webp" type="image/webp">
+          <img src="/img/logo.jpg" alt="" class="footer__logo">
+        </picture>
+      </div>
+      <div class="footer__copyright">
+        <p>Copyright &copy;</p>
+      </div>
+    </div>
+    <div class="footer__right">
+      <div class="footer__menu menu">
+        <ul class="menu__list">
+          <li class="menu__item">
+            <a href="#about" class="menu__link" title="">О нас</a>
+          </li>
+          <li class="menu__item">
+            <a href="#advantages" class="menu__link" title="">Преимущества мембраны</a>
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__link" title="">Акции</a>
+          </li>
+          <li class="menu__item">
+            <a href="#stages" class="menu__link" title="">Схема работы</a>
+          </li>
+          <li class="menu__item">
+            <a href="#reviews" class="menu__link" title="">Отзывы</a>
+          </li>
+          <li class="menu__item">
+            <a href="#feedback" class="menu__link" title="">Контакты</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__phone">
+        <div class="phone">
+          <a href="tel:+74955057718" class="phone__link">+7 (495) 505-77-18</a>
+        </div>
+      </div>
+      <div class="footer__socials socials">
+        <ul class="socials__list">
+          <li class="socials__item">
+            <a href="" class="socials__link">
+              <i class="socials__icon icon-social icon-social--fb"></i>
+            </a>
+          </li>
+          <li class="socials__item">
+            <a href="" class="socials__link">
+              <i class="socials__icon icon-social icon-social--vk"></i>
+            </a>
+          </li>
+          <li class="socials__item">
+            <a href="" class="socials__link">
+              <i class="socials__icon icon-social icon-social--insta"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
 
   </div>
 </footer>

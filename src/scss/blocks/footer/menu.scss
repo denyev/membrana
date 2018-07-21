@@ -1,0 +1,19 @@
+.menu__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 0 rem(10) 0;
+  padding: 0;
+  @include unstyle-list();
+  //@include clearfix();
+}
+
+.menu__link {
+  @include link-underline-hover();
+  @include fluid-type();
+  color: currentColor;
+  text-decoration: none;
+  display: inline-flex;
+  height: auto;
+  align-items: center;
+}
