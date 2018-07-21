@@ -130,6 +130,7 @@ window.onload = function () {
 
 // /.vertical-tab
 
+// .carousel
 
   var $carousel = $('.carousel');
 
@@ -162,7 +163,7 @@ window.onload = function () {
   $('.carousel__thumbnails').slick({
     infinite: true,
     slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToScroll: 1,
     fade:false,
     draggable: true,
     asNavFor: '.carousel',
@@ -171,6 +172,22 @@ window.onload = function () {
     centerMode: true,
     focusOnSelect: true
   });
+
+// /.carousel
+
+  // .team-carousel
+
+  $('.team-carousel').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    fade:false,
+    dots: true,
+    arrows: false,
+    dotsClass: 'team-carousel__dots'
+  });
+
+  // /.team-carousel
 
 
 } // end window.onload

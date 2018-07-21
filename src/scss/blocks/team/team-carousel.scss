@@ -1,0 +1,111 @@
+.team-carousel {
+  margin: 0 0 rem(53) 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  @include unstyle-list();
+  @include clearfix();
+}
+.team-carousel__dots {
+  position: absolute;
+  bottom: rem(-53);
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  li {
+    position: relative;
+    display: inline-block;
+    width: rem(20);
+    height: rem(20);
+    margin: 0 rem(5);
+    padding: 0;
+    cursor: pointer;
+    &.slick-active {
+      button {
+        &::before {
+          background-color: $color-light;
+        }
+      }
+    }
+    button {
+      font-size: 0;
+      line-height: 0;
+      display: block;
+      width: rem(20);
+      height: rem(20);
+      padding: rem(5);
+      cursor: pointer;
+      color: transparent;
+      border: 0;
+      outline: none;
+      background: transparent;
+      &::before {
+        font-size: rem(6);
+        line-height: rem(20);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: rem(11);
+        height: rem(11);
+        content: '';
+        text-align: center;
+        color: $color-night;
+        background-color: $color-night;
+        border-radius: 50%;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    }
+  }
+}
+
+.team-carousel__item {
+  margin-right: rem(17);
+  margin-top: rem(16);
+  margin-left: rem(17);
+}
+
+.team-carousel__content {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  padding: rem(30);
+  background-color: $color-night;
+  box-shadow: 0 0 rem(15) rem(6) $color-night;
+}
+
+.team-carousel__img-wrap {
+  flex: 0 0 rem(95);
+  width: rem(95);
+}
+
+.team-carousel__img {
+  width: rem(95);
+  height: rem(95);
+}
+
+.team-carousel__descr {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  padding-left: rem(30);
+  @include fluid-type($min-value: rem(12), $max-value: rem(19))
+}
+
+.team-carousel__name {
+  font-family: $title-font-family;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+.team-carousel__position {
+  margin-bottom: 0;
+}
+
+

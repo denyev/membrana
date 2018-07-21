@@ -1,0 +1,15 @@
+.team {
+  background-color: $color-dusky;
+  color: $color-light;
+}
+
+.team__wrap {
+  padding-top: rem(88);
+  padding-bottom: rem(142);
+  @include page-container();
+  @include clearfix();
+}
+
+.team__head {
+  margin-bottom: rem(60);
+}
