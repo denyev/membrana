@@ -189,6 +189,36 @@ window.onload = function () {
 
   // /.team-carousel
 
+  // .reviews__list
+
+  // $('.reviews__list').slick({
+  //     slidesToShow: 3,
+  //     slidesToScroll: 1,
+  //     arrows: true,
+  //     fade: false,
+  //     draggable: false,
+  //     prevArrow: '<i class="fa fa-arrow-left"></i>',
+  //     nextArrow: '<i class="fa fa-arrow-right"></i>'
+  // })
+  //   .magnificPopup({
+  //     type: 'image',
+  //     delegate: 'a:not(.slick-cloned)',
+  //     gallery: {
+  //       enabled: true
+  //     },
+  //     callbacks: {
+  //       open: function () {
+  //         var current = $carousel.slick('slickCurrentSlide');
+  //         $carousel.magnificPopup('goTo', current);
+  //       },
+  //       beforeClose: function () {
+  //         $carousel.slick('slickGoTo', parseInt(this.index));
+  //       }
+  //     }
+  //   });
+
+  // /.reviews__list
+
 
 } // end window.onload
 
