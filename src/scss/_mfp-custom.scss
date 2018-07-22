@@ -1,0 +1,41 @@
+body .mfp-bg {
+  background-color: $color-light;
+}
+
+/**
+ * Top Down transition,
+ */
+
+.mfp-top-up.mfp-bg {
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.mfp-top-up.mfp-bg.mfp-ready {
+  opacity: 0.8;
+  transition: all 0.3s ease-out;
+}
+.mfp-top-up.mfp-bg.mfp-removing {
+  transition: all 0.3s ease-out;
+  opacity: 0;
+}
+.mfp-top-up.mfp-wrap .mfp-content {
+  opacity: 0;
+  -webkit-transition: all 0.5s cubic-bezier(.25, .98, .26, .99);
+  -moz-transition: all 0.5s cubic-bezier(.25, .98, .26, .99);
+  -o-transition: all 0.5s cubic-bezier(.25, .98, .26, .99);
+  transition: all 0.5s cubic-bezier(.25, .98, .26, .99);
+  bottom: 100%;
+}
+.mfp-top-up.mfp-wrap.mfp-ready .mfp-content {
+  transition: all 0.5s cubic-bezier(.25, .98, .26, .99);
+  opacity: 1;
+  bottom: 0;
+}
+.mfp-top-up.mfp-wrap.mfp-removing .mfp-content {
+  transition: all 0.5s cubic-bezier(.25, .98, .26, .99);
+  opacity: 0;
+  bottom: 100%;
+}

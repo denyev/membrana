@@ -18,6 +18,12 @@
 @import "mixins/mixins";
 
 //------------------------------------------------------------------
+// [MagnificPopUp]
+//
+
+@import "mfp-custom";
+
+//------------------------------------------------------------------
 // [Normilize]
 //
 
@@ -54,6 +60,7 @@
 @import "blocks/header/main-nav";
 @import "blocks/header/requisites";
 @import "blocks/header/widget";
+@import "blocks/header/callback";
 @import "blocks/about/about";
 @import "blocks/about/actuality";
 @import "blocks/advantages/advantages";

@@ -2,8 +2,6 @@
 
 document.documentElement.classList.remove('no-js');
 
-// window.onload = function () {
-
 function createLinkOnHead(path, file) {
   var link = document.createElement("link");
   link.setAttribute("rel", "stylesheet");
@@ -47,103 +45,67 @@ document.addEventListener('change', function (event) {
 
 // jQuery
 
-// (function () {
-//
-//   function loadScript(url, callback) {
-//
-//     var script = document.createElement('script')
-//     script.type = "text/javascript";
-//
-//     if (script.readyState) { // IE
-//       script.onreadystatechange = function () {
-//         if (script.readyState == 'loaded' || script.readyState == 'complete') {
-//           script.onreadystatechange = null;
-//           callback();
-//         }
-//       };
-//     } else { // Others
-//       script.onload = function () {
-//         callback();
-//       };
-//     }
-//
-//     script.src = url;
-//     document.getElementsByTagName('head')[0].appendChild(script);
-//     console.log(url + ' is loaded');
-//   }
-//
-//   loadScript('https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', function () {
-//     var $ = window.jQuery;
-//     return $;
-//   });
-
-//  loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js', function () {
-$(document).ready(function () {
-  $('input[type="tel"]').mask('+7 (000) 000-00-00');
-});
-//   })();
-// })();
+(function ($) {
+  $(document).ready(function () {
+    $('input[type="tel"]').mask('+7 (000) 000-00-00');
+  });
 
 // .vertical-tab
 
-$('.vertical-tab__head').click(function (event) {
-  event.preventDefault();
-  $(this).addClass('vertical-tab__head--active');
-  $(this).siblings().removeClass('vertical-tab__head--active');
+  $('.vertical-tab__head').click(function (event) {
+    event.preventDefault();
+    $(this).addClass('vertical-tab__head--active');
+    $(this).siblings().removeClass('vertical-tab__head--active');
 
-  var ph = $(this).parent().height();
-  var ch = $(this).next().height();
+    var ph = $(this).parent().height();
+    var ch = $(this).next().height();
 
-  if (ch > ph) {
-    $(this).parent().css({
-      'min-height': ch + 'px'
-    });
-  } else {
-    $(this).parent().css({
-      'height': 'auto'
-    });
+    if (ch > ph) {
+      $(this).parent().css({
+        'min-height': ch + 'px'
+      });
+    } else {
+      $(this).parent().css({
+        'height': 'auto'
+      });
+    }
+  });
+
+  function tabParentHeight() {
+    var ph = $('.vertical-tab').height();
+    var ch = $('.vertical-tab__inner').height();
+    if (ch > ph) {
+      $('section').css({
+        'height': ch + 'px'
+      });
+    } else {
+      $(this).parent().css({
+        'height': 'auto'
+      });
+    }
   }
-});
 
-function tabParentHeight() {
-  var ph = $('.vertical-tab').height();
-  var ch = $('.vertical-tab__inner').height();
-  if (ch > ph) {
-    $('section').css({
-      'height': ch + 'px'
-    });
-  } else {
-    $(this).parent().css({
-      'height': 'auto'
-    });
-  }
-}
+  $(window).resize(function () {
+    tabParentHeight();
+  });
 
-$(window).resize(function () {
+  $(document).resize(function () {
+    tabParentHeight();
+  });
   tabParentHeight();
-});
-
-$(document).resize(function () {
-  tabParentHeight();
-});
-tabParentHeight();
 
 // /.vertical-tab
 
 // .carousel
 
-var $carousel = $('.carousel');
-
-$carousel
-  .slick({
+  $('.carousel').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
     fade: true,
     draggable: false,
     asNavFor: '.carousel__thumbnails',
-  })
-  .magnificPopup({
+  }).magnificPopup({
     type: 'image',
     delegate: 'a:not(.slick-cloned)',
     gallery: {
@@ -160,48 +122,47 @@ $carousel
     }
   });
 
-$('.carousel__thumbnails').slick({
-  infinite: true,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  fade: false,
-  draggable: true,
-  asNavFor: '.carousel',
-  arrows: false,
-  dots: false,
-  centerMode: true,
-  focusOnSelect: true
-});
+  $('.carousel__thumbnails').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    fade: false,
+    draggable: true,
+    asNavFor: '.carousel',
+    arrows: false,
+    dots: false,
+    centerMode: true,
+    focusOnSelect: true
+  });
 
 // /.carousel
 
 // .team-carousel
 
-$('.team-carousel').slick({
-  infinite: true,
-  slidesToShow: 3,
-  slidesToScroll: 3,
-  fade: false,
-  dots: true,
-  arrows: false,
-  dotsClass: 'team-carousel__dots'
-});
+  $('.team-carousel').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    fade: false,
+    dots: true,
+    arrows: false,
+    dotsClass: 'team-carousel__dots'
+  });
 
 // /.team-carousel
 
 // .reviews__list
 
-$('.reviews__list').slick({
-  infinite: true,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  arrows: true,
-  fade: false,
-  draggable: false,
-  prevArrow: '<i class="reviews__arrow reviews__arrow--left"></i>',
-  nextArrow: '<i class="reviews__arrow reviews__arrow--right"></i>'
-})
-  .magnificPopup({
+  $('.reviews__list').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: true,
+    fade: false,
+    draggable: false,
+    prevArrow: '<i class="reviews__arrow reviews__arrow--left"></i>',
+    nextArrow: '<i class="reviews__arrow reviews__arrow--right"></i>'
+  }).magnificPopup({
     type: 'image',
     delegate: 'a:not(.slick-cloned)',
     gallery: {
@@ -222,20 +183,120 @@ $('.reviews__list').slick({
 
 // .brands__list
 
-$('.brands__list').slick({
-  infinite: true,
-  slidesToShow: 4,
-  slidesToScroll: 1,
-  arrows: true,
-  fade: false,
-  draggable: false,
-  prevArrow: '<i class="brands__arrow brands__arrow--left"></i>',
-  nextArrow: '<i class="brands__arrow brands__arrow--right"></i>'
-})
+  $('.brands__list').slick({
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    arrows: true,
+    fade: false,
+    draggable: false,
+    prevArrow: '<i class="brands__arrow brands__arrow--left"></i>',
+    nextArrow: '<i class="brands__arrow brands__arrow--right"></i>'
+  })
 
 // /.brands__list
 
+// Ajax Submit Form
 
-// } // end window.onload
+  jQuery.fn.sendForm = function (options) {
+    options = $.extend({
+      successTitle: "Спасибо, что выбрали нас!",
+      successText: "Мы свяжемся с Вами в ближайшее время.",
+      errorTitle: "Сообщение не отправлено!",
+      errorSubmit: "Ошибка отправки формы!",
+      errorNocaptcha: "Вы не заполнили каптчу",
+      errorCaptcha: "Вы не прошли проверку каптчи",
+      mailUrl: "../submit.php",
+      autoClose: false,
+      autoCloseDelay: 5000
+    }, options);
+
+    var make = function () {
+      var $this = $(this);
+      $(this).submit(function () {
+        function errorRes(errorMessage) {
+          $this.find('.btn-submit').parents('.form__form').removeClass('sending');
+          $this.append('<div class="form__error">' + errorMessage + '</div>');
+          setTimeout(function () {
+            $this.find('.form__error').remove();
+          }, 5000);
+        }
+
+        var data = $(this).serialize();
+        $.ajax({
+          url: options.mailUrl,
+          type: "POST",
+          data: data,
+          beforeSend: function () {
+            $this.find('.btn-submit').parents('.form__form').addClass('sending');
+          },
+          success: function (res) {
+            if (res == 1) {
+              $this[0].reset();
+              grecaptcha.reset();
+              $this.find('.form__hide-success').slideUp().delay(5000).slideDown();
+              $this.find('.btn-submit').parents('.form__form').removeClass('sending');
+              $this.find('.form__hide-success').after('<div class="form__sys-message"></div>');
+              $this.find('.form__sys-message').html('<div class="form__success-title">'
+                  + options.successTitle
+                  + '</div><p class = "form__success-text" >'
+                  + options.successText + '</p>');
+              setTimeout(function () {
+                $this.find('.form__sys-message').fadeOut().delay(3000).remove();
+                if (options.autoClose) {
+                  $.magnificPopup.close();
+                }
+              }, options.autoCloseDelay);
+            } else if (res == 2) {
+              errorRes(options.errorNocaptcha);
+            } else if (res == 3) {
+              errorRes(options.errorCaptcha);
+            } else {
+              errorRes(options.errorSubmit);
+            }
+          },
+          error: function () {
+            errorRes(options.errorSubmit);
+          }
+        });
+        return false;
+      });
+
+    } // end make
+
+    return this.each(make);
+  };
+
+// /Ajax Submit Form
+
+// #callbackForm
+
+  $('.call__btn').magnificPopup({
+    type: 'inline',
+    fixedContentPos: false,
+    fixedBgPos: true,
+    overflowY: 'auto',
+    preloader: false,
+    midClick: true,
+    removalDelay: 300,
+    mainClass: 'mfp-top-up',
+    tClose: 'Закрыть (Esc)',
+    closeBtnInside: true,
+    closeMarkup: '<button title="%title%" type="button" class="mfp-close">test &#215;</button>',
+
+  });
+
+  $('#callbackForm').sendForm({
+    successTitle: "Ваша заявка принята!",
+    successText: "Наш сотрудник свяжется с Вами в самое ближайшее время.",
+    autoClose: true,
+    autoCloseDelay: 3000,
+    mailUrl: "submit.php"
+  });
+
+// /#callbackForm
+
+
+})(jQuery);
 
 console.log('script.js is loaded');

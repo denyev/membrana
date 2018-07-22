@@ -87,3 +87,4 @@ src/img/
 *.lock
 libs/
 /design/
+/assets/

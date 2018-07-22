@@ -64,7 +64,7 @@
           </li>
           <li class="requisites__item call">
             <div class="call__wrap">
-              <a href="" class="btn btn--link btn--slide-up btn--ripple call__btn">Заказать звонок</a>
+              <a href="#callback" class="btn btn--link btn--slide-up btn--ripple call__btn">Заказать звонок</a>
             </div>
           </li>
           <li class="requisites__item schedule">
@@ -84,7 +84,7 @@
         <div class="widget__shape"></div>
         <figure class="widget__content">
           <h2 class="widget__title">Цена монтажа <span class="widget__price">120 руб/м<sup
-            class="widget__price-index">2</sup></span></h2>
+              class="widget__price-index">2</sup></span></h2>
           <figcaption class="widget__descr">
             <div class="widget__text">
               <p>Расчет вашей кровли уже сегодня</p>
@@ -1113,16 +1113,16 @@
           <div class="feedback__list">
             <div class="feedback__item form-element form-input feedback__textarea-wrap">
                 <textarea
-                  class="form-element-field feedback__textarea"
-                  name="feedback-message"
-                  id="feedback-message"
-                  cols="30"
-                  rows="1"
-                  placeholder="&nbsp;"></textarea>
+                    class="form-element-field feedback__textarea"
+                    name="feedback-message"
+                    id="feedback-message"
+                    cols="30"
+                    rows="1"
+                    placeholder="&nbsp;"></textarea>
               <div class="form-element-bar"></div>
               <label
-                class="form-element-label"
-                for="feedback-message">Задайте ваш вопрос</label>
+                  class="form-element-label"
+                  for="feedback-message">Задайте ваш вопрос</label>
             </div>
 
             <div class="feedback__group">
@@ -1135,8 +1135,8 @@
                        required>
                 <div class="form-element-bar"></div>
                 <label
-                  class="form-element-label"
-                  for="feedback-name">Имя</label>
+                    class="form-element-label"
+                    for="feedback-name">Имя</label>
               </div>
 
               <div class="feedback__item form-element form-input">
@@ -1147,8 +1147,8 @@
                        required>
                 <div class="form-element-bar"></div>
                 <label
-                  class="form-element-label"
-                  for="feedback-email">Почта</label>
+                    class="form-element-label"
+                    for="feedback-email">Почта</label>
               </div>
 
               <div class="feedback__item form-element form-input">
@@ -1242,6 +1242,39 @@
 
   </div>
 </footer>
+
+<aside id="callback" class="callback mfp-hide zoom-anim-dialog">
+  <form id="callbackForm" action="#" method="post" class="callback__form">
+    <fieldset class="form-fieldset">
+
+      <legend class="callback__legend">Закажите обратный звонок</legend>
+      <div class="callback__row callback__row--inputs">
+        <div class="callback__item form-element form-input">
+          <input id="callbackName" type="text" class="form-element-field"
+                 placeholder="Введите Ваше имя">
+          <div class="form-element-bar"></div>
+          <label class="form-element-label" for="callbackName">Имя</label>
+        </div>
+
+        <div class="callback__item form-element form-input">
+          <input id="callbackPhone" type="tel" class="form-element-field"
+                 placeholder="+7 (___)___-__-__"
+                 required>
+          <div class="form-element-bar"></div>
+          <label class="form-element-label" for="callbackPhone">Телефон<sup>*</sup></label>
+        </div>
+      </div>
+    </fieldset>
+    <div class="callback__row callback__row--bottom">
+      <div class="callback__left callback__send">
+        <button class="btn btn--flat btn--red btn--ripple callback__btn">Заказать звонок</button>
+      </div>
+      <div class="callback__right">
+        <small class="callback__note">Нажимая кнопку “Заказать звонок”, вы даете согласие на обработку персональных данных</small>
+      </div>
+    </div>
+  </form>
+</aside>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>

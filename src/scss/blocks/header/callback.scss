@@ -1,0 +1,73 @@
+.callback {
+  background-color: $color-light;
+  max-width: rem(712);
+  height: rem(220);
+  margin: 0 auto;
+  padding: rem(20) rem(30);
+  position: relative;
+  box-shadow: 0 0 rem(30) rem(12) $color-shadow-dark;
+  &--white {
+
+  }
+  .mfp-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 0;
+    width: rem(78);
+    height: rem(64);
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 60%;
+      left: 0;
+      width: rem(40);
+      height: rem(3);
+      background-color: #333;
+    }
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.callback__legend {
+  margin-bottom: rem(30);
+}
+
+.callback__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  &--inputs {
+    .callback__item {
+      flex: 0 0 48%;
+      margin: 0 0 rem(20) 0;
+    }
+  }
+  &--bottom {
+    .callback__left {
+      flex: 0 0 26.6%;
+      margin: 0 0 rem(20) 0;
+    }
+    .callback__right {
+      flex: 0 0 47%;
+      margin: 0 auto rem(20) 0;
+    }
+  }
+}
+
+.callback__btn {
+  color: $color-light;
+}
+
+.callback__note {
+  font-size: rem(11);
+  color: $color-gray;
+  line-height: 1;
+}
