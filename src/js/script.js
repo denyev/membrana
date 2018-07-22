@@ -238,9 +238,9 @@ document.addEventListener('change', function (event) {
               $this.find('.btn-submit').parents('.form__form').removeClass('sending');
               $this.find('.form__hide-success').after('<div class="form__sys-message"></div>');
               $this.find('.form__sys-message').html('<div class="form__success-title">'
-                  + options.successTitle
-                  + '</div><p class = "form__success-text" >'
-                  + options.successText + '</p>');
+                + options.successTitle
+                + '</div><p class = "form__success-text" >'
+                + options.successText + '</p>');
               setTimeout(function () {
                 $this.find('.form__sys-message').fadeOut().delay(3000).remove();
                 if (options.autoClose) {
@@ -323,12 +323,20 @@ document.addEventListener('change', function (event) {
 
 // .calculate
 
-  $('#calculateFile').change(function(){
+  $('#calculateFile').change(function () {
     var filename = $(this).val().replace(/.*\\/, '');
     $('#calculateFilename').val(filename);
   });
 
 // /.calculate
+
+//  scroll
+
+  var scroll = new SmoothScroll('a[href*="#"]',{
+    // header: '[data-scroll-header]'
+  });
+
+//  /scroll
 
 
 })(jQuery);
