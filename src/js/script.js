@@ -275,7 +275,7 @@ document.addEventListener('change', function (event) {
     type: 'inline',
     fixedContentPos: false,
     fixedBgPos: true,
-    overflowY: 'auto',
+    overflowY: 'hidden',
     preloader: false,
     midClick: true,
     removalDelay: 300,
@@ -301,7 +301,7 @@ document.addEventListener('change', function (event) {
     type: 'inline',
     fixedContentPos: false,
     fixedBgPos: true,
-    overflowY: 'auto',
+    overflowY: 'hidden',
     preloader: false,
     midClick: true,
     removalDelay: 300,
@@ -332,7 +332,7 @@ document.addEventListener('change', function (event) {
 
 //  scroll
 
-  var scroll = new SmoothScroll('a[href*="#"]',{
+  var scroll = new SmoothScroll('.main-nav__link, .main-nav__btn a, .menu__link',{
     // header: '[data-scroll-header]'
   });
 

@@ -9,6 +9,11 @@
 html,
 body {
   height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: $color-light;
+  width: auto;
+  max-width: 100%;
 }
 
 body {
