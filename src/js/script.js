@@ -34,7 +34,7 @@ function preventDefaultForElementList(elementList) {
   }
 }
 
-preventDefaultForElementList('a.btn');
+// preventDefaultForElementList('a.btn');
 
 document.addEventListener('change', function (event) {
   var element = event.target;
@@ -282,8 +282,7 @@ document.addEventListener('change', function (event) {
     mainClass: 'mfp-top-up',
     tClose: 'Закрыть (Esc)',
     closeBtnInside: true,
-    closeMarkup: '<button title="%title%" type="button" class="mfp-close">test &#215;</button>',
-
+    closeMarkup: '<button title="%title%" type="button" class="mfp-close">&#215;</button>'
   });
 
   $('#callbackForm').sendForm({
@@ -295,6 +294,41 @@ document.addEventListener('change', function (event) {
   });
 
 // /#callbackForm
+
+// #calculateForm
+
+  $('.calculator-request__btn, .btn__calculate').magnificPopup({
+    type: 'inline',
+    fixedContentPos: false,
+    fixedBgPos: true,
+    overflowY: 'auto',
+    preloader: false,
+    midClick: true,
+    removalDelay: 300,
+    mainClass: 'mfp-top-up',
+    tClose: 'Закрыть (Esc)',
+    closeBtnInside: true,
+    closeMarkup: '<button title="%title%" type="button" class="mfp-close">&#215;</button>'
+  });
+
+  $('#calculateForm').sendForm({
+    successTitle: "Ваша заявка принята!",
+    successText: "Наш сотрудник свяжется с Вами в самое ближайшее время.",
+    autoClose: true,
+    autoCloseDelay: 3000,
+    mailUrl: "submit.php"
+  });
+
+// /#calculateForm
+
+// .calculate
+
+  $('#calculateFile').change(function(){
+    var filename = $(this).val().replace(/.*\\/, '');
+    $('#calculateFilename').val(filename);
+  });
+
+// /.calculate
 
 
 })(jQuery);

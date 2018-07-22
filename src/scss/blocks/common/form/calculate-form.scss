@@ -1,0 +1,145 @@
+.calculate {
+  background-color: $color-light;
+  max-width: rem(712);
+  height: rem(333);
+  margin: 0 auto;
+  padding: rem(30) rem(30) 0 rem(30);
+  position: relative;
+  box-shadow: 0 0 rem(30) rem(12) $color-shadow-dark;
+  &--white {
+
+  }
+  .form-element-bar {
+    background-color: $color-radio;
+  }
+  .mfp-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 0;
+    width: rem(78);
+    height: rem(64);
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 60%;
+      left: 0;
+      width: rem(40);
+      height: rem(3);
+      background-color: #333;
+    }
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.calculate__legend {
+  margin-bottom: rem(30);
+}
+
+.calculate__item {
+  margin: 0 0 rem(30) 0;
+}
+
+.calculate__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  &--inputs {
+    .calculate__item {
+      flex: 0 0 48%;
+      margin: 0 0 rem(30) 0;
+    }
+  }
+  &--bottom {
+    .calculate__left {
+      display: flex;
+      flex: 0 0 26.6%;
+      flex-direction: column;
+      margin: 0 rem(30) 0 0;
+    }
+    .calculate__center {
+      display: flex;
+      flex: 0 0 22%;
+      margin: 0 0 rem(30) 0;
+    }
+    .calculate__right {
+      display: flex;
+      flex: 0 0 30%;
+      align-items: center;
+      margin: 0 auto rem(30) 0;
+    }
+  }
+}
+
+.calculate__textarea,
+textarea.calculate__textarea {
+  height: rem(24);
+  min-height: rem(24);
+}
+
+.calculate__file {
+  margin-top: 0;
+  margin-bottom: rem(5);
+  padding: 0;
+  max-height: rem(35);
+  background-color: $color-radio;
+  cursor: pointer;
+  &:hover {
+    color: $color-light;
+  }
+  input[type="file"] {
+    opacity: 0;
+    overflow: hidden;
+    width: 100%;
+    max-width: rem(163);
+    height: 100%;
+    max-height: rem(35);
+    margin-right: rem(32);
+    cursor: pointer;
+    &:hover {
+      color: $color-light;
+    }
+  }
+  label {
+    font-size: rem(11);
+    width: 100%;
+    height: 100%;
+    line-height: 4.4;
+    cursor: pointer;
+    &:hover {
+      color: $color-light;
+    }
+  }
+}
+
+.calculate__filename {
+  background: $color-light;
+  border: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  @include fluid-type($min-value: rem(12),$max-value: rem(16))
+}
+
+.calculate__btn {
+  color: $color-light;
+  margin-top: 0;
+  flex-basis: 79%;
+}
+
+.calculate__send {
+  margin-top: 0;
+  color: $color-light;
+}
+
+.calculate__note {
+  font-size: rem(11);
+  color: $color-gray;
+  line-height: 1;
+}

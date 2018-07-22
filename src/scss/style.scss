@@ -51,7 +51,9 @@
 @import "blocks/common/schedule";
 @import "blocks/common/helpers";
 @import "blocks/common/icon";
-@import "blocks/common/form";
+@import "blocks/common/form/form";
+@import "blocks/common/form/callback";
+@import "blocks/common/form/calculate-form";
 @import "blocks/common/tooltip";
 @import "blocks/common/vertical-tabs";
 @import "blocks/common/carousel";
@@ -60,7 +62,6 @@
 @import "blocks/header/main-nav";
 @import "blocks/header/requisites";
 @import "blocks/header/widget";
-@import "blocks/header/callback";
 @import "blocks/about/about";
 @import "blocks/about/actuality";
 @import "blocks/advantages/advantages";

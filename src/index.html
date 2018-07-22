@@ -48,7 +48,7 @@
           </ul>
           <ul class="main-nav__btn-list">
             <li class="main-nav__btn">
-              <button class="btn btn--flat btn--red btn--ripple">Калькулятор</button>
+              <a href="#calculator" class="btn btn--flat btn--red btn--ripple">Калькулятор</a>
             </li>
           </ul>
         </div>
@@ -90,7 +90,7 @@
               <p>Расчет вашей кровли уже сегодня</p>
             </div>
             <div class="widget__button">
-              <a href="" class="btn btn__calculate btn__calculate--icon">Рассчитать</a>
+              <a href="#calculate" class="btn btn__calculate btn__calculate--icon">Рассчитать</a>
             </div>
           </figcaption>
         </figure>
@@ -622,7 +622,7 @@
   </section>
 
   <section>
-    <div class="calculator">
+    <div id="calculator" class="calculator">
       <div class="calculator__wrap">
         <h2 class="calculator__head">Калькулятор</h2>
         <h3 class="calculator__title">Введите параметры объекта</h3>
@@ -737,8 +737,8 @@
             </fieldset>
           </div>
 
-          <div class="price-request__send">
-            <button class="btn btn--flat btn--red btn--ripple">Рассчитать</button>
+          <div class="calculator-request__send">
+            <a href="#calculate" class="btn btn--flat btn--red btn--ripple calculator-request__btn">Рассчитать</a>
           </div>
         </form>
       </div>
@@ -1243,7 +1243,7 @@
   </div>
 </footer>
 
-<aside id="callback" class="callback mfp-hide zoom-anim-dialog">
+<aside id="callback" class="callback mfp-hide">
   <form id="callbackForm" action="#" method="post" class="callback__form">
     <fieldset class="form-fieldset">
 
@@ -1270,7 +1270,74 @@
         <button class="btn btn--flat btn--red btn--ripple callback__btn">Заказать звонок</button>
       </div>
       <div class="callback__right">
-        <small class="callback__note">Нажимая кнопку “Заказать звонок”, вы даете согласие на обработку персональных данных</small>
+        <small class="callback__note">Нажимая кнопку “Заказать звонок”, вы даете согласие на обработку персональных
+          данных
+        </small>
+      </div>
+    </div>
+  </form>
+</aside>
+
+<aside id="calculate" class="calculate mfp-hide">
+  <form id="calculateForm" action="#" method="post" class="calculate__form">
+    <fieldset class="form-fieldset">
+
+      <legend class="calculate__legend">Рассчитать стоимость кровли</legend>
+
+      <div class="calculate__item form-element form-input">
+        <input id="calculateName" type="text" class="form-element-field"
+               placeholder="Введите Ваше имя">
+        <div class="form-element-bar"></div>
+        <label class="form-element-label" for="calculateName">Имя</label>
+      </div>
+
+      <div class="calculate__row calculate__row--inputs">
+        <div class="calculate__item form-element form-input">
+          <input id="calculateEmail" type="text" class="form-element-field"
+                 placeholder="user@example.com">
+          <div class="form-element-bar"></div>
+          <label class="form-element-label" for="calculateEmail">Почта</label>
+        </div>
+
+        <div class="calculate__item form-element form-input">
+          <input id="calculatePhone" type="tel" class="form-element-field"
+                 placeholder="+7 (___)___-__-__"
+                 required>
+          <div class="form-element-bar"></div>
+          <label class="form-element-label" for="calculatePhone">Телефон<sup>*</sup></label>
+        </div>
+      </div>
+
+      <div class="calculate__item form-element form-input calculate__textarea-wrap">
+                <textarea
+                    class="form-element-field calculate__textarea"
+                    name="calculate-message"
+                    id="calculateMessage"
+                    cols="30"
+                    rows="1"
+                    placeholder="&nbsp;"></textarea>
+        <div class="form-element-bar"></div>
+        <label
+            class="form-element-label"
+            for="calculateMessage">Дополнительная информация</label>
+      </div>
+
+    </fieldset>
+    <div class="calculate__row calculate__row--bottom">
+      <div class="calculate__left">
+        <div class="form-element form-input calculate__file btn btn--flat btn--red btn--ripple">
+          <input type="file" id="calculateFile" name="calculateFile" multiple="multiple">
+          <label for="calculateFile" class="form-element-label">Прикрепить файл</label>
+        </div>
+        <input type="text" id="calculateFilename" class="calculate__filename" disabled>
+      </div>
+      <div class="calculate__center calculate__send">
+        <a class="btn btn--flat btn--red btn--ripple calculate__btn ">Рассчитать</a>
+      </div>
+      <div class="calculate__right">
+        <small class="calculate__note">Нажимая кнопку “Рассчитать”, вы даете согласие на обработку персональных
+          данных
+        </small>
       </div>
     </div>
   </form>

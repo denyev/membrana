@@ -72,4 +72,6 @@
   }
 }
 
-//@include n-columns($list: calculator-request__group, $item: calculator-request__item, $min-width: rem(50), $max-cols: 2)
+.calculator-request__btn {
+  max-width: rem(111);
+}
