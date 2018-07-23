@@ -33,3 +33,32 @@
     margin-bottom: 0;
   }
 }
+
+@media screen and (max-width: rem(768)) {
+  .actuality {
+    flex-basis: 100%;
+    justify-content: center;
+    display: flex;
+  }
+  .actuality__list {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: rem(576)) {
+  .actuality {
+    flex: 0 0 100%;
+  }
+
+  .actuality__content {
+    flex-direction: column;
+  }
+
+  .actuality__icon {
+    margin: 0 auto rem(10) auto;
+  }
+
+  .actuality__descr {
+    margin: 0 auto rem(20) auto;
+  }
+}

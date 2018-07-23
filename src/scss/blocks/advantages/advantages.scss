@@ -11,7 +11,6 @@
   margin-bottom: rem(115);
 }
 
-
 .advantages__list {
   @include unstyle-list();
   @include clearfix();
@@ -49,3 +48,22 @@
 }
 
 @include n-columns($list: advantages__bottom-list, $item: advantages__bottom-item, $min-width: rem(280), $max-cols: 2);
+
+@media screen and (max-width: rem(768)) {
+  .advantages__item {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: rem(576)) {
+  .advantages__content {
+    flex-direction: column;
+  }
+  .advantages__head {
+    margin-bottom: rem(50);
+  }
+  .advantages__icon {
+    margin: rem(20) auto;
+  }
+
+}

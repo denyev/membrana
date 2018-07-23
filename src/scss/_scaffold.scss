@@ -77,3 +77,13 @@ legend {
 .important-text {
   color: $btn-primary;
 }
+
+@media screen and (max-width: rem(576)) {
+  h2 {
+    text-align: center;
+    margin-bottom: rem(40);
+  }
+  h3 {
+    text-align: center;
+  }
+}

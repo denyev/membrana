@@ -42,3 +42,18 @@
 .about__img {
   width: 100%;
 }
+
+@media screen and (max-width: rem(768)) {
+  .about__content {
+    flex-direction: column;
+  }
+
+  .about__descr {
+    margin-bottom: rem(70);
+  }
+}
+@media screen and (max-width: rem(576)) {
+  .about__descr {
+    flex: 0 0 100%;
+  }
+}
