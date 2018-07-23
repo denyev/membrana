@@ -104,11 +104,11 @@ function preventDefaultForElementList(elementList) {
     },
     callbacks: {
       open: function () {
-        var current = $carousel.slick('slickCurrentSlide');
-        $carousel.magnificPopup('goTo', current);
+        var current = $('.carousel').slick('slickCurrentSlide');
+        $('.carousel').magnificPopup('goTo', current);
       },
       beforeClose: function () {
-        $carousel.slick('slickGoTo', parseInt(this.index));
+        $('.carousel').slick('slickGoTo', parseInt(this.index));
       }
     }
   });
@@ -170,7 +170,25 @@ function preventDefaultForElementList(elementList) {
     fade: false,
     draggable: false,
     prevArrow: '<i class="reviews__arrow reviews__arrow--left"></i>',
-    nextArrow: '<i class="reviews__arrow reviews__arrow--right"></i>'
+    nextArrow: '<i class="reviews__arrow reviews__arrow--right"></i>',
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true
+        }
+      }
+    ]
   }).magnificPopup({
     type: 'image',
     delegate: 'a:not(.slick-cloned)',
@@ -179,14 +197,16 @@ function preventDefaultForElementList(elementList) {
     },
     callbacks: {
       open: function () {
-        var current = $carousel.slick('slickCurrentSlide');
-        $carousel.magnificPopup('goTo', current);
+        var current = $('.reviews__list').slick('slickCurrentSlide');
+        $('.reviews__list').magnificPopup('goTo', current);
       },
       beforeClose: function () {
-        $carousel.slick('slickGoTo', parseInt(this.index));
+        $('.reviews__list').slick('slickGoTo', parseInt(this.index));
       }
     }
   });
+
+  $('.reviews__img-wrap').matchHeight();
 
 // /.reviews__list
 
