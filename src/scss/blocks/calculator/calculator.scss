@@ -75,3 +75,24 @@
 .calculator-request__btn {
   max-width: rem(111);
 }
+
+@media screen and (max-width: rem(768)) {
+  .calculator-request__column {
+    flex-direction: column;
+    &--left,
+    &--center,
+    &--right {
+      flex-basis: 100%;
+    }
+  }
+  .calculator-request__group {
+    .calculator-request__item {
+      flex-direction: column;
+      margin-bottom: rem(33);
+      &:nth-child(1),
+      &:nth-child(2) {
+        flex-basis: 100%;
+      }
+    }
+  }
+}
