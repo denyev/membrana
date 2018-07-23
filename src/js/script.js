@@ -329,7 +329,7 @@ function preventDefaultForElementList(elementList) {
 
 //  /scroll
 
-//  Go to a calculator for the mobile menu
+//  A link handler for the mobile menu
 
   $('.main-nav__link, .main-nav__btn a, .menu__link').on('click', function () {
     $('.page-header__checkbox').prop('checked', false);
