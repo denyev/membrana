@@ -137,7 +137,25 @@ function preventDefaultForElementList(elementList) {
     fade: false,
     dots: true,
     arrows: false,
-    dotsClass: 'team-carousel__dots'
+    dotsClass: 'team-carousel__dots',
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   });
 
 // /.team-carousel

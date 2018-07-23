@@ -19,7 +19,7 @@ let critical = require('critical');
 let realFavicon = require('gulp-real-favicon');
 let fs = require('fs');
 let htmlminify = require('gulp-htmlmin');
-let mqpacker = require('css-mqpacker');
+let mq = require('gulp-group-css-media-queries');
 let sourcemaps = require('gulp-sourcemaps');
 let gsgc = require('gulp-sass-generate-contents');
 let debug = require('gulp-debug');
@@ -151,9 +151,9 @@ let cnf = {
 
 gulp.task('clean:all', function (done) {
   run(
-    'clean:assets',
-    'clean:build',
-    done
+      'clean:assets',
+      'clean:build',
+      done
   );
 });
 
@@ -177,11 +177,11 @@ gulp.task('copy:all', function (done) {
   ], {
     base: cnf.src.path
   })
-    .pipe(plumber())
-    .pipe(debug({
-      minimal: 'false'
-    }))
-    .pipe(gulp.dest(cnf.build.path));
+      .pipe(plumber())
+      .pipe(debug({
+        minimal: 'false'
+      }))
+      .pipe(gulp.dest(cnf.build.path));
 });
 
 gulp.task('copy:assets', function (done) {
@@ -190,11 +190,11 @@ gulp.task('copy:assets', function (done) {
   ], {
     base: cnf.src.path
   })
-    .pipe(plumber())
-    .pipe(debug({
-      minimal: 'false'
-    }))
-    .pipe(gulp.dest(cnf.src.path));
+      .pipe(plumber())
+      .pipe(debug({
+        minimal: 'false'
+      }))
+      .pipe(gulp.dest(cnf.src.path));
 });
 
 gulp.task('toc', function () {
@@ -202,87 +202,87 @@ gulp.task('toc', function () {
     cnf.src.scss,
     cnf.src.blocks
   ])
-    .pipe(plumber())
-    .pipe(debug({
-      minimal: 'false'
-    }))
-    .pipe(gsgc(cnf.src.scss, cnf.creds))
-    .pipe(gulp.dest(cnf.build.css));
+      .pipe(plumber())
+      .pipe(debug({
+        minimal: 'false'
+      }))
+      .pipe(gsgc(cnf.src.scss, cnf.creds))
+      .pipe(gulp.dest(cnf.build.css));
 });
 
 gulp.task('style', function () {
   return gulp.src(cnf.src.scss)
-    .pipe(plumber())
-    .pipe(debug({
-      minimal: 'false'
-    }))
-    .pipe(sourcemaps.init())
-    .pipe(sass({
-      includePaths: [
-        'node_modules'
-      ]
-    }).on('error', sass.logError))
-    .pipe(postcss([
-      // uncss({
-      //   html: [
-      //     cnf.src.html
-      //   ],
-      //   ignore: [
-      //     /\.js-.*/,
-      //     /\..*-js/,
-      //     '.js'
-      //   ]
-      // }),
-      postcssFixes(),
-      autoprefixer(),
-      mqpacker()
-    ]))
-    .pipe(base64(cnf.base64))
-    .pipe(webpcss())
-    .pipe(gulp.dest(cnf.build.css))
-    .pipe(minifyCss(cnf.minify.css))
-    .pipe(rename('style.min.css'))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(cnf.build.css))
-    .pipe(server.stream());
+      .pipe(plumber())
+      .pipe(debug({
+        minimal: 'false'
+      }))
+      .pipe(sourcemaps.init())
+      .pipe(sass({
+        includePaths: [
+          'node_modules'
+        ]
+      }).on('error', sass.logError))
+      .pipe(postcss([
+        // uncss({
+        //   html: [
+        //     cnf.src.html
+        //   ],
+        //   ignore: [
+        //     /\.js-.*/,
+        //     /\..*-js/,
+        //     '.js'
+        //   ]
+        // }),
+        postcssFixes(),
+        autoprefixer()
+      ]))
+      .pipe(mq())
+      .pipe(base64(cnf.base64))
+      .pipe(webpcss())
+      .pipe(gulp.dest(cnf.build.css))
+      .pipe(minifyCss(cnf.minify.css))
+      .pipe(rename('style.min.css'))
+      .pipe(sourcemaps.write('.'))
+      .pipe(gulp.dest(cnf.build.css))
+      .pipe(server.stream());
 });
 
 gulp.task('style:light', function () {
   return gulp.src(cnf.src.scss)
-    .pipe(plumber())
-    .pipe(debug({
-      minimal: 'false'
-    }))
-    .pipe(sass({
-      includePaths: [
-        'node_modules'
-      ]
-    }).on('error', sass.logError))
-    .pipe(rename('style.min.css'))
-    .pipe(gulp.dest(cnf.build.css))
-    .pipe(server.stream());
+      .pipe(plumber())
+      .pipe(debug({
+        minimal: 'false'
+      }))
+      .pipe(sass({
+        includePaths: [
+          'node_modules'
+        ]
+      }).on('error', sass.logError))
+      .pipe(rename('style.min.css'))
+      .pipe(gulp.dest(cnf.build.css))
+      .pipe(server.stream());
 });
 
 gulp.task('style:font', function () {
   return gulp.src(cnf.src.fontcss)
-    .pipe(plumber())
-    .pipe(debug({
-      minimal: 'false'
-    }))
-    .pipe(sourcemaps.init())
-    .pipe(gulp.dest(cnf.build.fontcss))
-    .pipe(minifyCss())
-    .pipe(rename({suffix: '.min'}))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(cnf.build.fontcss))
-    .pipe(server.stream());
+      .pipe(plumber())
+      .pipe(debug({
+        minimal: 'false'
+      }))
+      .pipe(sourcemaps.init())
+      .pipe(gulp.dest(cnf.build.fontcss))
+      .pipe(minifyCss())
+      .pipe(rename({suffix: '.min'}))
+      .pipe(sourcemaps.write('.'))
+      .pipe(gulp.dest(cnf.build.fontcss))
+      .pipe(server.stream());
 });
 
 gulp.task('style:all', function (done) {
   run(
-    'style:font',
-    'style',
-    done
+      'style:font',
+      'style',
+      done
   )
 });
 
@@ -310,11 +310,11 @@ gulp.task('js:browserify', function () {
   return browserify([
     cnf.src.js.ripple
   ])
-    .transform(babelify.configure({
-      presets: ["es2015"]
-    }))
-    .bundle()
-    .pipe(fs.createWriteStream(cnf.src.js.vendor));
+      .transform(babelify.configure({
+        presets: ["es2015"]
+      }))
+      .bundle()
+      .pipe(fs.createWriteStream(cnf.src.js.vendor));
 });
 
 gulp.task('js:modernizr', function (done) {
@@ -329,136 +329,136 @@ gulp.task('js:all', function () {
     cnf.src.libs.js,
     cnf.src.js.all
   ])
-    .pipe(plumber())
-    .pipe(sourcemaps.init())
-    .pipe(rigger())
-    .pipe(gulp.dest(cnf.build.js))
-    .pipe(jsImport())
-    .pipe(uglify())
-    .pipe(concat('script.js'))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(cnf.build.js))
-    .pipe(server.reload({stream: true}));
+      .pipe(plumber())
+      .pipe(sourcemaps.init())
+      .pipe(rigger())
+      .pipe(gulp.dest(cnf.build.js))
+      .pipe(jsImport())
+      .pipe(uglify())
+      .pipe(concat('script.js'))
+      .pipe(rename({suffix: '.min'}))
+      .pipe(sourcemaps.write('.'))
+      .pipe(gulp.dest(cnf.build.js))
+      .pipe(server.reload({stream: true}));
 });
 
 gulp.task('img:jpg', function () {
   return gulp.src(cnf.src.assets.img.jpg)
-    .pipe(plumber())
-    .pipe(debug({
-      minimal: 'false'
-    }))
-    .pipe(imagemin([
-      imagemin.jpegtran({progressive: true}),
-      imageminMozjpeg({
-        quality: 75
-      })
-    ]))
-    .pipe(gulp.dest(cnf.src.img.path))
-    .pipe(webp({
-      quality: 65
-    }))
-    .pipe(gulp.dest(cnf.src.img.path));
+      .pipe(plumber())
+      .pipe(debug({
+        minimal: 'false'
+      }))
+      .pipe(imagemin([
+        imagemin.jpegtran({progressive: true}),
+        imageminMozjpeg({
+          quality: 75
+        })
+      ]))
+      .pipe(gulp.dest(cnf.src.img.path))
+      .pipe(webp({
+        quality: 65
+      }))
+      .pipe(gulp.dest(cnf.src.img.path));
 
 });
 
 gulp.task('img:png', function () {
   return gulp.src(cnf.src.assets.img.png)
-    .pipe(plumber())
-    .pipe(debug({
-      minimal: 'false'
-    }))
-    .pipe(imagemin([
-      imagemin.optipng({optimizationLevel: 7})
-    ]))
-    .pipe(gulp.dest(cnf.src.img.path))
-    .pipe(webp({
-      lossless: true
-    }))
-    .pipe(gulp.dest(cnf.src.img.path));
+      .pipe(plumber())
+      .pipe(debug({
+        minimal: 'false'
+      }))
+      .pipe(imagemin([
+        imagemin.optipng({optimizationLevel: 7})
+      ]))
+      .pipe(gulp.dest(cnf.src.img.path))
+      .pipe(webp({
+        lossless: true
+      }))
+      .pipe(gulp.dest(cnf.src.img.path));
 });
 
 gulp.task('svg:sprite', function () {
   return gulp.src(cnf.src.assets.img.svg)
-    .pipe(plumber())
-    .pipe(debug({
-      minimal: 'false'
-    }))
-    .pipe(svgmin())
-    .pipe(svgstore({
-      inlineSvg: true
-    }))
-    .pipe(rename('icons.svg'))
-    .pipe(gulp.dest(cnf.src.img.path));
+      .pipe(plumber())
+      .pipe(debug({
+        minimal: 'false'
+      }))
+      .pipe(svgmin())
+      .pipe(svgstore({
+        inlineSvg: true
+      }))
+      .pipe(rename('icons.svg'))
+      .pipe(gulp.dest(cnf.src.img.path));
 });
 
 gulp.task('html', function () {
   return gulp.src(cnf.src.html)
-    .pipe(plumber())
-    .pipe(debug())
-    .pipe(typographic({
-      locale: [
-        'ru',
-        'en-US'
-      ],
-      htmlEntity: {type: 'name'},
-      addRule: {
-        name: 'common/nbsp/wrapNbspForDegreed',
-        handler: function (text) {
-          // https://regex101.com/r/LDlPg5/1/
-          return text.replace(/(\d+((\&\w+\;)?)+[Cс])/g, '<span class="nbsp">$1</span>');
-        }
-      },
-      disableRule: [
-        'common/*',
-        'ru/*'
-      ],
-      enableRule: [
-        'common/nbsp/*',
-        'common/nbsp/wrapNbspForDegreed',
-        'common/other/delBOM',
-        'common/punctuation/apostrophe',
-        'common/punctuation/quote',
-        'common/punctuation/quoteLink',
-        'common/space/afterPunctuation',
-        'common/space/beforeBracket',
-        'common/space/bracket',
-        'common/space/delBeforePercent',
-        'common/space/delBeforePunctuation',
-        'common/space/delLeadingBlanks',
-        'common/space/delRepeatN',
-        'common/space/delRepeatSpace',
-        'common/space/delTrailingBlanks',
-        'common/space/squareBracket',
-        'common/space/trimLeft',
-        'common/space/trimRight',
-        'common/symbols/cf',
-        'ru/dash/*',
-        'ru/nbsp/*',
-        'ru/number/*',
-        'ru/other/accent',
-        'ru/punctuation/*',
-        'ru/space/*',
-        'ru/symbols/NN'
-      ]
-    }))
-    .pipe(htmlhint())
-    .pipe(htmlminify({
-      collapseWhitespace: true,
-      removeComments: true
-    }))
-    .pipe(gulp.dest(cnf.build.path));
+      .pipe(plumber())
+      .pipe(debug())
+      .pipe(typographic({
+        locale: [
+          'ru',
+          'en-US'
+        ],
+        htmlEntity: {type: 'name'},
+        addRule: {
+          name: 'common/nbsp/wrapNbspForDegreed',
+          handler: function (text) {
+            // https://regex101.com/r/LDlPg5/1/
+            return text.replace(/(\d+((\&\w+\;)?)+[Cс])/g, '<span class="nbsp">$1</span>');
+          }
+        },
+        disableRule: [
+          'common/*',
+          'ru/*'
+        ],
+        enableRule: [
+          'common/nbsp/*',
+          'common/nbsp/wrapNbspForDegreed',
+          'common/other/delBOM',
+          'common/punctuation/apostrophe',
+          'common/punctuation/quote',
+          'common/punctuation/quoteLink',
+          'common/space/afterPunctuation',
+          'common/space/beforeBracket',
+          'common/space/bracket',
+          'common/space/delBeforePercent',
+          'common/space/delBeforePunctuation',
+          'common/space/delLeadingBlanks',
+          'common/space/delRepeatN',
+          'common/space/delRepeatSpace',
+          'common/space/delTrailingBlanks',
+          'common/space/squareBracket',
+          'common/space/trimLeft',
+          'common/space/trimRight',
+          'common/symbols/cf',
+          'ru/dash/*',
+          'ru/nbsp/*',
+          'ru/number/*',
+          'ru/other/accent',
+          'ru/punctuation/*',
+          'ru/space/*',
+          'ru/symbols/NN'
+        ]
+      }))
+      .pipe(htmlhint())
+      .pipe(htmlminify({
+        collapseWhitespace: true,
+        removeComments: true
+      }))
+      .pipe(gulp.dest(cnf.build.path));
 });
 
 gulp.task('htmlmin', function () {
   return gulp.src(cnf.build.html)
-    .pipe(plumber())
-    .pipe(debug())
-    .pipe(htmlminify({
-      collapseWhitespace: true,
-      removeComments: true
-    }))
-    .pipe(gulp.dest(cnf.build.path));
+      .pipe(plumber())
+      .pipe(debug())
+      .pipe(htmlminify({
+        collapseWhitespace: true,
+        removeComments: true
+      }))
+      .pipe(gulp.dest(cnf.build.path));
 });
 
 gulp.task('server', function () {
@@ -471,64 +471,64 @@ gulp.task('server', function () {
   });
 
   gulp.watch(
-    cnf.watch.src.css,
-    ['style:all']
+      cnf.watch.src.css,
+      ['style:all']
   );
 
   gulp.watch(
-    cnf.watch.src.scss,
-    ['style']
+      cnf.watch.src.scss,
+      ['style']
   );
 
   gulp.watch(cnf.watch.dist.css)
-    .on('change', server.reload);
+      .on('change', server.reload);
 
   gulp.watch(
-    cnf.watch.src.js,
-    ['js:all']
+      cnf.watch.src.js,
+      ['js:all']
   );
 
   gulp.watch(cnf.watch.dist.js)
-    .on('change', server.reload);
+      .on('change', server.reload);
 
   gulp.watch(
-    cnf.watch.src.html,
-    [
-      // 'htmlmin',
-      'html'
-    ]
+      cnf.watch.src.html,
+      [
+        // 'htmlmin',
+        'html'
+      ]
   );
 
   gulp.watch(cnf.watch.dist.html)
-    .on('change', server.reload);
+      .on('change', server.reload);
 });
 
 gulp.task('build:light', function (done) {
   run(
-    'clean:build',
-    'copy:assets',
-    'copy:all',
-    'style:font',
-    'style:light',
-    'js:all',
-    'html',
-    'server',
-    done
+      'clean:build',
+      'copy:assets',
+      'copy:all',
+      'style:font',
+      'style:light',
+      'js:all',
+      'html',
+      'server',
+      done
   );
 });
 
 gulp.task('build', function (done) {
   run(
-    'clean:build',
-    'img:jpg',
-    'img:png',
-    'svg:sprite',
-    'copy:all',
-    'style:all',
-    'js:modernizr',
-    'js:all',
-    'html',
-    'server',
-    done
+      'clean:build',
+      'img:jpg',
+      'img:png',
+      'svg:sprite',
+      'copy:all',
+      'style:all',
+      'js:modernizr',
+      'js:all',
+      'html',
+      'server',
+      done
   );
 });

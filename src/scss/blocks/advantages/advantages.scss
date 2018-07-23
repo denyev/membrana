@@ -56,6 +56,13 @@
 }
 
 @media screen and (max-width: rem(576)) {
+  .advantages__list {
+    .advantages__item {
+      margin: 0 auto;
+      flex-basis: 100%;
+      padding: rem(16);
+    }
+  }
   .advantages__content {
     flex-direction: column;
   }
@@ -64,6 +71,9 @@
   }
   .advantages__icon {
     margin: rem(20) auto;
+  }
+  .advantages__text {
+    margin: 0;
   }
 
 }

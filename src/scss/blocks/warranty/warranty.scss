@@ -29,6 +29,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  padding-left: rem(220);
   &::after {
     content: "";
     display: block;
@@ -45,6 +46,11 @@
 .warranty__content {
   max-width: 67.465%;
   font-family: $title-font-family;
+  text-align: left;
+  margin-left: 0;
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
 }
 
 .warranty__widget {
@@ -71,11 +77,47 @@
   height: 100%;
   align-items: center;
   font-family: $title-font-family;
-  @include fluid-type($min-value: rem(12), $max-value: rem(19))
+  @include fluid-type($min-value: rem(14), $max-value: rem(19))
 }
 
 .warranty__widget-text {
   &--big {
     @include fluid-type($min-value: rem(16), $max-value: rem(43));
+  }
+}
+
+@media screen and (max-width: rem(1250)) {
+  .warranty__widget {
+    background-size: calc(100% - 1vw);
+  }
+  .warranty__right {
+    padding-left: calc(25% - 5vw);
+    &::after {
+      content: none;
+    }
+  }
+  .warranty__content {
+    max-width: none;
+  }
+}
+
+@media screen and (max-width: rem(768)) {
+  .warranty__left {
+    flex-basis: 100%;
+    margin-bottom: rem(16);
+  }
+  .warranty__widget {
+    width: 70%;
+    transform: translate(70%, -140%);
+    top: 140%;
+    left: -35%;
+  }
+  .warranty__right {
+    padding: 0 rem(16);
+    margin: 0 0 rem(16) 0;
+    flex-basis: 100%;
+  }
+  .warranty__head {
+    margin-bottom: rem(32);
   }
 }
