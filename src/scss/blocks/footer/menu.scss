@@ -17,3 +17,23 @@
   height: auto;
   align-items: center;
 }
+
+@media screen and (max-width: rem(992)) {
+
+  .menu {
+    flex-direction: column;
+    flex-basis: 50%;
+    display: flex;
+
+  }
+  .menu__list {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    display: flex;
+  }
+  .menu__item {
+
+  }
+
+}
