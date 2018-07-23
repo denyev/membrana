@@ -16,6 +16,7 @@ $color-footer-gray: #c2c2c4;
 $color-label: #adadaf;
 $color-sub: #8a8b96;
 $color-gray: #010101;
+$color-menu: #232e39;
 $color-dusky: #1f2937;
 $color-dark: #000;
 $color-strong: #dc0303;
@@ -48,3 +49,11 @@ $table-cell-padding: .75rem !default;
 $table-caption-color: $color-dark !default;
 
 $label-margin-bottom: .5rem !default;
+
+$xxl: rem(1400);
+$xl: rem(1200);
+$lg: rem(1024);
+$md: rem(992);
+$sm: rem(768);
+$xs: rem(576);
+$xxs: rem(480);

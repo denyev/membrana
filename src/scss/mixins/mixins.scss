@@ -204,7 +204,9 @@
 //
 
 @mixin hover {
-  &:hover { @content; }
+  &:hover {
+    @content;
+  }
 }
 
 @mixin hover-focus {
@@ -226,6 +228,12 @@
   &:hover,
   &:focus,
   &:active {
+    @content;
+  }
+}
+
+@mixin maw($value) {
+  @media only screen and (max-width: #{$value}) {
     @content;
   }
 }

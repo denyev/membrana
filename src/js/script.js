@@ -36,15 +36,6 @@ function preventDefaultForElementList(elementList) {
 
 // preventDefaultForElementList('a.btn');
 
-document.addEventListener('change', function (event) {
-  var element = event.target;
-  if (element && element.matches('.form-element-field')) {
-    element.classList[element.value ? 'add' : 'remove']('js-hasvalue');
-  }
-});
-
-// jQuery
-
 (function ($) {
   $(document).ready(function () {
     $('input[type="tel"]').mask('+7 (000) 000-00-00');
@@ -332,13 +323,31 @@ document.addEventListener('change', function (event) {
 
 //  scroll
 
-  var scroll = new SmoothScroll('.main-nav__link, .main-nav__btn a, .menu__link',{
+  var scroll = new SmoothScroll('.main-nav__link, .main-nav__btn a, .menu__link', {
     // header: '[data-scroll-header]'
   });
 
 //  /scroll
 
+//  Go to a calculator for the mobile menu
+
+  $('.main-nav__link, .main-nav__btn a, .menu__link').on('click', function () {
+    $('.page-header__checkbox').prop('checked', false);
+  });
+
+
+
+
 
 })(jQuery);
+
+document.addEventListener('change', function (event) {
+  var element = event.target;
+  if (element && element.matches('.form-element-field')) {
+    element.classList[element.value ? 'add' : 'remove']('js-hasvalue');
+  }
+});
+
+// jQuery
 
 console.log('script.js is loaded');

@@ -19,61 +19,70 @@
 <body>
 <header class="page-header">
   <div class="page-header__wrap">
-    <div class="page-header__top">
-      <div class="page-header__logo">
-        <img src="/img/logo.jpg" alt="" class="page-header__logo-img">
-        <p></p>
+    <input type="checkbox" id="pageHeaderCheckbox" class="hidden page-header__checkbox page-header__checkbox--open"/>
+    <label for="pageHeaderCheckbox" class="page-header__menu-button">
+      <span class="page-header__menu-text hidden">Меню</span>
+      <i class="page-header__menu-icon"></i>
+      <i class="page-header__menu-icon"></i>
+      <i class="page-header__menu-icon"></i>
+    </label>
+    <div class="page-header__menu">
+      <div class="page-header__top">
+        <div class="page-header__logo">
+          <img src="/img/logo.jpg" alt="" class="page-header__logo-img">
+          <p></p>
+        </div>
+        <nav class="main-nav" data-scroll-header>
+          <div class="main-nav__wrapper">
+            <ul class="main-nav__list">
+              <li class="main-nav__item">
+                <a href="#about" class="main-nav__link" title="">О нас</a>
+              </li>
+              <li class="main-nav__item">
+                <a href="#advantages" class="main-nav__link" title="">Преимущества мембраны</a>
+              </li>
+              <li class="main-nav__item">
+                <a href="#" class="main-nav__link" title="">Акции</a>
+              </li>
+              <li class="main-nav__item">
+                <a href="#stages" class="main-nav__link" title="">Схема работы</a>
+              </li>
+              <li class="main-nav__item">
+                <a href="#reviews" class="main-nav__link" title="">Отзывы</a>
+              </li>
+              <li class="main-nav__item">
+                <a href="#feedback" class="main-nav__link" title="">Контакты</a>
+              </li>
+            </ul>
+            <ul class="main-nav__btn-list">
+              <li class="main-nav__btn">
+                <a href="#calculator" class="btn btn--flat btn--red btn--ripple">Калькулятор</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
       </div>
-      <nav class="main-nav" data-scroll-header>
-        <div class="main-nav__wrapper">
-          <ul class="main-nav__list">
-            <li class="main-nav__item">
-              <a href="#about" class="main-nav__link" title="">О нас</a>
+      <div class="requisites">
+        <div class="requisites__wrap">
+          <ul class="requisites__list">
+            <li class="requisites__item">
+              <div class="phone">
+                <a href="tel:+74955057718" class="phone__link">+7 (495) 505-77-18</a>
+              </div>
             </li>
-            <li class="main-nav__item">
-              <a href="#advantages" class="main-nav__link" title="">Преимущества мембраны</a>
+            <li class="requisites__item call">
+              <div class="call__wrap">
+                <a href="#callback" class="btn btn--link btn--slide-up btn--ripple call__btn">Заказать звонок</a>
+              </div>
             </li>
-            <li class="main-nav__item">
-              <a href="#" class="main-nav__link" title="">Акции</a>
-            </li>
-            <li class="main-nav__item">
-              <a href="#stages" class="main-nav__link" title="">Схема работы</a>
-            </li>
-            <li class="main-nav__item">
-              <a href="#reviews" class="main-nav__link" title="">Отзывы</a>
-            </li>
-            <li class="main-nav__item">
-              <a href="#feedback" class="main-nav__link" title="">Контакты</a>
-            </li>
-          </ul>
-          <ul class="main-nav__btn-list">
-            <li class="main-nav__btn">
-              <a href="#calculator" class="btn btn--flat btn--red btn--ripple">Калькулятор</a>
+            <li class="requisites__item schedule">
+              <div class="schedule__wrap">
+                <i class="schedule__icon"></i>
+                <span class="schedule__value">Пн-Пт 9:00-20:00</span>
+              </div>
             </li>
           </ul>
         </div>
-      </nav>
-    </div>
-    <div class="requisites">
-      <div class="requisites__wrap">
-        <ul class="requisites__list">
-          <li class="requisites__item">
-            <div class="phone">
-              <a href="tel:+74955057718" class="phone__link">+7 (495) 505-77-18</a>
-            </div>
-          </li>
-          <li class="requisites__item call">
-            <div class="call__wrap">
-              <a href="#callback" class="btn btn--link btn--slide-up btn--ripple call__btn">Заказать звонок</a>
-            </div>
-          </li>
-          <li class="requisites__item schedule">
-            <div class="schedule__wrap">
-              <i class="schedule__icon"></i>
-              <span class="schedule__value">Пн-Пт 9:00-20:00</span>
-            </div>
-          </li>
-        </ul>
       </div>
     </div>
     <div class="main-title">
@@ -102,7 +111,7 @@
 <main>
 
   <section>
-    <div class="about">
+    <div id="about" class="about">
       <div class="about__wrap">
         <h2>О нас</h2>
         <div class="about__content">

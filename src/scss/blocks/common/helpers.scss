@@ -19,6 +19,10 @@
   white-space: nowrap; /* 1 */
 }
 
+.hidden {
+  display: none;
+}
+
 .clearfix {
   @include clearfix();
 }

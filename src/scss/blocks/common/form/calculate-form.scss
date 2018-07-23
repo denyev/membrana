@@ -6,6 +6,7 @@
   padding: rem(30) rem(30) 0 rem(30);
   position: relative;
   box-shadow: 0 0 rem(30) rem(12) $color-shadow-dark;
+  z-index: 200;
   &--white {
 
   }
