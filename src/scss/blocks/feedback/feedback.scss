@@ -56,7 +56,36 @@ textarea.feedback__textarea {
 }
 
 .feedback__note {
-  flex: 0 0 auto;
+  flex: 1 1 auto;
   font-size: rem(12);
   margin: auto auto auto rem(19);
+}
+
+@media screen and (max-width: rem(992)) {
+  .feedback__btn {
+    flex-basis: 30%;
+  }
+}
+
+@media screen and (max-width: rem(768)) {
+  .feedback__textarea-wrap {
+    margin-bottom: rem(36);
+  }
+  .feedback__group {
+    .feedback__item {
+      flex-basis: 100%;
+      margin-top: 0;
+    }
+  }
+}
+
+@media screen and (max-width: rem(768)) {
+  .feedback__btn {
+    flex-basis: 100%;
+    margin-bottom: rem(16);
+  }
+  .feedback__note {
+    text-align: center;
+    margin: 0 auto;
+  }
 }
