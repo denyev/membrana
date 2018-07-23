@@ -125,16 +125,16 @@
     width: rem(72);
     height: rem(48);
     cursor: pointer;
-    z-index: 9999;
+    z-index: 150;
     border-radius: 50%;
     .page-header__menu-icon {
       display: block;
       float: right;
-      width: 20px;
-      height: 2px;
+      width: rem(20);
+      height: rem(2);
       background-color: $color-light;
-      border-radius: 2px;
-      margin-left: 14px;
+      border-radius: rem(2);
+      margin-left: rem(14);
       box-shadow: $color-shadow-dark 1px 1px 3px,
       $color-shadow-dark -1px -1px 3px,
       $color-shadow-dark -1px 1px 3px,

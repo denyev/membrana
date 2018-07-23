@@ -39,3 +39,9 @@ body .mfp-bg {
   opacity: 0;
   bottom: 100%;
 }
+
+@media screen and (max-width: rem(576)) {
+  .mfp-container {
+    padding: 0;
+  }
+}

@@ -1,6 +1,7 @@
 .icon-small {
   background-image: url(/img/icon-small-sprite.png);
   background-position-x: -10px;
+  background-repeat: no-repeat;
   display: block;
   width: rem(84);
   height: rem(83);
@@ -84,6 +85,7 @@
 .icon-big {
   background-image: url(/img/icon-big-sprite.png);
   background-position-x: -10px;
+  background-repeat: no-repeat;
   display: block;
   width: rem(135);
   height: rem(136);
@@ -116,6 +118,7 @@
 .icon-social {
   background-image: url(/img/icon-social-sprite.png);
   background-position-x: -10px;
+  background-repeat: no-repeat;
   display: block;
   &--insta {
     width: rem(14);

@@ -125,7 +125,7 @@ textarea.calculate__textarea {
   border: 0;
   white-space: nowrap;
   text-overflow: ellipsis;
-  @include fluid-type($min-value: rem(12),$max-value: rem(16))
+  @include fluid-type($min-value: rem(12), $max-value: rem(16))
 }
 
 .calculate__btn {
@@ -143,4 +143,50 @@ textarea.calculate__textarea {
   font-size: rem(11);
   color: $color-gray;
   line-height: 1;
+}
+
+@media screen and (max-width: rem(768)) {
+  .calculate {
+    max-width: none;
+    max-height: none;
+  }
+}
+
+@media screen and (max-width: rem(576)) {
+  .calculate {
+    width: 100%;
+    height: 100%;
+    .mfp-close {
+      width: rem(42);
+      height: rem(42);
+    }
+  }
+
+  .calculate__legend {
+    text-align: center;
+  }
+
+  .calculate__row {
+    &--inputs {
+      .calculate__item {
+        flex: 0 0 100%;
+      }
+    }
+    &--bottom {
+      .calculate__left {
+        flex: 0 0 100%;
+      }
+      .calculate__center {
+        flex: 0 0 100%;
+        margin-top: rem(10);
+      }
+      .calculate__right {
+        flex: 0 0 100%;
+      }
+    }
+  }
+
+  .calculate__btn {
+    flex-basis: 100%;
+  }
 }
