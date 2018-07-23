@@ -42,3 +42,8 @@
   text-align: center;
 }
 
+@media screen and (max-width: rem(768)) {
+  .features__item {
+    flex-basis: 100%;
+  }
+}
