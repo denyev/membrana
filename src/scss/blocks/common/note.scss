@@ -15,3 +15,11 @@
   display: inline-block;
   padding: rem(12) 0 0 rem(12);
 }
+
+@media screen and (max-width: rem(576)) {
+  .note {
+    margin-bottom: rem(30);
+    padding-bottom: rem(1);
+    @include clearfix;
+  }
+}

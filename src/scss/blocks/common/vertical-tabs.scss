@@ -183,40 +183,32 @@
     clear: both;
   }
 }
+
 .vertical-tab__head {
   cursor: pointer;
-  border-top: none;
   margin-bottom: 0;
   padding: rem(28) rem(20);
   font-family: $root-font-family;
   font-weight: $font-weight-normal;
-  border-bottom: rem(2) solid $color-silver;
-  @include fluid-type($min-value: rem(12), $max-value: rem(19));
+  border-top: rem(2) solid $color-silver;
+  font-size: rem(21);
+  &:first-of-type {
+    border-top: 0;
+  }
   &:last-of-type {
-    border-bottom: 0;
+    border-bottom: rem(2) solid $color-silver;
   }
   + &--active {
-    border-bottom: rem(2) solid transparent;
+    border-top: rem(2) solid transparent;
   }
   &--active {
     cursor: default;
-    box-shadow: -10px 0 15px 10px $color-shadow;
-    &::after {
-      content: "";
-      display: block;
-      width: 30px;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: calc(100% - 20px);
-      background-color: $color-light;
-      z-index: 10;
-    }
     + .vertical-tab__inner {
       display: block;
     }
   }
 }
+
 .vertical-tab__inner {
   zoom: 1;
   position: relative;
@@ -224,16 +216,19 @@
   min-height: 100%;
   border-left: none;
   display: none;
-  box-shadow: 0 0 12px 10px $color-shadow;
+  padding: 0 rem(16);
   @include clearfix();
 }
+
 .vertical-tab__title {
   font-family: $title-font-family;
   margin-bottom: rem(24);
 }
+
 .vertical-tab__text {
   margin-bottom: rem(24);
 }
+
 .vertical-tab__delimiter {
   clear: both;
   @include clearfix;
@@ -244,12 +239,30 @@
   margin-bottom: rem(5);
 }
 
-@media screen and (min-width: rem(600)) {
+@media screen and (min-width: rem(768)) {
   .vertical-tab__head {
     position: relative;
     width: 19.3321616872%;
     height: 20%;
     display: block;
+    font-size: rem(19);
+    &--active {
+      box-shadow: -10px 0 15px 10px $color-shadow;
+      &::after {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: calc(100% - 20px);
+        background-color: $color-light;
+        z-index: 10;
+      }
+      + .vertical-tab__inner {
+        display: block;
+      }
+    }
   }
 
   .vertical-tab__inner {
@@ -257,7 +270,7 @@
     width: 80.6678383128%;
     right: 0;
     top: 0;
-    //padding: rem(30);
+    box-shadow: 0 0 12px 10px $color-shadow;
   }
 
   .vertical-tab__slider {
@@ -278,4 +291,15 @@
   }
 }
 
+@media screen and (max-width: rem(992)) {
+  .vertical-tab__slider {
+    float: none;
+    width: auto;
+  }
+  .vertical-tab__content {
+    float: none;
+    width: auto;
+    @include clearfix;
+  }
+}
 
