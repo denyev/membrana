@@ -19,3 +19,13 @@
   color: $color-light;
   padding-top: rem(12);
 }
+
+@media screen and (max-width: rem(768)) {
+  .price-request__list {
+    .price-request__item {
+      flex-basis: 100%;
+      margin: rem(16) auto;
+      padding-left: rem(16);
+    }
+  }
+}
