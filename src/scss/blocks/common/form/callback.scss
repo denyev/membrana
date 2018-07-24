@@ -72,3 +72,29 @@
   color: $color-gray;
   line-height: 1;
 }
+
+@media screen and (max-width: rem(768)) {
+  .callback {
+    max-height: none;
+    height: auto;
+  }
+  .callback__row {
+    flex-direction: column;
+    flex-basis: 100%;
+    width: 100%;
+    max-width: 100%;
+    &--inputs {
+      .callback__item {
+        flex-basis: 100%;
+      }
+    }
+    &--bottom {
+      .callback__left {
+        flex-basis: 100%;
+      }
+      .callback__right {
+        flex-basis: 100%
+      }
+    }
+  }
+}

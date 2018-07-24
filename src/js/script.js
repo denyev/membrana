@@ -122,8 +122,8 @@ function preventDefaultForElementList(elementList) {
     asNavFor: '.carousel',
     arrows: false,
     dots: false,
-    centerMode: true,
-    focusOnSelect: true
+    // centerMode: true,
+    // focusOnSelect: true
   });
 
 // /.carousel
