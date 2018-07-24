@@ -60,6 +60,10 @@ function preventDefaultForElementList(elementList) {
         'height': 'auto'
       });
     }
+
+    $('.carousel').slick('setPosition');
+    $('.carousel__thumbnails').slick('setPosition');
+
   });
 
   function tabParentHeight() {
@@ -112,6 +116,8 @@ function preventDefaultForElementList(elementList) {
       }
     }
   });
+
+  $('.carousel').slick('setPosition');
 
   $('.carousel__thumbnails').slick({
     infinite: true,

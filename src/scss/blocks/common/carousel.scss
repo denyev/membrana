@@ -7,8 +7,8 @@
 }
 .carousel__thumbnails {
   .slick-slide {
-    min-width: rem(143);
-    min-height: rem(95);
+    width: rem(143);
+    height: rem(95);
     object-fit: cover;
   }
 }
