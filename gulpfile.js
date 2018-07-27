@@ -98,7 +98,7 @@ let cnf = {
       }
     },
     config: {
-      apache: 'src/.htaccess'
+      apache: 'src/.htaccess_'
     }
   },
   watch: {
