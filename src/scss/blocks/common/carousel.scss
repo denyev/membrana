@@ -1,14 +1,48 @@
 .carousel {
-  img {
+  max-width: rem(429);
+  .slick-slide img {
+    width: rem(429);
+    height: rem(285);
     object-fit: cover;
-    min-width: rem(429);
-    min-height: rem(285);
+    margin: 0;
+    padding: 0;
   }
 }
 .carousel__thumbnails {
-  .slick-slide {
+  max-width: rem(429);
+  .slick-slide img {
     width: rem(143);
     height: rem(95);
     object-fit: cover;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: rem(768)) {
+  .carousel {
+    .slick-slide img {
+      width: 100%;
+      height: rem(240);
+    }
+  }
+  .carousel__thumbnails {
+    .slick-slide img {
+      width: 100%;
+      height: rem(95);
+    }
+  }
+}
+
+@media screen and (max-width: rem(480)) {
+  .carousel {
+    .slick-slide img {
+      height: rem(140);
+    }
+  }
+  .carousel__thumbnails {
+    .slick-slide img {
+      height: rem(95);
+    }
   }
 }

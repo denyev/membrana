@@ -99,6 +99,10 @@ function preventDefaultForElementList(elementList) {
     arrows: false,
     fade: true,
     draggable: false,
+    // swipe: true,
+    // autoplay: true,
+    // autoplaySpeed: 4000,
+    // slide: 'a',
     asNavFor: '.carousel__thumbnails',
   }).magnificPopup({
     type: 'image',
@@ -124,12 +128,25 @@ function preventDefaultForElementList(elementList) {
     slidesToShow: 3,
     slidesToScroll: 1,
     fade: false,
-    draggable: true,
+    draggable: false,
+    // swipe: true,
     asNavFor: '.carousel',
     arrows: false,
     dots: false,
     // centerMode: true,
-    // focusOnSelect: true
+    focusOnSelect: true,
+    centerMode: false,
+    centerPadding: 0,
+    variableWidth: false,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      }
+    ]
   });
 
 // /.carousel
