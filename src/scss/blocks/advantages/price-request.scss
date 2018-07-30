@@ -21,6 +21,9 @@
 }
 
 @media screen and (max-width: rem(768)) {
+  .price-request {
+    margin-bottom: rem(95);
+  }
   .price-request__list {
     .price-request__item {
       flex-basis: 100%;

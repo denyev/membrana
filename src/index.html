@@ -101,7 +101,7 @@
         <div class="widget__shape"></div>
         <figure class="widget__content">
           <h2 class="widget__title">Цена монтажа <span class="widget__price">120 руб/м<sup
-              class="widget__price-index">2</sup></span></h2>
+            class="widget__price-index">2</sup></span></h2>
           <figcaption class="widget__descr">
             <div class="widget__text">
               <p>Расчет вашей кровли уже сегодня</p>
@@ -474,48 +474,71 @@
             </aside>
 
             <aside class="composition advantages__bottom-item">
-              <div class="composition__layer composition__layer--1">
-                <!--<div class="tooltip">
-                <div class="tooltip__text-wrap">
-                <span class="tooltip__text">ПВХ мембрана</span>
-                </div>
-                <div class="tooltip__icon"></div>
-                </div>-->
-                <picture>
-                  <source srcset="/img/composition/layer-1.webp" type="image/webp">
-                  <img src="/img/composition/layer-1.png" alt="" class="composition__img">
-                </picture>
-              </div>
-              <div class="composition__layer composition__layer--2">
-                <picture>
-                  <source srcset="/img/composition/layer-2.webp" type="image/webp">
-                  <img src="/img/composition/layer-2.png" alt="" class="composition__img">
-                </picture>
-              </div>
-              <div class="composition__layer composition__layer--3">
-                <picture>
-                  <source srcset="/img/composition/layer-3.webp" type="image/webp">
-                  <img src="/img/composition/layer-3.png" alt="" class="composition__img">
-                </picture>
-              </div>
-              <div class="composition__layer composition__layer--4">
-                <picture>
-                  <source srcset="/img/composition/layer-4.webp" type="image/webp">
-                  <img src="/img/composition/layer-4.png" alt="" class="composition__img">
-                </picture>
-              </div>
-              <div class="composition__layer composition__layer--5">
-                <picture>
-                  <source srcset="/img/composition/layer-5.webp" type="image/webp">
-                  <img src="/img/composition/layer-5.png" alt="" class="composition__img">
-                </picture>
-              </div>
-              <div class="composition__layer composition__layer--6">
-                <picture>
-                  <source srcset="/img/composition/layer-6.webp" type="image/webp">
-                  <img src="/img/composition/layer-6.png" alt="" class="composition__img">
-                </picture>
-              </div>
+              <form action="#">
+                <fieldset>
+                  <label class="composition__label">
+                    <input class="composition__radio" name="layer" type="radio">
+                    <div class="composition__layer composition__layer--1">
+                      <!--<div class="tooltip">
+                      <div class="tooltip__text-wrap">
+                      <span class="tooltip__text">ПВХ мембрана</span>
+                      </div>
+                      <div class="tooltip__icon"></div>
+                      </div>-->
+                      <picture>
+                        <source srcset="/img/composition/layer-1.webp" type="image/webp">
+                        <img src="/img/composition/layer-1.png" alt="" class="composition__img">
+                      </picture>
+                    </div>
+                  </label>
+                  <label class="composition__label">
+                    <input class="composition__radio" name="layer" type="radio">
+                    <div class="composition__layer composition__layer--2">
+                      <picture>
+                        <source srcset="/img/composition/layer-2.webp" type="image/webp">
+                        <img src="/img/composition/layer-2.png" alt="" class="composition__img">
+                      </picture>
+                    </div>
+                  </label>
+                  <label class="composition__label">
+                    <input class="composition__radio" name="layer" type="radio">
+                    <div class="composition__layer composition__layer--3">
+                      <picture>
+                        <source srcset="/img/composition/layer-3.webp" type="image/webp">
+                        <img src="/img/composition/layer-3.png" alt="" class="composition__img">
+                      </picture>
+                    </div>
+                  </label>
+                  <label class="composition__label">
+                    <input class="composition__radio" name="layer" type="radio">
+                    <div class="composition__layer composition__layer--4">
+                      <picture>
+                        <source srcset="/img/composition/layer-4.webp" type="image/webp">
+                        <img src="/img/composition/layer-4.png" alt="" class="composition__img">
+                      </picture>
+                    </div>
+                  </label>
+                  <label class="composition__label">
+                    <input class="composition__radio" name="layer" type="radio">
+                    <div class="composition__layer composition__layer--5">
+                      <picture>
+                        <source srcset="/img/composition/layer-5.webp" type="image/webp">
+                        <img src="/img/composition/layer-5.png" alt="" class="composition__img">
+                      </picture>
+                    </div>
+                  </label>
+                  <label class="composition__label">
+                    <input class="composition__radio" name="layer" type="radio">
+                    <div class="composition__layer composition__layer--6">
+                      <picture>
+                        <source srcset="/img/composition/layer-6.webp" type="image/webp">
+                        <img src="/img/composition/layer-6.png" alt="" class="composition__img">
+                      </picture>
+                    </div>
+                  </label>
+                </fieldset>
+
+              </form>
             </aside>
           </div>
         </div>
@@ -1132,16 +1155,16 @@
           <div class="feedback__list">
             <div class="feedback__item form-element form-input feedback__textarea-wrap">
                 <textarea
-                    class="form-element-field feedback__textarea"
-                    name="feedback-message"
-                    id="feedback-message"
-                    cols="30"
-                    rows="1"
-                    placeholder="&nbsp;"></textarea>
+                  class="form-element-field feedback__textarea"
+                  name="feedback-message"
+                  id="feedback-message"
+                  cols="30"
+                  rows="1"
+                  placeholder="&nbsp;"></textarea>
               <div class="form-element-bar"></div>
               <label
-                  class="form-element-label"
-                  for="feedback-message">Задайте ваш вопрос</label>
+                class="form-element-label"
+                for="feedback-message">Задайте ваш вопрос</label>
             </div>
 
             <div class="feedback__group">
@@ -1153,8 +1176,8 @@
                        placeholder="&nbsp;">
                 <div class="form-element-bar"></div>
                 <label
-                    class="form-element-label"
-                    for="feedback-name">Имя</label>
+                  class="form-element-label"
+                  for="feedback-name">Имя</label>
               </div>
 
               <div class="feedback__item form-element form-input">
@@ -1164,8 +1187,8 @@
                        placeholder="user@example.com">
                 <div class="form-element-bar"></div>
                 <label
-                    class="form-element-label"
-                    for="feedback-email">Почта</label>
+                  class="form-element-label"
+                  for="feedback-email">Почта</label>
               </div>
 
               <div class="feedback__item form-element form-input">
@@ -1298,7 +1321,7 @@
 </aside>
 
 <aside id="calculate" class="calculate mfp-hide">
-  <form id="calculateForm" action="#" method="post" class="calculate__form">
+  <form id="calculateForm" action="#" method="post" class="calculate__form form__form">
     <fieldset class="form-fieldset">
 
       <legend class="calculate__legend">Рассчитать стоимость кровли</legend>
@@ -1329,16 +1352,16 @@
 
       <div class="calculate__item form-element form-input calculate__textarea-wrap">
                 <textarea
-                    class="form-element-field calculate__textarea"
-                    name="calculate-message"
-                    id="calculateMessage"
-                    cols="30"
-                    rows="1"
-                    placeholder="&nbsp;"></textarea>
+                  class="form-element-field calculate__textarea"
+                  name="calculate-message"
+                  id="calculateMessage"
+                  cols="30"
+                  rows="1"
+                  placeholder="&nbsp;"></textarea>
         <div class="form-element-bar"></div>
         <label
-            class="form-element-label"
-            for="calculateMessage">Дополнительная информация</label>
+          class="form-element-label"
+          for="calculateMessage">Дополнительная информация</label>
       </div>
 
     </fieldset>
@@ -1351,7 +1374,7 @@
         <input type="text" id="calculateFilename" class="calculate__filename" disabled>
       </div>
       <div class="calculate__center calculate__send">
-        <a class="btn btn--flat btn--red btn--ripple calculate__btn ">Рассчитать</a>
+        <a class="btn btn--flat btn--red btn--ripple calculate__btn btn-submit">Рассчитать</a>
       </div>
       <div class="calculate__right">
         <small class="calculate__note">Нажимая кнопку “Рассчитать”, вы даете согласие на обработку персональных

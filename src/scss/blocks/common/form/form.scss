@@ -407,6 +407,7 @@
   transform-origin: left center;
   transition: transform 0.28s ease, color 0.28s linear, opacity 0.28s linear;
   will-change: transform, color, opacity;
+  user-select: none;
 }
 
 .form-element-field {
@@ -424,6 +425,7 @@
   opacity: 0.001;
   transition: opacity 0.28s ease;
   will-change: opacity;
+  user-select: none;
   &:-ms-input-placeholder,
   &::placeholder {
     color: currentColor;

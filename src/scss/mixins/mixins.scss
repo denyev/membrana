@@ -27,6 +27,11 @@
     &::after {
       width: 100%;
     }
+    @media (hover: none) {
+      &::after {
+        width: 0;
+      }
+    }
   }
   &::after {
     content: "";

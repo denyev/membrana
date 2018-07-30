@@ -19,7 +19,12 @@ body {
 body {
   font-family: $root-font-family;
   @include fluid-type();
+  -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
 }
 
 h1 {

@@ -1,41 +1,86 @@
 .composition {
   position: relative;
-  height: rem(316);
+  height:rem(316);
   float: right;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  &:hover {
+    .composition__layer {
+      opacity: 0.2;
+    }
+  }
+  .composition__layer {
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.composition__label {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.composition__radio {
+  font-size: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
 }
 
 .composition__layer {
-  position: relative;
-  margin-bottom: -13%;
-  margin-top: -13%;
-  height: 181px;
-  transform: translateY(-8%);
+  position: absolute;
+  height: auto;
+  transform: translateY(-20%);
   transition: 0.4s ease-in-out;
   &--1 {
-
+    top: rem(-10);
     z-index: 60;
   }
   &--2 {
-    top: -3%;
+    top: rem(25);
     z-index: 50;
   }
   &--3 {
-    top: -6%;
+    top: rem(60);
     z-index: 40;
   }
   &--4 {
-    top: -4%;
+    top: rem(90);
     z-index: 30;
   }
   &--5 {
-
+    top: rem(150);
     z-index: 20;
   }
   &--6 {
-    top: -10%;
+    top: rem(170);
+  }
+  .composition:hover & {
+    &--1 {
+      top: -20%;
+    }
+    &--2 {
+      top: -10%;
+      z-index: 70;
+    }
+    &--3 {
+      top: 10%;
+      z-index: 60;
+    }
+    &--4 {
+      top: 20%;
+      z-index: 50;
+    }
+    &--5 {
+      top: 45%;
+      z-index: 40;
+    }
+    &--6 {
+      z-index: 30;
+    }
   }
 }
 
@@ -43,5 +88,12 @@
   float: right;
 }
 
+@media (hover: none) {
+  input[type="radio"]:checked {
+    + .composition__layer {
+      opacity: 1;
+    }
+  }
+}
 
 

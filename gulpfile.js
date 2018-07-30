@@ -66,6 +66,9 @@ let cnf = {
       all: 'src/libs/**/*',
       js: 'src/libs/**/*.js'
     },
+    php: {
+      all: 'src/**/*.php'
+    },
     js: {
       path: 'src/js/',
       all: 'src/js/**/*.js',
@@ -168,6 +171,7 @@ gulp.task('clean:assets', function () {
 gulp.task('copy:all', function (done) {
   return gulp.src([
     cnf.src.html,
+    cnf.src.php.all,
     cnf.src.fonts,
     cnf.src.css,
     cnf.src.libs.all,

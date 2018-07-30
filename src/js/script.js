@@ -284,7 +284,7 @@ function preventDefaultForElementList(elementList) {
       errorSubmit: "Ошибка отправки формы!",
       errorNocaptcha: "Вы не заполнили каптчу",
       errorCaptcha: "Вы не прошли проверку каптчи",
-      mailUrl: "../submit.php",
+      mailUrl: "../send.php",
       autoClose: false,
       autoCloseDelay: 5000
     }, options);
@@ -368,7 +368,7 @@ function preventDefaultForElementList(elementList) {
     successText: "Наш сотрудник свяжется с Вами в самое ближайшее время.",
     autoClose: true,
     autoCloseDelay: 3000,
-    mailUrl: "submit.php"
+    mailUrl: "../send.php"
   });
 
 // /#callbackForm
@@ -394,7 +394,7 @@ function preventDefaultForElementList(elementList) {
     successText: "Наш сотрудник свяжется с Вами в самое ближайшее время.",
     autoClose: true,
     autoCloseDelay: 3000,
-    mailUrl: "submit.php"
+    mailUrl: "../send.php"
   });
 
 // /#calculateForm
@@ -418,10 +418,9 @@ function preventDefaultForElementList(elementList) {
 
 //  A link handler for the mobile menu
 
-  $('.main-nav__link, .main-nav__btn a, .menu__link').on('click', function () {
+  $('.main-nav__link, .main-nav__btn a, .menu__link').on('click touchend touchstart', function () {
     $('.page-header__checkbox').prop('checked', false);
   });
-
 
 
 
