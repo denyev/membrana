@@ -26,6 +26,11 @@ if (isset($_POST["message"])) {
 if (isset($_POST["title"])) {
     $title = htmlentities(trim($_POST['title']), ENT_QUOTES);
 }
+if ( $_FILES["file"]["name"] != "" ) {
+    $attachment = chunk_split(base64_encode(file_get_contents($_FILES["file"]["tmp_name"])));
+    $filename = $_FILES["file"]["name"];
+    $boundary = md5(date('r', time()));
+}
 
 // ===== Variables =====
 $to = "spamcheck@strogov.ru"; // E-mail на который присылать письмо
@@ -41,7 +46,7 @@ function adopt($text)
 
 $message = '<html><body>';
 $message .= "<table>";
-if ( !empty($name) ) {
+if (!empty($name)) {
     $message .= "<tr>";
     $message .= "<td>";
     $message .= "<strong> Имя: </strong>";
@@ -51,7 +56,7 @@ if ( !empty($name) ) {
     $message .= "</td>";
     $message .= "</tr>";
 }
-if ( !empty($email) && ($email != $fromEmail) ) {
+if (!empty($email) && ($email != $fromEmail)) {
     $message .= "<tr>";
     $message .= "<td>";
     $message .= "<strong> E-mail: </strong>";
@@ -61,7 +66,7 @@ if ( !empty($email) && ($email != $fromEmail) ) {
     $message .= "</td>";
     $message .= "</tr>";
 }
-if ( !empty($phone) ) {
+if (!empty($phone)) {
     $message .= "<tr>";
     $message .= "<td>";
     $message .= "<strong> Телефон: </strong>";
@@ -71,7 +76,7 @@ if ( !empty($phone) ) {
     $message .= "</td>";
     $message .= "</tr>";
 }
-if ( !empty($text) ) {
+if (!empty($text)) {
     $message .= "<tr>";
     $message .= "<td>";
     $message .= "<strong> Сообщение: </strong>";
@@ -83,11 +88,21 @@ if ( !empty($text) ) {
 }
 
 $message .= "</table><br><br>";
+
+if ($_FILES["file"]["name"] != "") {
+    $message .= "$attachment
+--_1_$boundary--";
+}
+
 $message .= '</body></html>';
 $headers = "MIME-Version: 1.0" . PHP_EOL .
     "Content-Type: text/html; charset=utf-8" . PHP_EOL .
     'From: ' . adopt($name) . ' <' . $fromEmail . '>' . PHP_EOL .
     'Reply-To: ' . adopt($name) . ' <' . $email . '> ' . PHP_EOL;
+
+if ($_FILES["file"]["name"] != "") {
+    $headers .= "\r\nMIME-Version: 1.0\r\nContent-Type: multipart/mixed; boundary=\"_1_$boundary\"";
+}
 
 mail($to, adopt($subject), $message, $headers);
 

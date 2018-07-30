@@ -351,11 +351,11 @@ function preventDefaultForElementList(elementList) {
 
   $('form').submit(function (e) {
     e.preventDefault();
-    var data = $(this).serialize(),
-        btn = $(this).find('[type="submit"]'),
-        btnClose = $('form + .mfp-close');
-    btn.val('Загрузка...');
+    var data = $(this).serialize();
+    var btn = $(this).find('[type="submit"]');
+    var btnClose = $('form + .mfp-close');
     // btn.prop('disabled', true);
+    btn.val('Загрузка...');
     $.ajax({
       type: 'POST',
       url: '../send.php',

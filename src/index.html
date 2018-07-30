@@ -1380,13 +1380,20 @@
 </aside>
 
 <aside id="calculate" class="calculate mfp-hide">
-  <form id="calculateForm" action="#" method="post" class="calculate__form form__form">
+  <form id="calculateForm"
+        action="#"
+        method="post"
+        enctype="multipart/form-data"
+        class="calculate__form form__form">
     <fieldset class="form-fieldset">
 
       <legend class="calculate__legend">Рассчитать стоимость кровли</legend>
 
       <div class="calculate__item form-element form-input">
-        <input id="calculateName" type="text" class="form-element-field"
+        <input id="calculateName"
+               name="name"
+               type="text"
+               class="form-element-field"
                placeholder="Введите Ваше имя">
         <div class="form-element-bar"></div>
         <label class="form-element-label" for="calculateName">Имя</label>
@@ -1394,14 +1401,20 @@
 
       <div class="calculate__row calculate__row--inputs">
         <div class="calculate__item form-element form-input">
-          <input id="calculateEmail" type="text" class="form-element-field"
+          <input id="calculateEmail"
+                 name="email"
+                 type="text"
+                 class="form-element-field"
                  placeholder="user@example.com">
           <div class="form-element-bar"></div>
           <label class="form-element-label" for="calculateEmail">Почта</label>
         </div>
 
         <div class="calculate__item form-element form-input">
-          <input id="calculatePhone" type="tel" class="form-element-field"
+          <input id="calculatePhone"
+                 name="phone"
+                 type="tel"
+                 class="form-element-field"
                  placeholder="+7 (___)___-__-__"
                  required>
           <div class="form-element-bar"></div>
@@ -1412,7 +1425,7 @@
       <div class="calculate__item form-element form-input calculate__textarea-wrap">
                 <textarea
                     class="form-element-field calculate__textarea"
-                    name="calculate-message"
+                    name="message"
                     id="calculateMessage"
                     cols="30"
                     rows="1"
@@ -1422,25 +1435,30 @@
             class="form-element-label"
             for="calculateMessage">Дополнительная информация</label>
       </div>
+      <input type="hidden"
+             name="title"
+             value="Рассчитать стоимость кровли">
 
-    </fieldset>
-    <div class="calculate__row calculate__row--bottom">
-      <div class="calculate__left">
-        <div class="form-element form-input calculate__file btn btn--flat btn--red btn--ripple">
-          <input type="file" id="calculateFile" name="calculateFile" multiple="multiple">
-          <label for="calculateFile" class="form-element-label">Прикрепить файл</label>
+      <div class="calculate__row calculate__row--bottom">
+        <div class="calculate__left">
+          <div class="form-element form-input calculate__file btn btn--flat btn--red btn--ripple">
+            <input type="file"
+                   name="file"
+                   id="calculateFile">
+            <label for="calculateFile" class="form-element-label">Прикрепить файл</label>
+          </div>
+          <input type="text" id="calculateFilename" class="calculate__filename" disabled>
         </div>
-        <input type="text" id="calculateFilename" class="calculate__filename" disabled>
+        <div class="calculate__center calculate__send">
+          <button class="btn btn--flat btn--red btn--ripple calculate__btn btn-submit" type="submit">Рассчитать</button>
+        </div>
+        <div class="calculate__right">
+          <small class="calculate__note">Нажимая кнопку “Рассчитать”, вы даете согласие на обработку персональных
+            данных
+          </small>
+        </div>
       </div>
-      <div class="calculate__center calculate__send">
-        <a class="btn btn--flat btn--red btn--ripple calculate__btn btn-submit">Рассчитать</a>
-      </div>
-      <div class="calculate__right">
-        <small class="calculate__note">Нажимая кнопку “Рассчитать”, вы даете согласие на обработку персональных
-          данных
-        </small>
-      </div>
-    </div>
+    </fieldset>
   </form>
 </aside>
 
