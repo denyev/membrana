@@ -276,6 +276,7 @@ function preventDefaultForElementList(elementList) {
 
 // Ajax Submit Form
 
+/*
   jQuery.fn.sendForm = function (options) {
     options = $.extend({
       successTitle: "Спасибо, что выбрали нас!",
@@ -316,9 +317,9 @@ function preventDefaultForElementList(elementList) {
               $this.find('.btn-submit').parents('.form__form').removeClass('sending');
               $this.find('.form__hide-success').after('<div class="form__sys-message"></div>');
               $this.find('.form__sys-message').html('<div class="form__success-title">'
-                + options.successTitle
-                + '</div><p class = "form__success-text" >'
-                + options.successText + '</p>');
+                  + options.successTitle
+                  + '</div><p class = "form__success-text" >'
+                  + options.successText + '</p>');
               setTimeout(function () {
                 $this.find('.form__sys-message').fadeOut().delay(3000).remove();
                 if (options.autoClose) {
@@ -344,6 +345,44 @@ function preventDefaultForElementList(elementList) {
 
     return this.each(make);
   };
+*/
+
+//
+
+  $('form').submit(function (e) {
+    e.preventDefault();
+    var data = $(this).serialize(),
+        btn = $(this).find('[type="submit"]'),
+        btnClose = $('form + .mfp-close');
+    btn.val('Загрузка...');
+    // btn.prop('disabled', true);
+    $.ajax({
+      type: 'POST',
+      url: '../send.php',
+      data: data,
+      success: function (data) {
+        swal({
+          type: 'success',
+          title: 'Заявка отправлена.',
+          text: 'Спасибо за обращение!'
+        });
+        btn.val('Отправлено');
+        // btn.prop('disabled', true);
+        setTimeout(function () {
+          btnClose.click();
+        }, 2000);
+      },
+      error: function (data) {
+        swal({
+          type: 'error',
+          title: 'Оправка не удалась!',
+          text: 'Что-то пошло не так :-('
+        });
+        btn.val('Повторить отправку');
+        btn.prop('disabled', false);
+      }
+    });
+  });
 
 // /Ajax Submit Form
 
@@ -363,13 +402,13 @@ function preventDefaultForElementList(elementList) {
     closeMarkup: '<button title="%title%" type="button" class="mfp-close">&#215;</button>'
   });
 
-  $('#callbackForm').sendForm({
-    successTitle: "Ваша заявка принята!",
-    successText: "Наш сотрудник свяжется с Вами в самое ближайшее время.",
-    autoClose: true,
-    autoCloseDelay: 3000,
-    mailUrl: "../send.php"
-  });
+  // $('#callbackForm').sendForm({
+  //   successTitle: "Ваша заявка принята!",
+  //   successText: "Наш сотрудник свяжется с Вами в самое ближайшее время.",
+  //   autoClose: true,
+  //   autoCloseDelay: 3000,
+  //   mailUrl: "../send.php"
+  // });
 
 // /#callbackForm
 
@@ -389,13 +428,13 @@ function preventDefaultForElementList(elementList) {
     closeMarkup: '<button title="%title%" type="button" class="mfp-close">&#215;</button>'
   });
 
-  $('#calculateForm').sendForm({
-    successTitle: "Ваша заявка принята!",
-    successText: "Наш сотрудник свяжется с Вами в самое ближайшее время.",
-    autoClose: true,
-    autoCloseDelay: 3000,
-    mailUrl: "../send.php"
-  });
+  // $('#calculateForm').sendForm({
+  //   successTitle: "Ваша заявка принята!",
+  //   successText: "Наш сотрудник свяжется с Вами в самое ближайшее время.",
+  //   autoClose: true,
+  //   autoCloseDelay: 3000,
+  //   mailUrl: "../send.php"
+  // });
 
 // /#calculateForm
 
@@ -421,8 +460,6 @@ function preventDefaultForElementList(elementList) {
   $('.main-nav__link, .main-nav__btn a, .menu__link').on('click touchend touchstart', function () {
     $('.page-header__checkbox').prop('checked', false);
   });
-
-
 
 
 })(jQuery);

@@ -101,7 +101,7 @@
         <div class="widget__shape"></div>
         <figure class="widget__content">
           <h2 class="widget__title">Цена монтажа <span class="widget__price">120 руб/м<sup
-            class="widget__price-index">2</sup></span></h2>
+              class="widget__price-index">2</sup></span></h2>
           <figcaption class="widget__descr">
             <div class="widget__text">
               <p>Расчет вашей кровли уже сегодня</p>
@@ -479,12 +479,14 @@
                   <label class="composition__label">
                     <input class="composition__radio" name="layer" type="radio">
                     <div class="composition__layer composition__layer--1">
-                      <!--<div class="tooltip">
-                      <div class="tooltip__text-wrap">
-                      <span class="tooltip__text">ПВХ мембрана</span>
+                      <div class="tooltip tooltip--1">
+                        <div class="tooltip__wrap">
+                          <div class="tooltip__icon"></div>
+                          <div class="tooltip__text-wrap">
+                            <span class="tooltip__text">ПВХ мембрана</span>
+                          </div>
+                        </div>
                       </div>
-                      <div class="tooltip__icon"></div>
-                      </div>-->
                       <picture>
                         <source srcset="/img/composition/layer-1.webp" type="image/webp">
                         <img src="/img/composition/layer-1.png" alt="" class="composition__img">
@@ -494,6 +496,22 @@
                   <label class="composition__label">
                     <input class="composition__radio" name="layer" type="radio">
                     <div class="composition__layer composition__layer--2">
+                      <div class="tooltip tooltip--2">
+                        <div class="tooltip__wrap">
+                          <div class="tooltip__icon"></div>
+                          <div class="tooltip__text-wrap">
+                            <span class="tooltip__text">Разделительный слой</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tooltip tooltip--7">
+                        <div class="tooltip__wrap">
+                          <div class="tooltip__icon"></div>
+                          <div class="tooltip__text-wrap">
+                            <span class="tooltip__text">Телескопический крепеж</span>
+                          </div>
+                        </div>
+                      </div>
                       <picture>
                         <source srcset="/img/composition/layer-2.webp" type="image/webp">
                         <img src="/img/composition/layer-2.png" alt="" class="composition__img">
@@ -503,6 +521,14 @@
                   <label class="composition__label">
                     <input class="composition__radio" name="layer" type="radio">
                     <div class="composition__layer composition__layer--3">
+                      <div class="tooltip tooltip--3">
+                        <div class="tooltip__wrap">
+                          <div class="tooltip__icon"></div>
+                          <div class="tooltip__text-wrap">
+                            <span class="tooltip__text">Верхний слой утеплителя</span>
+                          </div>
+                        </div>
+                      </div>
                       <picture>
                         <source srcset="/img/composition/layer-3.webp" type="image/webp">
                         <img src="/img/composition/layer-3.png" alt="" class="composition__img">
@@ -512,6 +538,14 @@
                   <label class="composition__label">
                     <input class="composition__radio" name="layer" type="radio">
                     <div class="composition__layer composition__layer--4">
+                      <div class="tooltip tooltip--4">
+                        <div class="tooltip__wrap">
+                          <div class="tooltip__icon"></div>
+                          <div class="tooltip__text-wrap">
+                            <span class="tooltip__text">Нижний слой утеплителя</span>
+                          </div>
+                        </div>
+                      </div>
                       <picture>
                         <source srcset="/img/composition/layer-4.webp" type="image/webp">
                         <img src="/img/composition/layer-4.png" alt="" class="composition__img">
@@ -521,6 +555,14 @@
                   <label class="composition__label">
                     <input class="composition__radio" name="layer" type="radio">
                     <div class="composition__layer composition__layer--5">
+                      <div class="tooltip tooltip--5">
+                        <div class="tooltip__wrap">
+                          <div class="tooltip__icon"></div>
+                          <div class="tooltip__text-wrap">
+                            <span class="tooltip__text">Пароизоляционный слой</span>
+                          </div>
+                        </div>
+                      </div>
                       <picture>
                         <source srcset="/img/composition/layer-5.webp" type="image/webp">
                         <img src="/img/composition/layer-5.png" alt="" class="composition__img">
@@ -530,6 +572,14 @@
                   <label class="composition__label">
                     <input class="composition__radio" name="layer" type="radio">
                     <div class="composition__layer composition__layer--6">
+                      <div class="tooltip tooltip--6">
+                        <div class="tooltip__wrap">
+                          <div class="tooltip__icon"></div>
+                          <div class="tooltip__text-wrap">
+                            <span class="tooltip__text">Основание кровли</span>
+                          </div>
+                        </div>
+                      </div>
                       <picture>
                         <source srcset="/img/composition/layer-6.webp" type="image/webp">
                         <img src="/img/composition/layer-6.png" alt="" class="composition__img">
@@ -1155,16 +1205,16 @@
           <div class="feedback__list">
             <div class="feedback__item form-element form-input feedback__textarea-wrap">
                 <textarea
-                  class="form-element-field feedback__textarea"
-                  name="feedback-message"
-                  id="feedback-message"
-                  cols="30"
-                  rows="1"
-                  placeholder="&nbsp;"></textarea>
+                    class="form-element-field feedback__textarea"
+                    name="feedback-message"
+                    id="feedback-message"
+                    cols="30"
+                    rows="1"
+                    placeholder="&nbsp;"></textarea>
               <div class="form-element-bar"></div>
               <label
-                class="form-element-label"
-                for="feedback-message">Задайте ваш вопрос</label>
+                  class="form-element-label"
+                  for="feedback-message">Задайте ваш вопрос</label>
             </div>
 
             <div class="feedback__group">
@@ -1176,8 +1226,8 @@
                        placeholder="&nbsp;">
                 <div class="form-element-bar"></div>
                 <label
-                  class="form-element-label"
-                  for="feedback-name">Имя</label>
+                    class="form-element-label"
+                    for="feedback-name">Имя</label>
               </div>
 
               <div class="feedback__item form-element form-input">
@@ -1187,8 +1237,8 @@
                        placeholder="user@example.com">
                 <div class="form-element-bar"></div>
                 <label
-                  class="form-element-label"
-                  for="feedback-email">Почта</label>
+                    class="form-element-label"
+                    for="feedback-email">Почта</label>
               </div>
 
               <div class="feedback__item form-element form-input">
@@ -1292,24 +1342,33 @@
       <legend class="callback__legend">Закажите обратный звонок</legend>
       <div class="callback__row callback__row--inputs">
         <div class="callback__item form-element form-input">
-          <input id="callbackName" type="text" class="form-element-field"
+          <input id="callbackName"
+                 name="name"
+                 type="text"
+                 class="form-element-field"
                  placeholder="Введите Ваше имя">
           <div class="form-element-bar"></div>
           <label class="form-element-label" for="callbackName">Имя</label>
         </div>
 
         <div class="callback__item form-element form-input">
-          <input id="callbackPhone" type="tel" class="form-element-field"
+          <input id="callbackPhone"
+                 name="phone"
+                 type="tel"
+                 class="form-element-field"
                  placeholder="+7 (___)___-__-__"
                  required>
           <div class="form-element-bar"></div>
           <label class="form-element-label" for="callbackPhone">Телефон<sup>*</sup></label>
         </div>
       </div>
+      <input type="hidden"
+             name="title"
+             value="Закажите обратный звонок">
     </fieldset>
     <div class="callback__row callback__row--bottom">
       <div class="callback__left callback__send">
-        <button class="btn btn--flat btn--red btn--ripple callback__btn">Заказать звонок</button>
+        <button class="btn btn--flat btn--red btn--ripple callback__btn" type="submit">Заказать звонок</button>
       </div>
       <div class="callback__right">
         <small class="callback__note">Нажимая кнопку “Заказать звонок”, вы даете согласие на обработку персональных
@@ -1352,16 +1411,16 @@
 
       <div class="calculate__item form-element form-input calculate__textarea-wrap">
                 <textarea
-                  class="form-element-field calculate__textarea"
-                  name="calculate-message"
-                  id="calculateMessage"
-                  cols="30"
-                  rows="1"
-                  placeholder="&nbsp;"></textarea>
+                    class="form-element-field calculate__textarea"
+                    name="calculate-message"
+                    id="calculateMessage"
+                    cols="30"
+                    rows="1"
+                    placeholder="&nbsp;"></textarea>
         <div class="form-element-bar"></div>
         <label
-          class="form-element-label"
-          for="calculateMessage">Дополнительная информация</label>
+            class="form-element-label"
+            for="calculateMessage">Дополнительная информация</label>
       </div>
 
     </fieldset>
@@ -1391,6 +1450,7 @@
 <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/smooth-scroll/14.2.1/smooth-scroll.min.js"></script>
+<script src="//unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="/js/script.min.js"></script>
 </body>
 </html>

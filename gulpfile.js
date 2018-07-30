@@ -108,13 +108,15 @@ let cnf = {
     dist: {
       html: 'dist/**/*.html',
       css: 'dist/css/**/*.css',
-      js: 'dist/js/**/*.js'
+      js: 'dist/js/**/*.js',
+      php: 'dist/**/*.php'
     },
     src: {
       html: 'src/**/*.html',
       scss: 'src/scss/**/*.scss',
       css: 'src/scss/**/*.css',
-      js: 'src/js/**/*.js'
+      js: 'src/js/**/*.js',
+      php: 'src/**/*.php'
     }
   },
   clean: {
@@ -199,6 +201,15 @@ gulp.task('copy:assets', function (done) {
         minimal: 'false'
       }))
       .pipe(gulp.dest(cnf.src.path));
+});
+
+gulp.task('copy:php', function (done) {
+  return gulp.src([
+    cnf.src.php.all
+  ], {
+    base: cnf.src.path
+  })
+      .pipe(gulp.dest(cnf.build.path));
 });
 
 gulp.task('toc', function () {
@@ -493,6 +504,14 @@ gulp.task('server', function () {
   );
 
   gulp.watch(cnf.watch.dist.js)
+      .on('change', server.reload);
+
+  gulp.watch(
+      cnf.watch.src.php,
+      ['copy:php']
+  );
+
+  gulp.watch(cnf.watch.dist.php)
       .on('change', server.reload);
 
   gulp.watch(
