@@ -448,27 +448,36 @@
                   <legend class="price-request__legend">Расчет цены кровли<br> уже сегодня</legend>
                   <div class="price-request__list">
                     <div class="price-request__item form-element form-input">
-                      <input id="price-request-name" type="text" class="form-element-field"
+                      <input id="price-request-name"
+                             name="name"
+                             type="text"
+                             class="form-element-field"
                              placeholder="Введите Ваше имя">
                       <div class="form-element-bar"></div>
                       <label class="form-element-label" for="price-request-name">Имя</label>
                     </div>
 
                     <div class="price-request__item form-element form-input">
-                      <input id="price-request-phone" type="tel" class="form-element-field"
+                      <input id="price-request-phone"
+                             name="phone"
+                             type="tel"
+                             class="form-element-field"
                              placeholder="+7 (___)___-__-__"
                              required>
                       <div class="form-element-bar"></div>
                       <label class="form-element-label" for="price-request-phone">Телефон</label>
                     </div>
                   </div>
+                  <input type="hidden"
+                         name="title"
+                         value="Расчет цены кровли">
                 </fieldset>
                 <small class="price-request__note">Нажимая кнопку “Заказать”, вы даете согласие на обработку
                   персональных
                   данных
                 </small>
                 <div class="price-request__send">
-                  <button class="btn btn--flat btn--red btn--ripple">Заказать звонок</button>
+                  <button class="btn btn--flat btn--red btn--ripple" type="submit">Заказать звонок</button>
                 </div>
               </form>
             </aside>
