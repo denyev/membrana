@@ -394,7 +394,7 @@ function preventDefaultForElementList(elementList) {
 
 // #callbackForm
 
-  $('.call__btn').magnificPopup({
+  $('.call__btn, .stages__btn').magnificPopup({
     type: 'inline',
     fixedContentPos: false,
     fixedBgPos: true,

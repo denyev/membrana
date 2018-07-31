@@ -75,6 +75,10 @@
   color: $color-light;
 }
 
+.stages__btn {
+  max-width: rem(200);
+}
+
 @media screen and (max-width: rem(768)) {
   .stages__head {
     margin-bottom: rem(100);
@@ -139,5 +143,8 @@
   .stages__send {
     flex-basis: 100%;
     margin: 0 auto;
+  }
+  .stages__btn {
+    max-width: none;
   }
 }
