@@ -78,6 +78,9 @@
     max-height: none;
     height: auto;
   }
+  .callback__legend {
+    padding-top: rem(42);
+  }
   .callback__row {
     flex-direction: column;
     flex-basis: 100%;
@@ -86,14 +89,17 @@
     &--inputs {
       .callback__item {
         flex-basis: 100%;
+        width: 100%;
       }
     }
     &--bottom {
       .callback__left {
         flex-basis: 100%;
+        width: 100%;
       }
       .callback__right {
-        flex-basis: 100%
+        flex-basis: 100%;
+        width: 100%;
       }
     }
   }
