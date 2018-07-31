@@ -725,12 +725,17 @@
       <div class="calculator__wrap">
         <h2 class="calculator__head">Калькулятор</h2>
         <h3 class="calculator__title">Введите параметры объекта</h3>
-        <form action="#" method="post" class="calculator-request__form">
+        <form action="#"
+              method="post"
+              class="calculator-request__form">
           <div class="calculator-request__row calculator-request__row--top">
             <fieldset class="form-fieldset calculator-request__column calculator-request__column--left">
               <div class="calculator-request__list calculator-request__group">
                 <div class="calculator-request__item form-element form-input">
-                  <input id="calculator-length" type="text" class="form-element-field form-element-field--calculator"
+                  <input id="calculator-length"
+                         name="length"
+                         type="text"
+                         class="form-element-field form-element-field--calculator"
                          placeholder="&nbsp;">
                   <div class="form-element-bar form-element-bar--calculator"></div>
                   <label class="form-element-label form-element-label--calculator" for="calculator-length">Длина,
@@ -738,12 +743,14 @@
                 </div>
 
                 <div class="calculator-request__item form-element form-input">
-                  <input id="calculator-request-wide" type="tel"
+                  <input id="calculator-request-width"
+                         name="width"
+                         type="text"
                          class="form-element-field form-element-field--calculator"
                          placeholder="&nbsp;"
                          required>
                   <div class="form-element-bar form-element-bar--calculator"></div>
-                  <label class="form-element-label form-element-label--calculator" for="calculator-request-wide">Ширина,
+                  <label class="form-element-label form-element-label--calculator" for="calculator-request-width">Ширина,
                     м</label>
                 </div>
               </div>
@@ -756,7 +763,9 @@
             <fieldset class="form-fieldset calculator-request__column calculator-request__column--right">
               <div class="calculator-request__list">
                 <div class="calculator-request__item form-element form-input">
-                  <input id="calculator-request-square" type="tel"
+                  <input id="calculator-request-square"
+                         name="square"
+                         type="text"
                          class="form-element-field form-element-field--calculator"
                          placeholder="&nbsp;"
                          required>
@@ -775,17 +784,23 @@
                   <div class="form-radio form-radio-block">
                     <h3 class="calculator__title">Основание</h3>
                     <label class="form-radio-label">
-                      <input name="base-option" class="form-radio-field" value="base-option-1" type="radio">
+                      <input name="baseOption"
+                             class="form-radio-field"
+                             value="base-option-1"
+                             type="radio">
                       <i class="form-radio-button"></i>
                       <span>Требуется укладка профнастила</span>
                     </label>
                     <label class="form-radio-label">
-                      <input name="base-option" class="form-radio-field" value="base-option-2" type="radio">
+                      <input name="baseOption"
+                             class="form-radio-field"
+                             value="base-option-2"
+                             type="radio">
                       <i class="form-radio-button"></i>
                       <span>Металлический профнастил</span>
                     </label>
                     <label class="form-radio-label">
-                      <input name="base-option" class="form-radio-field" value="base-option-3" type="radio">
+                      <input name="baseOption" class="form-radio-field" value="base-option-3" type="radio">
                       <i class="form-radio-button"></i>
                       <span>Бетонное основание</span>
                     </label>
@@ -797,12 +812,18 @@
                   <div class="form-radio form-radio-block">
                     <h3 class="calculator__title">Материалы</h3>
                     <label class="form-radio-label">
-                      <input name="stuff-option" class="form-radio-field" value="stuff-option-1" type="radio">
+                      <input name="stuffOption"
+                             class="form-radio-field"
+                             value="stuff-option-1"
+                             type="radio">
                       <i class="form-radio-button"></i>
                       <span>Требуется укладка профнастила</span>
                     </label>
                     <label class="form-radio-label">
-                      <input name="stuff-option" class="form-radio-field" value="stuff-option-2" type="radio">
+                      <input name="stuffOption"
+                             class="form-radio-field"
+                             value="stuff-option-2"
+                             type="radio">
                       <i class="form-radio-button"></i>
                       <span>Рассчитать стоимость без материалов</span>
                     </label>
@@ -817,25 +838,36 @@
               <div class="form-radio form-radio-block">
                 <h3 class="calculator__title">Тип монтажа</h3>
                 <label class="form-radio-label">
-                  <input name="mounting-option" class="form-radio-field" value="mounting-option-1" type="radio">
+                  <input name="mountingOption"
+                         class="form-radio-field"
+                         value="mounting-option-1"
+                         type="radio">
                   <i class="form-radio-button"></i>
                   <span>Монтаж мембраны</span>
                 </label>
                 <label class="form-radio-label">
-                  <input name="mounting-option" class="form-radio-field" value="mounting-option-2" type="radio">
+                  <input name="mountingOption"
+                         class="form-radio-field"
+                         value="mounting-option-2"
+                         type="radio">
                   <i class="form-radio-button"></i>
                   <span>Монтаж мембраны с утеплением</span>
                 </label>
               </div>
               <div class="calculator-request__item form-element form-input">
-                <input id="calculator-depth" type="text" class="form-element-field form-element-field--calculator"
+                <input id="calculator-depth"
+                       name="depth"
+                       type="text"
+                       class="form-element-field form-element-field--calculator"
                        placeholder="&nbsp;">
                 <div class="form-element-bar form-element-bar--calculator"></div>
                 <label class="form-element-label form-element-label--calculator" for="calculator-depth">Толщина</label>
               </div>
             </fieldset>
           </div>
-
+          <input type="hidden"
+                 name="title"
+                 value="Калькулятор">
           <div class="calculator-request__send">
             <a href="#calculate" class="btn btn--flat btn--red btn--ripple calculator-request__btn">Рассчитать</a>
           </div>
@@ -1215,7 +1247,7 @@
             <div class="feedback__item form-element form-input feedback__textarea-wrap">
                 <textarea
                     class="form-element-field feedback__textarea"
-                    name="feedback-message"
+                    name="message"
                     id="feedback-message"
                     cols="30"
                     rows="1"
@@ -1230,7 +1262,8 @@
 
               <div class="feedback__item form-element form-input">
                 <input id="feedback-name"
-                       type="tel"
+                       name="name"
+                       type="text"
                        class="form-element-field"
                        placeholder="&nbsp;">
                 <div class="form-element-bar"></div>
@@ -1241,6 +1274,7 @@
 
               <div class="feedback__item form-element form-input">
                 <input id="feedback-email"
+                       name="email"
                        type="email"
                        class="form-element-field"
                        placeholder="user@example.com">
@@ -1252,6 +1286,7 @@
 
               <div class="feedback__item form-element form-input">
                 <input id="feedback-phone"
+                       name="phone"
                        type="tel"
                        class="form-element-field"
                        placeholder="+7 (___)___-__-__"
@@ -1259,12 +1294,14 @@
                 <div class="form-element-bar"></div>
                 <label class="form-element-label" for="feedback-phone">Телефон<sup>*</sup></label>
               </div>
-
+              <input type="hidden"
+                     name="title"
+                     value="Обратная связь">
             </div>
           </div>
         </fieldset>
         <div class="feedback__send">
-          <button class="btn btn--flat btn--red btn--ripple feedback__btn">Отправить вопрос</button>
+          <button class="btn btn--flat btn--red btn--ripple feedback__btn" type="submit">Отправить вопрос</button>
           <small class="feedback__note">Нажимая кнопку "Отправить вопрос", вы даете согласие на обработку персональных
             данных
           </small>

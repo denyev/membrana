@@ -356,6 +356,12 @@ function preventDefaultForElementList(elementList) {
     var btnClose = $('form + .mfp-close');
     // btn.prop('disabled', true);
     btn.val('Загрузка...');
+
+/*    data.baseOption = $.trim(self.find('[name="baseOption"]:checked').val());
+    data.stuffOption = $.trim(self.find('[name="stuffOption"]:checked').val());
+    data.mountingOption = $.trim(self.find('[name="mountingOption"]:checked').val());*/
+
+    console.log(data);
     $.ajax({
       type: 'POST',
       url: '../send.php',

@@ -23,6 +23,30 @@ if (isset($_POST["phone"])) {
 if (isset($_POST["message"])) {
     $text = htmlentities(trim($_POST['message']), ENT_QUOTES);
 }
+if (isset($_POST["length"])) {
+    $length = htmlentities(trim($_POST['length']), ENT_QUOTES);
+}
+if (isset($_POST["width"])) {
+    $width = htmlentities(trim($_POST['width']), ENT_QUOTES);
+}
+if (isset($_POST["square"])) {
+    $square = htmlentities(trim($_POST['square']), ENT_QUOTES);
+}
+if (isset($_POST["depth"])) {
+    $depth = htmlentities(trim($_POST['depth']), ENT_QUOTES);
+}
+if (isset($_POST["baseOption"])) {
+    $baseOption = htmlentities(trim($_POST['baseOption']), ENT_QUOTES);
+}
+if (isset($_POST["stuffOption"])) {
+    $stuffOption = htmlentities(trim($_POST['stuffOption']), ENT_QUOTES);
+}
+if (isset($_POST["mountingOption"])) {
+    $mountingOption = htmlentities(trim($_POST['mountingOption']), ENT_QUOTES);
+}
+if (isset($_POST["depth"])) {
+    $depth = htmlentities(trim($_POST['depth']), ENT_QUOTES);
+}
 if (isset($_POST["title"])) {
     $title = htmlentities(trim($_POST['title']), ENT_QUOTES);
 }
