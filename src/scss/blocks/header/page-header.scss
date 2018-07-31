@@ -46,6 +46,21 @@
   transform: translateY(-41%);
 }
 
+@media screen and (max-width: rem(1100)) {
+  .main-nav__list {
+    flex-wrap: wrap;
+    margin: 0 auto auto auto;
+    flex-basis: 54%;
+    justify-content: space-between;
+  }
+  .main-nav__item {
+    margin: rem(8) rem(16);
+    &:last-child {
+      margin: rem(8) rem(16);
+    }
+  }
+}
+
 @media screen and (max-width: rem(1024)) {
   .page-header__logo {
     &--mobile {
@@ -75,7 +90,7 @@
       position: absolute;
     }
     .main-nav {
-      margin: rem(50) auto 0 auto;
+      margin: rem(85) auto 0 auto;
     }
     .main-nav__wrapper,
     .requisites__wrap {
