@@ -14,7 +14,7 @@
 }
 
 .warranty__left {
-  flex: 0 0 34.616%;
+  flex: 0 0 30%;
   position: relative;
   z-index: 10;
 }
@@ -33,8 +33,9 @@
   &::after {
     content: "";
     display: block;
-    width: 100%;
+    //width: 110%;
     height: rem(70);
+    overflow: hidden;
     background-color: $color-dusky;
     position: absolute;
     bottom: 0;
@@ -59,7 +60,7 @@
   left: 98.5%;
   transform: translate(-50%, -50%);
   color: $color-light;
-  width: 100%;
+  width: 110%;
   height: 100%;
   background-image: url(/img/warranty/warranty-widget-bg.png);
   background-repeat: no-repeat;

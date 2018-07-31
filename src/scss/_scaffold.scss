@@ -83,6 +83,13 @@ legend {
   color: $btn-primary;
 }
 
+@media screen and (max-width: rem(1024)) {
+  h1 {
+    margin-top: rem(85);
+    margin-bottom: rem(85);
+  }
+}
+
 @media screen and (max-width: rem(576)) {
   h2 {
     text-align: center;
