@@ -21,6 +21,7 @@
 
 .warranty__img {
   width: 100%;
+  height: 110%;
 }
 
 .warranty__right {
@@ -90,6 +91,7 @@
 @media screen and (max-width: rem(1250)) {
   .warranty__widget {
     background-size: calc(100% - 1vw);
+    width: 120%;
   }
   .warranty__right {
     padding-left: calc(25% - 5vw);
@@ -106,6 +108,9 @@
   .warranty__left {
     flex-basis: 100%;
     margin-bottom: rem(16);
+  }
+  .warranty__img {
+    height: auto;
   }
   .warranty__widget {
     width: 70%;
