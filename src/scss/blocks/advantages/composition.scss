@@ -36,7 +36,7 @@
   transform: translateY(-20%);
   transition: 0.4s ease-in-out;
   &--1 {
-    top: rem(-10);
+    top: rem(-20);
     z-index: 60;
   }
   &--2 {
@@ -48,7 +48,7 @@
     z-index: 40;
   }
   &--4 {
-    top: rem(90);
+    top: rem(107);
     z-index: 30;
   }
   &--5 {
@@ -60,7 +60,7 @@
   }
   .composition:hover & {
     &--1 {
-      top: -20%;
+      top: -30%;
     }
     &--2 {
       top: -10%;
@@ -71,7 +71,7 @@
       z-index: 60;
     }
     &--4 {
-      top: 20%;
+      top: 26%;
       z-index: 50;
     }
     &--5 {
