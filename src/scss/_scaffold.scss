@@ -31,8 +31,8 @@ h1 {
   font-family: $title-font-family;
   @include fluid-type($max-value: rem(75));
   text-align: center;
-  margin-top: rem(113);
-  margin-bottom: rem(87);
+  margin-top: rem(30);
+  margin-bottom: rem(50);
   max-width: rem(1098);
 }
 

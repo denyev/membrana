@@ -20,7 +20,6 @@
   margin: 0;
   padding: 0;
   @include unstyle-list();
-  @include clearfix();
 }
 
 .features__item {
@@ -42,8 +41,29 @@
   text-align: center;
 }
 
+@media screen and (max-width: rem(992)) {
+  .features__list {
+    justify-content: space-between;
+    &:before,
+    &::after {
+      content: none;
+    }
+  }
+  .features__item {
+    flex-basis: auto;
+    margin: 0 rem(32);
+  }
+}
+
+@media screen and (max-width: rem(890)) {
+  .features__item {
+    margin: 0 rem(16);
+  }
+}
+
 @media screen and (max-width: rem(768)) {
   .features__item {
     flex-basis: 100%;
+    margin: 0 auto;
   }
 }

@@ -19,6 +19,8 @@
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
   <link rel="stylesheet" type="text/css"
         href="//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"/>
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 </head>
 <body>
 <header class="page-header">
@@ -56,7 +58,7 @@
                 <a href="#stages" class="main-nav__link" title="">Схема работы</a>
               </li>
               <li class="main-nav__item">
-                <a href="#reviews" class="main-nav__link" title="">Отзывы</a>
+                <a href="#reviews" class="main-nav__link" title="">Наши работы</a>
               </li>
               <li class="main-nav__item">
                 <a href="#feedback" class="main-nav__link" title="">Контакты</a>
@@ -804,6 +806,11 @@
                       <i class="form-radio-button"></i>
                       <span>Бетонное основание</span>
                     </label>
+                    <label class="form-radio-label">
+                      <input name="baseOption" class="form-radio-field" value="base-option-4" type="radio">
+                      <i class="form-radio-button"></i>
+                      <span>Битумная кровля</span>
+                    </label>
                   </div>
                 </fieldset>
 
@@ -817,7 +824,7 @@
                              value="stuff-option-1"
                              type="radio">
                       <i class="form-radio-button"></i>
-                      <span>Требуется укладка профнастила</span>
+                      <span>Рассчитать с материалами</span>
                     </label>
                     <label class="form-radio-label">
                       <input name="stuffOption"
@@ -825,7 +832,7 @@
                              value="stuff-option-2"
                              type="radio">
                       <i class="form-radio-button"></i>
-                      <span>Рассчитать стоимость без материалов</span>
+                      <span>Рассчитать без материалов</span>
                     </label>
                   </div>
                 </fieldset>
@@ -843,7 +850,7 @@
                          value="mounting-option-1"
                          type="radio">
                   <i class="form-radio-button"></i>
-                  <span>Монтаж мембраны</span>
+                  <span>Монтаж мембраны без утепления</span>
                 </label>
                 <label class="form-radio-label">
                   <input name="mountingOption"
@@ -1128,7 +1135,7 @@
   <section>
     <div id="reviews" class="reviews">
       <div class="reviews__wrap">
-        <h2 class="reviews__head">Отзывы</h2>
+        <h2 class="reviews__head">Наши работы</h2>
         <ul class="reviews__list">
 
           <li class="reviews__item">
@@ -1183,7 +1190,7 @@
   <section>
     <div class="brands">
       <div class="brands__wrap">
-        <h2 class="brands__head">Наши клиенты</h2>
+        <h2 class="brands__head">Наши партнеры</h2>
         <ul class="brands__list">
 
           <li class="brands__item">
@@ -1292,7 +1299,7 @@
                        placeholder="+7 (___)___-__-__"
                        required>
                 <div class="form-element-bar"></div>
-                <label class="form-element-label" for="feedback-phone">Телефон<sup>*</sup></label>
+                <label class="form-element-label" for="feedback-phone">Телефон</label>
               </div>
               <input type="hidden"
                      name="title"
@@ -1324,7 +1331,7 @@
         </picture>
       </div>
       <div class="footer__copyright">
-        <p>Copyright &copy;</p>
+        <p>Copyright &copy; 2018</p>
       </div>
     </div>
     <div class="footer__right">
@@ -1343,7 +1350,7 @@
             <a href="#stages" class="menu__link" title="">Схема работы</a>
           </li>
           <li class="menu__item">
-            <a href="#reviews" class="menu__link" title="">Отзывы</a>
+            <a href="#reviews" class="menu__link" title="">Наши работы</a>
           </li>
           <li class="menu__item">
             <a href="#feedback" class="menu__link" title="">Контакты</a>
@@ -1405,7 +1412,7 @@
                  placeholder="+7 (___)___-__-__"
                  required>
           <div class="form-element-bar"></div>
-          <label class="form-element-label" for="callbackPhone">Телефон<sup>*</sup></label>
+          <label class="form-element-label" for="callbackPhone">Телефон</label>
         </div>
       </div>
       <input type="hidden"
@@ -1435,25 +1442,16 @@
 
       <legend class="calculate__legend">Рассчитать стоимость кровли</legend>
 
-      <div class="calculate__item form-element form-input">
-        <input id="calculateName"
-               name="name"
-               type="text"
-               class="form-element-field"
-               placeholder="Введите Ваше имя">
-        <div class="form-element-bar"></div>
-        <label class="form-element-label" for="calculateName">Имя</label>
-      </div>
-
       <div class="calculate__row calculate__row--inputs">
+
         <div class="calculate__item form-element form-input">
-          <input id="calculateEmail"
-                 name="email"
+          <input id="calculateName"
+                 name="name"
                  type="text"
                  class="form-element-field"
-                 placeholder="user@example.com">
+                 placeholder="Введите Ваше имя">
           <div class="form-element-bar"></div>
-          <label class="form-element-label" for="calculateEmail">Почта</label>
+          <label class="form-element-label" for="calculateName">Имя</label>
         </div>
 
         <div class="calculate__item form-element form-input">
@@ -1464,8 +1462,9 @@
                  placeholder="+7 (___)___-__-__"
                  required>
           <div class="form-element-bar"></div>
-          <label class="form-element-label" for="calculatePhone">Телефон<sup>*</sup></label>
+          <label class="form-element-label" for="calculatePhone">Телефон</label>
         </div>
+
       </div>
 
       <div class="calculate__item form-element form-input calculate__textarea-wrap">
