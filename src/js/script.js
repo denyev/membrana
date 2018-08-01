@@ -442,8 +442,23 @@ function preventDefaultForElementList(elementList) {
     $('.page-header__checkbox').prop('checked', false);
   });
 
+//  Material input
+
+  $(".form-element-field").change(function() {
+    var fieldValue = $(this).val();
+    if ( fieldValue != '' ) {
+      $(this).addClass('js-hasvalue');
+    } else {
+      $(this).removeClass('js-hasvalue');
+    }
+  });
+
 
 })(jQuery);
+
+// jQuery
+
+/*
 
 document.addEventListener('change', function (event) {
   var element = event.target;
@@ -452,6 +467,6 @@ document.addEventListener('change', function (event) {
   }
 });
 
-// jQuery
+*/
 
 console.log('script.js is loaded');
