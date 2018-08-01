@@ -444,29 +444,33 @@ function preventDefaultForElementList(elementList) {
 
 //  Material input
 
-  $(".form-element-field").change(function() {
+  $(".form-element-field").change(function () {
     var fieldValue = $(this).val();
-    if ( fieldValue != '' ) {
+    if (fieldValue != '') {
       $(this).addClass('js-hasvalue');
     } else {
       $(this).removeClass('js-hasvalue');
     }
   });
 
+//  Animate
+
+  function animationHover(element, animation) {
+    element = $(element);
+    element.hover(
+        function () {
+          element.addClass('animated ' + animation);
+        },
+        function () {
+          //wait for animation to finish before removing classes
+          window.setTimeout(function () {
+            element.removeClass('animated ' + animation);
+          }, 2000);
+        });
+  }
+
+  animationHover('.widget__wrap', 'tada');
 
 })(jQuery);
 
 // jQuery
-
-/*
-
-document.addEventListener('change', function (event) {
-  var element = event.target;
-  if (element && element.matches('.form-element-field')) {
-    element.classList[element.value ? 'add' : 'remove']('js-hasvalue');
-  }
-});
-
-*/
-
-console.log('script.js is loaded');
