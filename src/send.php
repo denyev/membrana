@@ -55,11 +55,6 @@ if (isset($_POST["depth"])) {
 if (isset($_POST["title"])) {
     $title = htmlentities(trim($_POST['title']), ENT_QUOTES);
 }
-if ( $_FILES["file"]["name"] != "" ) {
-    $attachment = chunk_split(base64_encode(file_get_contents($_FILES["file"]["tmp_name"])));
-    $filename = $_FILES["file"]["name"];
-    $boundary = md5(date('r', time()));
-}
 
 // ===== Variables =====
 $to = "spamcheck@strogov.ru"; // E-mail на который присылать письмо
@@ -117,21 +112,11 @@ if (!empty($text)) {
 }
 
 $message .= "</table><br><br>";
-
-//if ($_FILES["file"]["name"] != "") {
-//    $message .= "$attachment
-//--_1_$boundary--";
-//}
-
 $message .= '</body></html>';
 $headers = "MIME-Version: 1.0" . PHP_EOL .
     "Content-Type: text/html; charset=utf-8" . PHP_EOL .
     'From: ' . adopt($name) . ' <' . $fromEmail . '>' . PHP_EOL .
     'Reply-To: ' . adopt($name) . ' <' . $email . '> ' . PHP_EOL;
-
-//if ($_FILES["file"]["name"] != "") {
-//    $headers .= "\r\nMIME-Version: 1.0\r\nContent-Type: multipart/mixed; boundary=\"_1_$boundary\"";
-//}
 
 if ($_FILES["file"]["name"] != "") {
 
