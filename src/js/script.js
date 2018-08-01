@@ -99,10 +99,6 @@ function preventDefaultForElementList(elementList) {
     arrows: false,
     fade: true,
     draggable: false,
-    // swipe: true,
-    // autoplay: true,
-    // autoplaySpeed: 4000,
-    // slide: 'a',
     asNavFor: '.carousel__thumbnails',
   }).magnificPopup({
     type: 'image',
@@ -129,11 +125,9 @@ function preventDefaultForElementList(elementList) {
     slidesToScroll: 1,
     fade: false,
     draggable: false,
-    // swipe: true,
     asNavFor: '.carousel',
     arrows: false,
     dots: false,
-    // centerMode: true,
     focusOnSelect: true,
     centerMode: false,
     centerPadding: 0,
@@ -270,38 +264,11 @@ function preventDefaultForElementList(elementList) {
         }
       }
     ]
-  })
+  });
 
 // /.brands__list
 
 //  Calculator
-  /*
-    $('#calculatorRequest input[name="baseOption"][type="radio"]').change(function() {
-      var target = $('#calculateForm');
-      var name = $(this).attr('name');
-      console.log(name);
-
-      var value = $(this).parent().find('span').text();
-      console.log(value);
-      var hidden = $('<input type="hidden" name="' + name + '" value="' + value + '" />');
-
-      var targetHidden = target.find('input[name="' + name + '"]');
-
-      var isThereHiddenInTarget = targetHidden.length;
-
-      console.log(target);
-      console.log(isThereHiddenInTarget);
-      if ( isThereHiddenInTarget ) {
-        targetHidden.attr('name', name);
-        console.log(targetHidden.attr('name'));
-        targetHidden.attr('value', value);
-        console.log(targetHidden.attr('value'));
-      } else {
-        target.append(hidden);
-      }
-      console.log(hidden);
-    });
-    */
 
   function setRadioValue() {
     $('input[type="radio"]').each(function () {
@@ -343,10 +310,6 @@ function preventDefaultForElementList(elementList) {
     var btnClose = $('form + .mfp-close');
     // btn.prop('disabled', true);
     btn.val('Загрузка...');
-
-    /*    data.baseOption = $.trim(self.find('[name="baseOption"]:checked').val());
-        data.stuffOption = $.trim(self.find('[name="stuffOption"]:checked').val());
-        data.mountingOption = $.trim(self.find('[name="mountingOption"]:checked').val());*/
 
     console.log(data);
     $.ajax({
@@ -399,7 +362,6 @@ function preventDefaultForElementList(elementList) {
           text: 'Спасибо за обращение!'
         });
         btn.val('Отправлено');
-        // btn.prop('disabled', true);
         setTimeout(function () {
           btnClose.click();
         }, 2000);
@@ -411,7 +373,6 @@ function preventDefaultForElementList(elementList) {
           text: 'Спасибо за обращение!'
         });
         btn.val('Отправлено');
-        // btn.prop('disabled', true);
         setTimeout(function () {
           btnClose.click();
         }, 2000);
@@ -438,14 +399,6 @@ function preventDefaultForElementList(elementList) {
     closeMarkup: '<button title="%title%" type="button" class="mfp-close">&#215;</button>'
   });
 
-  // $('#callbackForm').sendForm({
-  //   successTitle: "Ваша заявка принята!",
-  //   successText: "Наш сотрудник свяжется с Вами в самое ближайшее время.",
-  //   autoClose: true,
-  //   autoCloseDelay: 3000,
-  //   mailUrl: "../send.php"
-  // });
-
 // /#callbackForm
 
 // #calculateForm
@@ -463,14 +416,6 @@ function preventDefaultForElementList(elementList) {
     closeBtnInside: true,
     closeMarkup: '<button title="%title%" type="button" class="mfp-close">&#215;</button>'
   });
-
-  // $('#calculateForm').sendForm({
-  //   successTitle: "Ваша заявка принята!",
-  //   successText: "Наш сотрудник свяжется с Вами в самое ближайшее время.",
-  //   autoClose: true,
-  //   autoCloseDelay: 3000,
-  //   mailUrl: "../send.php"
-  // });
 
 // /#calculateForm
 
