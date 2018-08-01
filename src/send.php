@@ -1,5 +1,10 @@
 <?php
 
+use PHPMailer\PHPMailer\PHPMailer;
+
+include('libs/vendor/autoload.php');
+include('libs/PHPMailer.php');
+
 if (
     empty($_SERVER['HTTP_X_REQUESTED_WITH']) ||
     strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest'
@@ -113,10 +118,10 @@ if (!empty($text)) {
 
 $message .= "</table><br><br>";
 
-if ($_FILES["file"]["name"] != "") {
-    $message .= "$attachment
---_1_$boundary--";
-}
+//if ($_FILES["file"]["name"] != "") {
+//    $message .= "$attachment
+//--_1_$boundary--";
+//}
 
 $message .= '</body></html>';
 $headers = "MIME-Version: 1.0" . PHP_EOL .
@@ -124,10 +129,34 @@ $headers = "MIME-Version: 1.0" . PHP_EOL .
     'From: ' . adopt($name) . ' <' . $fromEmail . '>' . PHP_EOL .
     'Reply-To: ' . adopt($name) . ' <' . $email . '> ' . PHP_EOL;
 
+//if ($_FILES["file"]["name"] != "") {
+//    $headers .= "\r\nMIME-Version: 1.0\r\nContent-Type: multipart/mixed; boundary=\"_1_$boundary\"";
+//}
+
 if ($_FILES["file"]["name"] != "") {
-    $headers .= "\r\nMIME-Version: 1.0\r\nContent-Type: multipart/mixed; boundary=\"_1_$boundary\"";
+
+    $mail = new PHPMailer();
+    $mail->IsHTML(true);
+    $mail->From      = $fromEmail;
+    $mail->FromName  = adopt($name);
+    $mail->Subject   = $subject;
+    $mail->Body      = $message;
+    $mail->AddAddress( $recepient );
+
+    $file_tmp  = $_FILES["file"]["tmp_name"];
+    $file_name = $_FILES["file"]["name"];
+    $encoding = 'base64';
+    $type = 'application/octet-stream';
+
+    $mail->AddAttachment($file_tmp, $file_name, $encoding, $type);
+
+    $mail->Send();
+} else {
+    mail($to, adopt($subject), $message, $headers);
 }
 
-mail($to, adopt($subject), $message, $headers);
+
+
+
 
 ?>
