@@ -295,7 +295,7 @@ function preventDefaultForElementList(elementList) {
       data: data,
       success: function (data) {
         swal({
-          type: 'success',
+          icon: 'success',
           title: 'Заявка отправлена.',
           text: 'Спасибо за обращение!'
         });
@@ -307,7 +307,7 @@ function preventDefaultForElementList(elementList) {
       },
       error: function (data) {
         swal({
-          type: 'error',
+          icon: 'error',
           title: 'Оправка не удалась!',
           text: 'Что-то пошло не так :-('
         });
@@ -334,7 +334,7 @@ function preventDefaultForElementList(elementList) {
       cache: false,
       success: function (formdata) {
         swal({
-          type: 'success',
+          icon: 'success',
           title: 'Заявка отправлена.',
           text: 'Спасибо за обращение!'
         });
@@ -346,7 +346,7 @@ function preventDefaultForElementList(elementList) {
       },
       error: function (formdata) {
         swal({
-          type: 'success',
+          icon: 'success',
           title: 'Заявка отправлена.',
           text: 'Спасибо за обращение!'
         });
