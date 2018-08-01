@@ -274,6 +274,66 @@ function preventDefaultForElementList(elementList) {
 
 // /.brands__list
 
+//  Calculator
+  /*
+    $('#calculatorRequest input[name="baseOption"][type="radio"]').change(function() {
+      var target = $('#calculateForm');
+      var name = $(this).attr('name');
+      console.log(name);
+
+      var value = $(this).parent().find('span').text();
+      console.log(value);
+      var hidden = $('<input type="hidden" name="' + name + '" value="' + value + '" />');
+
+      var targetHidden = target.find('input[name="' + name + '"]');
+
+      var isThereHiddenInTarget = targetHidden.length;
+
+      console.log(target);
+      console.log(isThereHiddenInTarget);
+      if ( isThereHiddenInTarget ) {
+        targetHidden.attr('name', name);
+        console.log(targetHidden.attr('name'));
+        targetHidden.attr('value', value);
+        console.log(targetHidden.attr('value'));
+      } else {
+        target.append(hidden);
+      }
+      console.log(hidden);
+    });
+    */
+
+  function setRadioValue() {
+    $('input[type="radio"]').each(function () {
+      var value = $(this).parent().find('span').text();
+      $(this).attr('value', value);
+    });
+  }
+
+  setRadioValue();
+
+  function copyInput(selector) {
+    $(selector).change(function () {
+      var target = $('#calculateForm');
+      var name = $(this).attr('name');
+      var value = $(this).val();
+      var hidden = $('<input type="hidden" name="' + name + '" value="' + value + '" />');
+      var targetHidden = target.find('input[name="' + name + '"]');
+      var isThereHiddenInTarget = targetHidden.length;
+
+      if (isThereHiddenInTarget) {
+        targetHidden.attr('name', name);
+        targetHidden.attr('value', value);
+      } else {
+        target.append(hidden);
+      }
+    });
+  }
+
+  copyInput('#calculatorRequest input');
+
+//  /Calculator
+
 // Ajax Submit Form
 
   $('#priceRequestForm, #compositionForm, #callbackForm, #feedbackForm').submit(function (e) {
@@ -284,9 +344,9 @@ function preventDefaultForElementList(elementList) {
     // btn.prop('disabled', true);
     btn.val('Загрузка...');
 
-/*    data.baseOption = $.trim(self.find('[name="baseOption"]:checked').val());
-    data.stuffOption = $.trim(self.find('[name="stuffOption"]:checked').val());
-    data.mountingOption = $.trim(self.find('[name="mountingOption"]:checked').val());*/
+    /*    data.baseOption = $.trim(self.find('[name="baseOption"]:checked').val());
+        data.stuffOption = $.trim(self.find('[name="stuffOption"]:checked').val());
+        data.mountingOption = $.trim(self.find('[name="mountingOption"]:checked').val());*/
 
     console.log(data);
     $.ajax({
@@ -317,7 +377,7 @@ function preventDefaultForElementList(elementList) {
     });
   });
 
-  $('#calculateForm').submit(function(e) {
+  $('#calculateForm').submit(function (e) {
     e.preventDefault();
 
     var btn = $(this).find('[type="submit"]');

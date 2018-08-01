@@ -110,6 +110,76 @@ if (!empty($text)) {
     $message .= "</td>";
     $message .= "</tr>";
 }
+if (!empty($length)) {
+    $message .= "<tr>";
+    $message .= "<td>";
+    $message .= "<strong> Длина: </strong>";
+    $message .= "</td>";
+    $message .= "<td style='padding-left:12px;'>";
+    $message .= "$length";
+    $message .= "</td>";
+    $message .= "</tr>";
+}
+if (!empty($width)) {
+    $message .= "<tr>";
+    $message .= "<td>";
+    $message .= "<strong> Ширина: </strong>";
+    $message .= "</td>";
+    $message .= "<td style='padding-left:12px;'>";
+    $message .= "$width";
+    $message .= "</td>";
+    $message .= "</tr>";
+}
+if (!empty($square)) {
+    $message .= "<tr>";
+    $message .= "<td>";
+    $message .= "<strong> Площадь: </strong>";
+    $message .= "</td>";
+    $message .= "<td style='padding-left:12px;'>";
+    $message .= "$square";
+    $message .= "</td>";
+    $message .= "</tr>";
+}
+if (!empty($depth)) {
+    $message .= "<tr>";
+    $message .= "<td>";
+    $message .= "<strong> Толщина: </strong>";
+    $message .= "</td>";
+    $message .= "<td style='padding-left:12px;'>";
+    $message .= "$depth";
+    $message .= "</td>";
+    $message .= "</tr>";
+}
+if (!empty($baseOption)) {
+    $message .= "<tr>";
+    $message .= "<td>";
+    $message .= "<strong> Основание: </strong>";
+    $message .= "</td>";
+    $message .= "<td style='padding-left:12px;'>";
+    $message .= "$baseOption";
+    $message .= "</td>";
+    $message .= "</tr>";
+}
+if (!empty($stuffOption)) {
+    $message .= "<tr>";
+    $message .= "<td>";
+    $message .= "<strong> Материалы: </strong>";
+    $message .= "</td>";
+    $message .= "<td style='padding-left:12px;'>";
+    $message .= "$stuffOption";
+    $message .= "</td>";
+    $message .= "</tr>";
+}
+if (!empty($mountingOption)) {
+    $message .= "<tr>";
+    $message .= "<td>";
+    $message .= "<strong> Тип монтажа: </strong>";
+    $message .= "</td>";
+    $message .= "<td style='padding-left:12px;'>";
+    $message .= "$mountingOption";
+    $message .= "</td>";
+    $message .= "</tr>";
+}
 
 $message .= "</table><br><br>";
 $message .= '</body></html>';
