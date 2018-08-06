@@ -192,6 +192,7 @@ if ($_FILES["file"]["name"] != "") {
 
     $mail = new PHPMailer();
     $mail->IsHTML(true);
+    $mail->CharSet = 'UTF-8';
     $mail->From      = $fromEmail;
     $mail->FromName  = adopt($name);
     $mail->Subject   = $subject;
