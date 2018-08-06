@@ -271,7 +271,7 @@ AddDefaultCharset utf-8
                      .rdf \
                      .rss \
                      .topojson \
-                     .vtt \
+#                     .vtt \
                      .webapp \
                      .webmanifest \
                      .xloc \
