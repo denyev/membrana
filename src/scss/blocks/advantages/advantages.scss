@@ -47,8 +47,24 @@
   margin-bottom: rem(15);
 }
 
-@include n-columns($list: advantages__bottom-list, $item: advantages__bottom-item, $min-width: rem(280), $max-cols: 2);
+@include n-columns($list: advantages__bottom-list, $item: advantages__bottom-item, $min-width: rem(450), $max-cols: 2);
 
+@media screen and (max-width: rem(950)) {
+  .advantages__bottom-item {
+    &:first-child {
+      margin-bottom: rem(100);
+    }
+
+    &:last-child {
+      form {
+        width: 100%;
+        max-width: rem(500);
+        margin: 0 auto;
+      }
+
+    }
+  }
+}
 @media screen and (max-width: rem(768)) {
   .advantages__item {
     margin: 0;
@@ -74,6 +90,13 @@
   }
   .advantages__text {
     margin: 0;
+  }
+
+  .advantages__bottom-item {
+    &:last-child {
+      display: none;
+
+    }
   }
 
 }

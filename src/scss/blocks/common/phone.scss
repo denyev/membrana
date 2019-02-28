@@ -2,11 +2,21 @@
 * [Phone]
 */
 
+.phone {
+  display: flex;
+  flex-direction: column;
+}
+
 .phone__link {
   @include reset-link();
   @include link-underline-hover($bottom: rem(-3));
+  margin-bottom: rem(8);
   font-family: $title-font-family;
   font-weight: bold;
   font-size: rem(18);
   color: currentColor;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }

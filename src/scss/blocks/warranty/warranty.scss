@@ -55,6 +55,10 @@
   margin-right: auto;
 }
 
+.warranty__note {
+  @include fluid-type($min-value: rem(10), $max-value: rem(11));
+}
+
 .warranty__widget {
   position: absolute;
   top: 50%;
@@ -79,7 +83,7 @@
   height: 100%;
   align-items: center;
   font-family: $title-font-family;
-  @include fluid-type($min-value: rem(14), $max-value: rem(19))
+  @include fluid-type($min-value: rem(14), $max-value: rem(19));
 }
 
 .warranty__widget-text {

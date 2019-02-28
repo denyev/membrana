@@ -82,6 +82,7 @@
     "gulp-webp": "^3.0.0",
     "gulp-webpcss": "^1.1.1",
     "imagemin-mozjpeg": "^7.0.0",
+    "lodash": "^4.17.11",
     "modernizr": "^3.6.0",
     "postcss-fixes": "^2.0.1",
     "postcss-uncss": "^0.16.1",

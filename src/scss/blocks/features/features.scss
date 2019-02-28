@@ -26,6 +26,10 @@
   flex: 0 0 33%;
   align-content: center;
   justify-content: center;
+
+  &:last-of-type {
+    margin: 0 auto;
+  }
 }
 
 .features__content {

@@ -22,3 +22,9 @@
 .requisites__item {
   align-self: center;
 }
+
+@media screen and (max-width: rem(1024)) {
+  .requisites__list {
+    height: 100%;
+  }
+}

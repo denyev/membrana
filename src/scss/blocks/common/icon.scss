@@ -80,6 +80,35 @@
   &--5 {
     background-position-y: -2482px;
   }
+  &--right-arrow {
+    &::after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-top: rem(16) solid transparent;
+      border-bottom: rem(16) solid transparent;
+      border-left: rem(16) solid $color-radio;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(-88%, -50%);
+    }
+  }
+  &--left-arrow {
+    &::after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-top: rem(16) solid transparent;
+      border-bottom: rem(16) solid transparent;
+      border-right: rem(16) solid $color-radio;
+      position: absolute;
+      top: 50%;
+      left: auto;
+      right: 0;
+      transform: translate(100%, -50%);
+    }
+  }
 }
 
 .icon-big {
