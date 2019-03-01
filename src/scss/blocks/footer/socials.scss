@@ -1,8 +1,8 @@
 .socials__list {
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   justify-content: end;
-  margin: 0;
+  margin: 0 0 0 auto;
   padding: 0;
   @include unstyle-list();
   @include clearfix();

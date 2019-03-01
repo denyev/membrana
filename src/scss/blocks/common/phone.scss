@@ -16,6 +16,11 @@
   font-size: rem(18);
   color: currentColor;
 
+  &--footer {
+    display: inline-flex;
+    margin-left: auto;
+  }
+
   &:last-of-type {
     margin-bottom: 0;
   }
